@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace lazyperson0710\folivora\event;
+namespace temp\event;
 
-use lazyperson0710\folivora\event\listeners\block\BlockEventListener;
 use lazyperson0710\folivora\utils\ListenerList;
+use temp\event\listeners\block\BlockEventListener;
 
 class SampleEventListener extends ListenerList {
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace lazyperson0710\folivora\event\listeners\block;
+namespace temp\event\listeners\block;
 
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\Listener;

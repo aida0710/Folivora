@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace lazyperson0710\folivora\utils;
+namespace temp\utils;
 
 use pocketmine\event\Listener;
 
