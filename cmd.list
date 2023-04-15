@@ -1,6 +1,0 @@
-cs-fixer実行
-./vendor/bin/php-cs-fixer fix
-
-phpStan実行
-./vendor/bin/phpstan analyse
-
