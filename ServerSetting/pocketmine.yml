@@ -17,7 +17,7 @@ settings:
   #Used for plugin asynchronous tasks, world generation, compression and web communication.
   #Set this approximately to your number of cores.
   #If set to auto, it'll try to detect the number of cores (or use 2)
-  async-workers: auto
+  async-workers: 8
   #Whether to allow running development builds. Dev builds might crash, break your plugins, corrupt your world and more.
   #It is recommended to avoid using development builds where possible.
   enable-dev-builds: false
@@ -38,7 +38,7 @@ memory:
   #AsyncWorker threads' hard memory limit in megabytes. Set to 0 to disable
   #This will crash the task currently executing on the worker if the task exceeds the limit
   #NOTE: THIS LIMIT APPLIES PER WORKER, NOT TO THE WHOLE PROCESS.
-  async-worker-hard-limit: 256
+  async-worker-hard-limit: 0
 
   #Period in ticks to check memory (default 1 second)
   check-rate: 20
@@ -118,10 +118,8 @@ chunk-sending:
   spawn-radius: 4
 
 chunk-ticking:
-  #Max amount of chunks processed each tick
-  per-tick: 40
   #Radius of chunks around a player to tick
-  tick-radius: 8
+  tick-radius: 3
   #Number of blocks inside ticking areas' subchunks that get ticked every tick. Higher values will accelerate events
   #like tree and plant growth, but at a higher performance cost.
   blocks-per-subchunk-per-tick: 3
@@ -133,7 +131,7 @@ chunk-ticking:
 
 chunk-generation:
   #Max. amount of chunks in the waiting queue to be populated
-  population-queue-size: 3200
+  population-queue-size: 32
 
 ticks-per:
   autosave: 6000
@@ -144,7 +142,7 @@ auto-report:
   send-code: false
   send-settings: false
   send-phpinfo: false
-  use-https: false
+  use-https: true
   host: crash.pmmp.io
 
 anonymous-statistics:
