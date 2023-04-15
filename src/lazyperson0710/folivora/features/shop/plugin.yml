@@ -1,0 +1,6 @@
+name: ShopSystem
+main: lazyperson0710\ShopSystem\Main
+version: 1.0.0
+api: 4.0.0
+load: POSTWORLD
+author: lazyperson0710
