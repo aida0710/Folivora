@@ -1,5 +1,4 @@
 # Futures
-
 ## Todo
 
 * [ ] administrator

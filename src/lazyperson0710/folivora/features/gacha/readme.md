@@ -1,3 +1,2 @@
 # Gacha
-
 ## Todo

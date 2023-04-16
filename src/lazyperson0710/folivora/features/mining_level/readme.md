@@ -1,3 +1,2 @@
 # Mining_Level
-
 ## Todo

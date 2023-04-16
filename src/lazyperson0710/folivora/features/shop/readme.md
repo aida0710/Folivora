@@ -1,3 +1,2 @@
 # Shop
-
 ## Todo
