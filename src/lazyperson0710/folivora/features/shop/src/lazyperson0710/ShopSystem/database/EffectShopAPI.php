@@ -17,6 +17,13 @@ class EffectShopAPI {
 	protected array $amplifiedMoney = [];
 	protected array $timeRestriction = [];
 
+	public static function getInstance() : EffectShopAPI {
+		if (!isset(self::$instance)) {
+			self::$instance = new EffectShopAPI();
+		}
+		return self::$instance;
+	}
+
 	public function init() : void {
 		$this->register(VanillaEffects::HASTE(), 600, 2, 800, 800);
 		$this->register(VanillaEffects::SPEED(), 250, 15, 1200, 800);
@@ -53,13 +60,6 @@ class EffectShopAPI {
 
 	public function getAmplifiedMoney(string $effectName) : ?int {
 		return $this->amplifiedMoney[$effectName];
-	}
-
-	public static function getInstance() : EffectShopAPI {
-		if (!isset(self::$instance)) {
-			self::$instance = new EffectShopAPI();
-		}
-		return self::$instance;
 	}
 
 }

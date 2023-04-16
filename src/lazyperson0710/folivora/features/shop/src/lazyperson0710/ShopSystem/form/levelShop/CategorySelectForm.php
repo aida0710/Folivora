@@ -12,6 +12,7 @@ use lazyperson0710\ShopSystem\form\levelShop\future\RestrictionShop;
 use lazyperson0710\ShopSystem\form\levelShop\future\ShopCategory;
 use lazyperson0710\ShopSystem\form\levelShop\future\ShopText;
 use pocketmine\player\Player;
+use function array_keys;
 
 class CategorySelectForm extends SimpleForm implements ShopText {
 

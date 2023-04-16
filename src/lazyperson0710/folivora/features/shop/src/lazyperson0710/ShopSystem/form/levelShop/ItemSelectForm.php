@@ -10,6 +10,8 @@ use lazyperson0710\ShopSystem\form\levelShop\element\SendMenuFormButton;
 use lazyperson0710\ShopSystem\form\levelShop\future\RestrictionShop;
 use lazyperson0710\ShopSystem\form\levelShop\future\ShopText;
 use pocketmine\player\Player;
+use function number_format;
+use const PHP_EOL;
 
 class ItemSelectForm extends SimpleForm implements ShopText {
 

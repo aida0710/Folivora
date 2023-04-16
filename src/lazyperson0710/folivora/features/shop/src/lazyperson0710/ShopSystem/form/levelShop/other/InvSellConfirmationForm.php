@@ -14,6 +14,7 @@ use lazyperson710\core\packet\SendMessage\SendMessage;
 use pocketmine\item\ItemIds;
 use pocketmine\player\Player;
 use function is_null;
+use const PHP_EOL;
 
 class InvSellConfirmationForm extends SimpleForm implements ShopText {
 

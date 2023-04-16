@@ -10,6 +10,8 @@ use bbo51dog\bboform\form\CustomForm;
 use lazyperson0710\ShopSystem\database\ItemShopAPI;
 use lazyperson0710\ShopSystem\form\levelShop\future\ShopText;
 use pocketmine\player\Player;
+use function var_dump;
+use const PHP_EOL;
 
 class BulkSaleForm extends CustomForm implements ShopText {
 

@@ -12,6 +12,8 @@ use lazyperson0710\ShopSystem\form\levelShop\future\ShopText;
 use lazyperson0710\ShopSystem\object\ShopItem;
 use onebone\economyapi\EconomyAPI;
 use pocketmine\player\Player;
+use function number_format;
+use const PHP_EOL;
 
 class SelectTypeForm extends SimpleForm implements ShopText {
 

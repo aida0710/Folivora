@@ -29,7 +29,7 @@ class ShopCommand extends Command {
 			return;
 		}
 		match ($args[0]) {
-			'other' => LevelCheck::getInstance()->check($sender, new OtherShopSelectForm, RestrictionShop::RESTRICTION_LEVEL_OTHER_SHOP),
+			'other' => LevelCheck::getInstance()->check($sender, new OtherShopSelectForm(), RestrictionShop::RESTRICTION_LEVEL_OTHER_SHOP),
 			'search' => LevelCheck::getInstance()->check($sender, new SearchItemForm(), RestrictionShop::RESTRICTION_LEVEL_OTHER_SHOP),
 			'invsell' => LevelCheck::getInstance()->check($sender, new InvSellConfirmationForm(), RestrictionShop::RESTRICTION_LEVEL_OTHER_SHOP),
 			'1' => LevelCheck::getInstance()->check($sender, new CategorySelectForm($sender, 1), RestrictionShop::RESTRICTION_LEVEL_SHOP_1),

@@ -20,6 +20,13 @@ class EnchantShopAPI {
 	protected array $levelLimit = [];
 	protected array $miningLevel = [];
 
+	public static function getInstance() : EnchantShopAPI {
+		if (!isset(self::$instance)) {
+			self::$instance = new EnchantShopAPI();
+		}
+		return self::$instance;
+	}
+
 	public function init() : void {
 		$this->register(VanillaEnchantments::SHARPNESS(), 3000, 5, 30);
 		$this->register(VanillaEnchantments::EFFICIENCY(), 5000, 5, 15);
@@ -59,13 +66,6 @@ class EnchantShopAPI {
 
 	public function getMiningLevel(string $enchantmentName) : ?int {
 		return $this->miningLevel[$enchantmentName];
-	}
-
-	public static function getInstance() : EnchantShopAPI {
-		if (!isset(self::$instance)) {
-			self::$instance = new EnchantShopAPI();
-		}
-		return self::$instance;
 	}
 
 }

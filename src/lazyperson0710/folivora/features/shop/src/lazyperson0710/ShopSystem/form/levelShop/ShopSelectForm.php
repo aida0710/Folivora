@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace lazyperson0710\ShopSystem\form\levelShop;
 
 use bbo51dog\bboform\form\SimpleForm;
@@ -10,6 +12,7 @@ use lazyperson0710\ShopSystem\form\levelShop\future\ShopText;
 use lazyperson0710\ShopSystem\form\levelShop\other\OtherShopSelectForm;
 use pocketmine\player\Player;
 use RuntimeException;
+use const PHP_EOL;
 
 class ShopSelectForm extends SimpleForm implements ShopText {
 

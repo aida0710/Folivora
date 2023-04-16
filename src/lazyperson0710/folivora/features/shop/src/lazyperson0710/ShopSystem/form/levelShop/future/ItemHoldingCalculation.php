@@ -8,6 +8,7 @@ use lazyperson0710\ShopSystem\object\ShopItem;
 use pocketmine\player\Player;
 use pocketmine\utils\SingletonTrait;
 use ree_jp\stackstorage\api\StackStorageAPI;
+use RuntimeException;
 
 class ItemHoldingCalculation {
 
@@ -32,6 +33,6 @@ class ItemHoldingCalculation {
 				return 0;
 			},
 		);
-		throw new \RuntimeException('This method must be called asynchronously.');
+		throw new RuntimeException('This method must be called asynchronously.');
 	}
 }

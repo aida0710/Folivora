@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace lazyperson0710\ShopSystem\form\levelShop\future;
 
 use bbo51dog\bboform\form\FormBase;
@@ -10,6 +12,7 @@ use lazyperson710\core\packet\SoundPacket;
 use pocketmine\player\Player;
 use pocketmine\utils\SingletonTrait;
 use pocketmine\utils\TextFormat;
+use const PHP_EOL;
 
 class LevelCheck {
 

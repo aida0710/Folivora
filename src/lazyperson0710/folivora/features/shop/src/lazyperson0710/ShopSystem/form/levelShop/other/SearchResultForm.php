@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 0);
+declare(strict_types = 1);
 
 namespace lazyperson0710\ShopSystem\form\levelShop\other;
 
@@ -14,6 +14,7 @@ use lazyperson0710\ShopSystem\object\ShopItem;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 use RuntimeException;
+use const PHP_EOL;
 
 class SearchResultForm extends SimpleForm implements ShopText {
 
