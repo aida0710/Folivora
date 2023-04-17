@@ -15,11 +15,6 @@
 ## ライセンス
 [MIT License](https://github.com/lazyperson0710/Folivora/blob/main/LICENSE)
 
-## その他
-
-- 公式サイト: https://nkserver.net
-- なまけもの自己紹介 : https://lazyperson0710.tech
-
 ## Markdown記法の統一
 
 - 改行は可読性を維持するため`<br>`で表現してください
