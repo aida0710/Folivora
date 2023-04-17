@@ -3,6 +3,10 @@
         {
             "name": "level_up_log",
             "url": ""
+        },
+        {
+            "name": "chat_log",
+            "url": ""
         }
     ]
 }
