@@ -68,7 +68,9 @@
       <path value="$PROJECT_DIR$/vendor/brick/math" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter interpreter_id="2e9bbd9b-a15d-4697-bf43-d9ca7e490768" tool_path="$USER_HOME$/Documents/plugins/vendor/bin/phpstan.bat" />
