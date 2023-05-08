@@ -2,7 +2,7 @@
 ## Todo
 
 * [ ] administrator
-* [ ] achievement 
+* [ ] achievement
 * [ ] announce
 * [ ] anti_cheat
 * [ ] bank
