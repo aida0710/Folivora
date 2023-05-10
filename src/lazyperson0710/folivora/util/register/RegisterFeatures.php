@@ -11,6 +11,7 @@ use pocketmine\Server;
 class RegisterFeatures {
 
     public static function enableFeatures(Server $server) : void {
+        //todo 優先順位を指定できるようにする
         $class = [
             new Other(),
         ];
