@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace lazyperson0710\folivora\features\other\Overwrite\block;
+namespace lazyperson0710\folivora\features\other\overwrite\block;
 
 use pocketmine\block\RedstoneOre;
 use pocketmine\item\Item;

@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\other\listener;
 
+use lazyperson0710\folivora\util\packet\SoundPacket;
 use lazyperson0710\PlayerSetting\object\PlayerSettingPool;
 use lazyperson0710\PlayerSetting\object\settings\normal\DestructionSoundSetting;
-use lazyperson710\core\packet\SoundPacket;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\Listener;
 use function mt_rand;

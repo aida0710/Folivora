@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace lazyperson0710\folivora\features\other\Overwrite\item;
+namespace lazyperson0710\folivora\features\other\overwrite\item;
 
 use pocketmine\inventory\CreativeInventory;
 use pocketmine\item\CookedChicken;

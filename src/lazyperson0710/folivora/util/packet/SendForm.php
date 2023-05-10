@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\util\packet;
 
 use lazyperson0710\folivora\util\message\send_soundless_message\SendSoundlessTip;
-use lazyperson710\core\task\IntervalTask;
+use lazyperson0710\folivora\util\task\IntervalTask;
 use pocketmine\form\Form;
 use pocketmine\player\Player;
 

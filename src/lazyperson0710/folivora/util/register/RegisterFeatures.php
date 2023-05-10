@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\util\register;
 
 use lazyperson0710\folivora\features\other\Other;
-use lazyperson0710\folivora\util\plugin_base\DummyPluginBase;
 use lazyperson0710\folivora\util\plugin_base\IPluginBase;
 use pocketmine\Server;
 

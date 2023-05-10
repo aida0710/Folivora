@@ -5,9 +5,9 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\features\other\listener;
 
 use InvalidArgumentException;
-use lazyperson710\core\packet\SendMessage\SendActionBarMessage;
-use lazyperson710\core\packet\SendMessage\SendMessage;
-use lazyperson710\core\packet\SendMessage\SendTip;
+use lazyperson0710\folivora\util\message\send_message\SendActionBarMessage;
+use lazyperson0710\folivora\util\message\send_message\SendMessage;
+use lazyperson0710\folivora\util\message\send_message\SendTip;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;

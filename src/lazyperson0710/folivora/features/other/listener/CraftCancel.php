@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\other\listener;
 
-use lazyperson710\core\packet\SendMessage\SendMessage;
+use lazyperson0710\folivora\util\message\send_message\SendMessage;
 use pocketmine\block\VanillaBlocks;
 use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
@@ -15,7 +15,7 @@ use function in_array;
 
 class CraftCancel implements Listener {
 
-    public function onCraft(CraftItemEvent $event) {
+    public function onCraft(CraftItemEvent $event) : void {
         $blocks = [
             VanillaBlocks::ACACIA_PRESSURE_PLATE()->asItem()->getVanillaName(),
             VanillaBlocks::ACTIVATOR_RAIL()->asItem()->getVanillaName(),
