@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace lazyperson0710\folivora\features\other\test\listener;
+namespace lazyperson0710\folivora\features\debug\test\listener;
 
-use lazyperson0710\folivora\util\register\RegisterTask;
+use lazyperson0710\folivora\util\register\RegisterTaskScheduler;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\scheduler\ClosureTask;
@@ -18,7 +18,7 @@ class JoinEventListener implements Listener {
     public function onJoin(PlayerJoinEvent $event) : void {
         $player = $event->getPlayer();
         Server::getInstance()->getLogger()->warning($player->getName() . 'が参加しました');
-        RegisterTask::register()->scheduleDelayedTask(new ClosureTask(
+        RegisterTaskScheduler::getScheduler()->scheduleDelayedTask(new ClosureTask(
             function () use ($player) : void {
                 Server::getInstance()->getLogger()->warning($player->getName() . 'が参加してから5秒経過しました');
             }

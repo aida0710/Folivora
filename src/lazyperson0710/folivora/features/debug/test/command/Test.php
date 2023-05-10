@@ -1,6 +1,6 @@
 <?php
 
-namespace lazyperson0710\folivora\features\other\test\command;
+namespace lazyperson0710\folivora\features\debug\test\command;
 
 use lazyperson0710\folivora\util\message\send_message\SendMessage;
 use pocketmine\command\Command;

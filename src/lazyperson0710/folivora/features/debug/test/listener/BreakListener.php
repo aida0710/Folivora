@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace lazyperson0710\folivora\features\other\test\listener;
+namespace lazyperson0710\folivora\features\debug\test\listener;
 
 use lazyperson0710\folivora\features\electronic_money\Money;
 use pocketmine\event\block\BlockBreakEvent;
