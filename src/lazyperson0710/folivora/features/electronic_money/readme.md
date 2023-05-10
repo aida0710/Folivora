@@ -1,2 +1,0 @@
-# ElectronicMoney
-## Todo

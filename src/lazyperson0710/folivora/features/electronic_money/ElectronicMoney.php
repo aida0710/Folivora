@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace lazyperson0710\folivora\features\electronic_money;
+
+use pocketmine\plugin\PluginBase;
+
+class ElectronicMoney {
+
+    public function init(PluginBase $base) : void {
+    }
+
+}
