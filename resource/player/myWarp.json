@@ -1,0 +1,21 @@
+{
+    "lazyperson0710": {
+        "UnixTimeStamp_1": {
+            "world": "world",
+            "x": 1,
+            "y": 2,
+            "z": 3,
+            "invite": [
+                "dummy_1",
+                "dummy_2"
+            ]
+        },
+        "UnixTimeStamp_2": {
+            "world": "world",
+            "x": 1,
+            "y": 2,
+            "z": 3,
+            "invite": []
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "lazyperson0710": {
+        "loginAttack": {
+            "enabled": false,
+            "current": 60,
+            "max": 100
+        },
+        "login-10": {
+            "enabled": false,
+            "current": 8,
+            "max": 10
+        },
+        "login-60": {
+            "enabled": false,
+            "current": 8,
+            "max": 60
+        },
+        "login-120": {
+            "enabled": false,
+            "current": 8,
+            "max": 600
+        },
+        "パン食べる": {
+            "enabled": false,
+            "current": 0,
+            "max": 1
+        }
+    }
+}
