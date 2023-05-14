@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace lazyperson0710\folivora\util\register;
 
 use lazyperson0710\folivora\util\exception\ConfigDataPathNotSetException;
@@ -14,7 +16,9 @@ class RegisterConfig {
      * @return string
      */
     public static function getDataPath() : string {
-        if (!isset(self::$dataPath)) throw new ConfigDataPathNotSetException("Path is not set.");
+        if (!isset(self::$dataPath)) {
+            throw new ConfigDataPathNotSetException('Path is not set.');
+        }
         return self::$dataPath;
     }
 
@@ -27,5 +31,4 @@ class RegisterConfig {
     public static function setDataPath(string $path) : void {
         self::$dataPath = $path;
     }
-
 }

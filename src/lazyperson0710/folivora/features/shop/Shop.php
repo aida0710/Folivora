@@ -14,14 +14,14 @@ use pocketmine\plugin\PluginBase;
 
 class Shop {
 
-	public function init(PluginBase $base) : void {
-		ItemShopAPI::getInstance()->init();
-		EffectShopAPI::getInstance()->init();
-		EnchantShopAPI::getInstance()->init();
-		$base->getServer()->getCommandMap()->registerAll('shopSystem', [
-			new ItemShopCommand(),
-			new EnchantShopCommand(),
-			new EffectShopCommand(),
-		]);
-	}
+    public function init(PluginBase $base) : void {
+        ItemShopAPI::getInstance()->init();
+        EffectShopAPI::getInstance()->init();
+        EnchantShopAPI::getInstance()->init();
+        $base->getServer()->getCommandMap()->registerAll('shopSystem', [
+            new ItemShopCommand(),
+            new EnchantShopCommand(),
+            new EffectShopCommand(),
+        ]);
+    }
 }

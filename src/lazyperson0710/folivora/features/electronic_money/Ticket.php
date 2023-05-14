@@ -16,9 +16,10 @@ class Ticket {
     public const SUFFIX = '枚';
     public const DEFAULT_CURRENCY = 15;
 
-    public function setTicket(Player $player, int $quantity) : void {
-        if ($quantity < 0) $quantity = 0;
-        PlayerData::getInstance()->setPlayerData($player, [self::NAME => $quantity]);
+    public function addTicket(Player $player, int $quantity) : void {
+        $currentMoney = $this->getTicket($player);
+        $ticket = $currentMoney + $quantity;
+        $this->setTicket($player, $ticket);
     }
 
     public function getTicket(Player $player) : int {
@@ -26,10 +27,9 @@ class Ticket {
         return $playerData[self::NAME];
     }
 
-    public function addTicket(Player $player, int $quantity) : void {
-        $currentMoney = $this->getTicket($player);
-        $ticket = $currentMoney + $quantity;
-        $this->setTicket($player, $ticket);
+    public function setTicket(Player $player, int $quantity) : void {
+        if ($quantity < 0) $quantity = 0;
+        PlayerData::getInstance()->setPlayerData($player, [self::NAME => $quantity]);
     }
 
     public function reduceTicket(Player $player, int $quantity) : void {

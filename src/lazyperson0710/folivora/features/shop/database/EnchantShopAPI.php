@@ -15,57 +15,57 @@ use pocketmine\Server;
 
 class EnchantShopAPI {
 
-	private static EnchantShopAPI $instance;
-	protected array $buy = [];
-	protected array $levelLimit = [];
-	protected array $miningLevel = [];
+    private static EnchantShopAPI $instance;
+    protected array $buy = [];
+    protected array $levelLimit = [];
+    protected array $miningLevel = [];
 
-	public static function getInstance() : EnchantShopAPI {
-		if (!isset(self::$instance)) {
-			self::$instance = new EnchantShopAPI();
-		}
-		return self::$instance;
-	}
+    public function init() : void {
+        $this->register(VanillaEnchantments::SHARPNESS(), 3000, 5, 30);
+        $this->register(VanillaEnchantments::EFFICIENCY(), 5000, 5, 15);
+        $this->register(VanillaEnchantments::SILK_TOUCH(), 15000, 1, 15);
+        $this->register(EnchantmentIdMap::getInstance()->fromId(EnchantmentIds::FORTUNE), 30000, 3, 25);
+        $this->register(VanillaEnchantments::UNBREAKING(), 10000, 3, 5);
+        $this->register(VanillaEnchantments::POWER(), 30000, 5, 30);
+    }
 
-	public function init() : void {
-		$this->register(VanillaEnchantments::SHARPNESS(), 3000, 5, 30);
-		$this->register(VanillaEnchantments::EFFICIENCY(), 5000, 5, 15);
-		$this->register(VanillaEnchantments::SILK_TOUCH(), 15000, 1, 15);
-		$this->register(EnchantmentIdMap::getInstance()->fromId(EnchantmentIds::FORTUNE), 30000, 3, 25);
-		$this->register(VanillaEnchantments::UNBREAKING(), 10000, 3, 5);
-		$this->register(VanillaEnchantments::POWER(), 30000, 5, 30);
-	}
+    public function register(Enchantment $enchantment, int $buy, int $limit, int $miningLevel) : void {
+        $enchantName = $enchantment->getName();
+        if ($enchantName instanceof Translatable) {
+            $enchantName = Server::getInstance()->getLanguage()->translate($enchantName);
+            //$player->getLanguage()->translate($enchantName);
+            //$enchantName = $enchantName->getText();
+        }
+        $this->buy[$enchantName] = $buy;
+        $this->levelLimit[$enchantName] = $limit;
+        $this->miningLevel[$enchantName] = $miningLevel;
+    }
 
-	public function register(Enchantment $enchantment, int $buy, int $limit, int $miningLevel) : void {
-		$enchantName = $enchantment->getName();
-		if ($enchantName instanceof Translatable) {
-			$enchantName = Server::getInstance()->getLanguage()->translate($enchantName);
-			//$player->getLanguage()->translate($enchantName);
-			//$enchantName = $enchantName->getText();
-		}
-		$this->buy[$enchantName] = $buy;
-		$this->levelLimit[$enchantName] = $limit;
-		$this->miningLevel[$enchantName] = $miningLevel;
-	}
+    public static function getInstance() : EnchantShopAPI {
+        if (!isset(self::$instance)) {
+            self::$instance = new EnchantShopAPI();
+        }
+        return self::$instance;
+    }
 
-	public function getBuy(string $enchantmentName) : ?int {
-		return $this->buy[$enchantmentName];
-	}
+    public function getBuy(string $enchantmentName) : ?int {
+        return $this->buy[$enchantmentName];
+    }
 
-	public function checkLevel(Player $player, string $enchantmentName) : bool {
-		$miningLevel = MiningLevelAPI::getInstance();
-		if (!($this->getMiningLevel($enchantmentName) < $miningLevel->getLevel($player->getName()))) {
-			return false;
-		}
-		return true;
-	}
+    public function checkLevel(Player $player, string $enchantmentName) : bool {
+        $miningLevel = MiningLevelAPI::getInstance();
+        if (!($this->getMiningLevel($enchantmentName) < $miningLevel->getLevel($player->getName()))) {
+            return false;
+        }
+        return true;
+    }
 
-	public function getLevelLimit(string $enchantmentName) : ?int {
-		return $this->levelLimit[$enchantmentName];
-	}
+    public function getMiningLevel(string $enchantmentName) : ?int {
+        return $this->miningLevel[$enchantmentName];
+    }
 
-	public function getMiningLevel(string $enchantmentName) : ?int {
-		return $this->miningLevel[$enchantmentName];
-	}
+    public function getLevelLimit(string $enchantmentName) : ?int {
+        return $this->levelLimit[$enchantmentName];
+    }
 
 }

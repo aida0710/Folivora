@@ -10,6 +10,6 @@ use pocketmine\player\Player;
 
 class ItemSellForm extends CustomForm {
 
-	public function __construct(Player $player, ItemShopObject $item) {
-	}
+    public function __construct(Player $player, ItemShopObject $item) {
+    }
 }

@@ -12,16 +12,16 @@ use pocketmine\player\Player;
 
 class SendMenuFormButton extends Button {
 
-	private FormBase $form;
-	private int $restrictionLevel;
+    private FormBase $form;
+    private int $restrictionLevel;
 
-	public function __construct(string $text, FormBase $form, int $restrictionLevel, ?ButtonImage $image = null) {
-		parent::__construct($text, $image);
-		$this->form = $form;
-		$this->restrictionLevel = $restrictionLevel;
-	}
+    public function __construct(string $text, FormBase $form, int $restrictionLevel, ?ButtonImage $image = null) {
+        parent::__construct($text, $image);
+        $this->form = $form;
+        $this->restrictionLevel = $restrictionLevel;
+    }
 
-	public function handleSubmit(Player $player) : void {
-		LevelCheck::getInstance()->check($player, $this->form, $this->restrictionLevel);
-	}
+    public function handleSubmit(Player $player) : void {
+        LevelCheck::getInstance()->check($player, $this->form, $this->restrictionLevel);
+    }
 }

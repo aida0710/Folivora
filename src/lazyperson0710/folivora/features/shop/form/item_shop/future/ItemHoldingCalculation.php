@@ -12,27 +12,27 @@ use RuntimeException;
 
 class ItemHoldingCalculation {
 
-	use SingletonTrait;
+    use SingletonTrait;
 
-	public function getHoldingCount(Player $player, ItemShopObject $item) : int {
-		$count = 0;
-		foreach ($player->getInventory()->getContents() as $inventoryItem) {
-			if ($item->getItem() === $inventoryItem) {
-				$count += $inventoryItem->getCount();
-			}
-		}
-		return $count;
-	}
+    public function getHoldingCount(Player $player, ItemShopObject $item) : int {
+        $count = 0;
+        foreach ($player->getInventory()->getContents() as $inventoryItem) {
+            if ($item->getItem() === $inventoryItem) {
+                $count += $inventoryItem->getCount();
+            }
+        }
+        return $count;
+    }
 
-	public function getVirtualStorageCount(Player $player, ItemShopObject $item) : int {
-		StackStorageAPI::$instance->getCount($player->getXuid(), $item->getItem(),
-			function ($count) {
-				return $count;
-			},
-			function () {
-				return 0;
-			},
-		);
-		throw new RuntimeException('This method must be called asynchronously.');
-	}
+    public function getVirtualStorageCount(Player $player, ItemShopObject $item) : int {
+        StackStorageAPI::$instance->getCount($player->getXuid(), $item->getItem(),
+            function ($count) {
+                return $count;
+            },
+            function () {
+                return 0;
+            },
+        );
+        throw new RuntimeException('This method must be called asynchronously.');
+    }
 }

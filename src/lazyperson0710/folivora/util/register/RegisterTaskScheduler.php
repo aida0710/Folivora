@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace lazyperson0710\folivora\util\register;
 
 use pocketmine\scheduler\TaskScheduler;

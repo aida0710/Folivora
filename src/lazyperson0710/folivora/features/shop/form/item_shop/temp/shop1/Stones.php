@@ -14,27 +14,27 @@ use function basename;
 
 class Stones extends SimpleForm {
 
-	private string $shopNumber;
-	private array $contents;
+    private string $shopNumber;
+    private array $contents;
 
-	public function __construct(Player $player) {
-		$this->shopNumber = basename(__DIR__);
-		$this->contents = [
-			VanillaBlocks::DIRT()->asItem(),
-			VanillaBlocks::STONE()->asItem(),
-			VanillaBlocks::COBBLESTONE()->asItem(),
-			VanillaBlocks::GRANITE()->asItem(),
-			VanillaBlocks::DIORITE()->asItem(),
-			VanillaBlocks::ANDESITE()->asItem(),
-			VanillaBlocks::SAND()->asItem(),
-			VanillaBlocks::SANDSTONE()->asItem(),
-			VanillaBlocks::GRAVEL()->asItem(),
-		];
-		Calculation::getInstance()->sendButton($player, $this->shopNumber, $this->contents, $this);
-	}
+    public function __construct(Player $player) {
+        $this->shopNumber = basename(__DIR__);
+        $this->contents = [
+            VanillaBlocks::DIRT()->asItem(),
+            VanillaBlocks::STONE()->asItem(),
+            VanillaBlocks::COBBLESTONE()->asItem(),
+            VanillaBlocks::GRANITE()->asItem(),
+            VanillaBlocks::DIORITE()->asItem(),
+            VanillaBlocks::ANDESITE()->asItem(),
+            VanillaBlocks::SAND()->asItem(),
+            VanillaBlocks::SANDSTONE()->asItem(),
+            VanillaBlocks::GRAVEL()->asItem(),
+        ];
+        Calculation::getInstance()->sendButton($player, $this->shopNumber, $this->contents, $this);
+    }
 
-	public function handleClosed(Player $player) : void {
-		SoundPacket::Send($player, 'mob.shulker.close');
-		SendForm::Send($player, Calculation::getInstance()->secondBackFormClass($this->shopNumber));
-	}
+    public function handleClosed(Player $player) : void {
+        SoundPacket::Send($player, 'mob.shulker.close');
+        SendForm::Send($player, Calculation::getInstance()->secondBackFormClass($this->shopNumber));
+    }
 }

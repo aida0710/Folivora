@@ -13,12 +13,12 @@ use pocketmine\player\Player;
 
 class FirstBackFormButton extends Button {
 
-	public function __construct(string $text, ?ButtonImage $image = null) {
-		parent::__construct($text, $image);
-	}
+    public function __construct(string $text, ?ButtonImage $image = null) {
+        parent::__construct($text, $image);
+    }
 
-	public function handleSubmit(Player $player) : void {
-		SoundPacket::Send($player, 'mob.shulker.close');
-		SendForm::Send($player, (new ShopSelectForm($player)));
-	}
+    public function handleSubmit(Player $player) : void {
+        SoundPacket::Send($player, 'mob.shulker.close');
+        SendForm::Send($player, (new ShopSelectForm($player)));
+    }
 }

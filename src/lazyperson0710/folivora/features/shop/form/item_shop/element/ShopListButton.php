@@ -11,14 +11,14 @@ use pocketmine\player\Player;
 
 class ShopListButton extends Button {
 
-	private int $shopNumber;
+    private int $shopNumber;
 
-	public function __construct(string $text, int $restrictionLevel, ?ButtonImage $image = null) {
-		parent::__construct($text, $image);
-		$this->shopNumber = $restrictionLevel;
-	}
+    public function __construct(string $text, int $restrictionLevel, ?ButtonImage $image = null) {
+        parent::__construct($text, $image);
+        $this->shopNumber = $restrictionLevel;
+    }
 
-	public function handleSubmit(Player $player) : void {
-		SendForm::Send($player,);
-	}
+    public function handleSubmit(Player $player) : void {
+        SendForm::Send($player,);
+    }
 }

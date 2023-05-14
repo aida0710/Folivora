@@ -10,18 +10,18 @@ use pocketmine\player\Player;
 
 class ItemShopBuyEvent extends Event {
 
-	public function __construct(
-		private Player $player,
-		private LevelShopItem $item,
-	) {
-	}
+    public function __construct(
+        private Player $player,
+        private LevelShopItem $item,
+    ) {
+    }
 
-	public function getPlayer() : Player {
-		return $this->player;
-	}
+    public function getPlayer() : Player {
+        return $this->player;
+    }
 
-	public function getItem() : LevelShopItem {
-		return $this->item;
-	}
+    public function getItem() : LevelShopItem {
+        return $this->item;
+    }
 
 }

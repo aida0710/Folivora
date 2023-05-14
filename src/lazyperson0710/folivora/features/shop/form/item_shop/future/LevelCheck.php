@@ -16,16 +16,16 @@ use const PHP_EOL;
 
 class LevelCheck {
 
-	use SingletonTrait;
+    use SingletonTrait;
 
-	public function check(Player $player, FormBase $formBase, int $restrictionLevel) : void {
-		if (MiningLevelAPI::getInstance()->getLevel($player) >= $restrictionLevel) {
-			SendForm::Send($player, $formBase);
-		} else {
-			$error = PHP_EOL . TextFormat::RED . '要求されたレベルに達していない為処理が中断されました' . PHP_EOL . '要求レベル -> lv.' . $restrictionLevel;
-			SendForm::Send($player, (new ShopSelectForm($player, $error)));
-			SoundPacket::Send($player, 'dig.chain');
-		}
-	}
+    public function check(Player $player, FormBase $formBase, int $restrictionLevel) : void {
+        if (MiningLevelAPI::getInstance()->getLevel($player) >= $restrictionLevel) {
+            SendForm::Send($player, $formBase);
+        } else {
+            $error = PHP_EOL . TextFormat::RED . '要求されたレベルに達していない為処理が中断されました' . PHP_EOL . '要求レベル -> lv.' . $restrictionLevel;
+            SendForm::Send($player, (new ShopSelectForm($player, $error)));
+            SoundPacket::Send($player, 'dig.chain');
+        }
+    }
 
 }

@@ -31,6 +31,18 @@ class WorldProtect implements Listener {
         $this->PlayerAction($event);
     }
 
+    public function PlayerAction(BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event) : void {
+        if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
+            $worldName = $event->getPlayer()->getPosition()->getWorld()->getFolderName();
+            if (in_array($worldName, WorldCategory::PublicWorld, true) || in_array($worldName, WorldCategory::PublicEventWorld, true) || in_array($worldName, WorldCategory::PVP, true)) {
+                if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
+                    $event->cancel();
+                }
+                SendTip::Send($event->getPlayer(), 'このワールドは保護されています', 'Protect', false);
+            }
+        }
+    }
+
     public function onBreak(BlockBreakEvent $event) : void {
         if ($event->isCancelled()) {
             return;
@@ -46,18 +58,6 @@ class WorldProtect implements Listener {
             return;
         }
         $this->PlayerAction($event);
-    }
-
-    public function PlayerAction(BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event) : void {
-        if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
-            $worldName = $event->getPlayer()->getPosition()->getWorld()->getFolderName();
-            if (in_array($worldName, WorldCategory::PublicWorld, true) || in_array($worldName, WorldCategory::PublicEventWorld, true) || in_array($worldName, WorldCategory::PVP, true)) {
-                if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
-                    $event->cancel();
-                }
-                SendTip::Send($event->getPlayer(), 'このワールドは保護されています', 'Protect', false);
-            }
-        }
     }
 
 }

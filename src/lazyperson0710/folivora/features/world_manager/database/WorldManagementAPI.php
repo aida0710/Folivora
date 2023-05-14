@@ -18,13 +18,6 @@ class WorldManagementAPI {
     protected array $z1 = [];
     protected array $z2 = [];
 
-    public static function getInstance() : WorldManagementAPI {
-        if (!isset(self::$instance)) {
-            self::$instance = new WorldManagementAPI();
-        }
-        return self::$instance;
-    }
-
     public function init() : void {
         #public
         $this->register('lobby', 255, 0, 0, 320, 280, 230, 80);
@@ -73,6 +66,13 @@ class WorldManagementAPI {
         $this->x2[$worldName] = $x2;
         $this->z1[$worldName] = $z1;
         $this->z2[$worldName] = $z2;
+    }
+
+    public static function getInstance() : WorldManagementAPI {
+        if (!isset(self::$instance)) {
+            self::$instance = new WorldManagementAPI();
+        }
+        return self::$instance;
     }
 
     public function getHeightLimit(string $worldFolderName) : int {

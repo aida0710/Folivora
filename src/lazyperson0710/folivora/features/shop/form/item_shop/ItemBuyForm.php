@@ -10,7 +10,7 @@ use pocketmine\player\Player;
 
 class ItemBuyForm extends CustomForm {
 
-	public function __construct(Player $player, ItemShopObject $item) {
-	}
+    public function __construct(Player $player, ItemShopObject $item) {
+    }
 
 }

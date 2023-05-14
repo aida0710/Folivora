@@ -17,21 +17,21 @@ use pocketmine\player\Player;
 
 class EnchantSelectFormButton extends Button {
 
-	private Enchantment $enchantment;
-	private string $enchantName;
+    private Enchantment $enchantment;
+    private string $enchantName;
 
-	public function __construct(string $text, Enchantment $enchantment, string $enchantName, ?ButtonImage $image = null) {
-		parent::__construct($text, $image);
-		$this->enchantment = $enchantment;
-		$this->enchantName = $enchantName;
-	}
+    public function __construct(string $text, Enchantment $enchantment, string $enchantName, ?ButtonImage $image = null) {
+        parent::__construct($text, $image);
+        $this->enchantment = $enchantment;
+        $this->enchantName = $enchantName;
+    }
 
-	public function handleSubmit(Player $player) : void {
-		if (MiningLevelAPI::getInstance()->getLevel($player) >= EnchantShopAPI::getInstance()->getMiningLevel($this->enchantName)) {
-			SendForm::Send($player, (new EnchantConfirmationForm($player, $this->enchantment)));
-		} else {
-			SendForm::Send($player, (new EnchantSelectForm("§cMiningLevelが足りないためformを開けませんでした\n要求レベル ->" . EnchantShopAPI::getInstance()->getMiningLevel($this->enchantName) . 'lv')));
-			SoundPacket::Send($player, 'dig.chain');
-		}
-	}
+    public function handleSubmit(Player $player) : void {
+        if (MiningLevelAPI::getInstance()->getLevel($player) >= EnchantShopAPI::getInstance()->getMiningLevel($this->enchantName)) {
+            SendForm::Send($player, (new EnchantConfirmationForm($player, $this->enchantment)));
+        } else {
+            SendForm::Send($player, (new EnchantSelectForm("§cMiningLevelが足りないためformを開けませんでした\n要求レベル ->" . EnchantShopAPI::getInstance()->getMiningLevel($this->enchantName) . 'lv')));
+            SoundPacket::Send($player, 'dig.chain');
+        }
+    }
 }

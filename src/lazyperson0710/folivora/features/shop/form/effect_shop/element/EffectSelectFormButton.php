@@ -13,14 +13,14 @@ use pocketmine\player\Player;
 
 class EffectSelectFormButton extends Button {
 
-	private Effect $effect;
+    private Effect $effect;
 
-	public function __construct(string $text, Effect $effect, ?ButtonImage $image = null) {
-		parent::__construct($text, $image);
-		$this->effect = $effect;
-	}
+    public function __construct(string $text, Effect $effect, ?ButtonImage $image = null) {
+        parent::__construct($text, $image);
+        $this->effect = $effect;
+    }
 
-	public function handleSubmit(Player $player) : void {
-		SendForm::Send($player, (new EffectConfirmationForm($player, $this->effect)));
-	}
+    public function handleSubmit(Player $player) : void {
+        SendForm::Send($player, (new EffectConfirmationForm($player, $this->effect)));
+    }
 }

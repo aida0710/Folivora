@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace lazyperson0710\folivora\features\debug\test\command;
 
 use lazyperson0710\folivora\util\message\send_message\SendMessage;

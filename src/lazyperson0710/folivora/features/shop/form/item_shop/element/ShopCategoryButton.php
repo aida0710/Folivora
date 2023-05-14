@@ -12,16 +12,16 @@ use pocketmine\player\Player;
 
 class ShopCategoryButton extends Button {
 
-	private int $shopNumber;
-	private string $category;
+    private int $shopNumber;
+    private string $category;
 
-	public function __construct(string $text, int $restrictionLevel, string $category, ?ButtonImage $image = null) {
-		parent::__construct($text, $image);
-		$this->shopNumber = $restrictionLevel;
-		$this->category = $category;
-	}
+    public function __construct(string $text, int $restrictionLevel, string $category, ?ButtonImage $image = null) {
+        parent::__construct($text, $image);
+        $this->shopNumber = $restrictionLevel;
+        $this->category = $category;
+    }
 
-	public function handleSubmit(Player $player) : void {
-		SendForm::Send($player, new ItemSelectForm($this->shopNumber, $this->category));
-	}
+    public function handleSubmit(Player $player) : void {
+        SendForm::Send($player, new ItemSelectForm($this->shopNumber, $this->category));
+    }
 }

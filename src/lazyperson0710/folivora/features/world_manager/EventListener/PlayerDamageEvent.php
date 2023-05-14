@@ -62,6 +62,10 @@ class PlayerDamageEvent implements Listener {
         }
     }
 
+    public function unset(Player $player) : void {
+        unset(self::$damageFlags[$player->getName()]);
+    }
+
     public function worldTeleport(EntityTeleportEvent $event) : void {
         $player = $event->getEntity();
         if ($player instanceof Player) {
@@ -80,9 +84,5 @@ class PlayerDamageEvent implements Listener {
                 ), 20 * 8);
             }
         }
-    }
-
-    public function unset(Player $player) : void {
-        unset(self::$damageFlags[$player->getName()]);
     }
 }

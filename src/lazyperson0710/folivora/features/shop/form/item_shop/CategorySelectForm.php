@@ -16,17 +16,17 @@ use function array_keys;
 
 class CategorySelectForm extends SimpleForm implements ShopText {
 
-	public function __construct(Player $player, int $shopNumber) {
-		$shopCategory = array_keys(ItemShopAPI::getInstance()->getCategory($shopNumber));
-		$restriction = RestrictionShop::getInstance()->getRestrictionByShopNumber($shopNumber);
-		$this
-			->setTitle(self::TITLE)
-			->setText(self::CONTENT);
-		foreach ($shopCategory as $category) {
-			$displayName = ShopCategory::getInstance()->getCategoryByDisplayName($category);
-			$this->addElement(new SendMenuFormButton($displayName, new ItemSelectForm($player, $shopNumber, $category), $restriction));
-		}
-		$this->addElement(new FirstBackFormButton('ショップ選択メニューに戻る'));
-	}
+    public function __construct(Player $player, int $shopNumber) {
+        $shopCategory = array_keys(ItemShopAPI::getInstance()->getCategory($shopNumber));
+        $restriction = RestrictionShop::getInstance()->getRestrictionByShopNumber($shopNumber);
+        $this
+            ->setTitle(self::TITLE)
+            ->setText(self::CONTENT);
+        foreach ($shopCategory as $category) {
+            $displayName = ShopCategory::getInstance()->getCategoryByDisplayName($category);
+            $this->addElement(new SendMenuFormButton($displayName, new ItemSelectForm($player, $shopNumber, $category), $restriction));
+        }
+        $this->addElement(new FirstBackFormButton('ショップ選択メニューに戻る'));
+    }
 
 }
