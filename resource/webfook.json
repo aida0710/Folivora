@@ -1,12 +1,6 @@
 {
-    "discord": [
-        {
-            "name": "level_up_log",
-            "url": ""
-        },
-        {
-            "name": "chat_log",
-            "url": ""
-        }
-    ]
+    "discord": {
+        "level_up_log": "url",
+        "chat_log": "url"
+    }
 }
