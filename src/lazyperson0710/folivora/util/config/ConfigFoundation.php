@@ -12,6 +12,25 @@ use pocketmine\utils\Config;
 abstract class ConfigFoundation {
 
     /**
+     * データをセーブするときは必ず使ってください。
+     * また、この関数を実行する直前にキャッシュを削除しデータの重複を避けてください。
+     *
+     * @param array  $data
+     * @param Config $config
+     * @return bool
+     * @throws JsonException
+     */
+    public function saveConfig(array $data, Config $config) : bool {
+        $config->setAll($data);
+        try {
+            $config->save();
+        } catch (ConfigSaveException $error) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * Configオブジェクトを生成します。
      * ディレクトリ階層は自動で生成されるため$path = ' dir1/dir2/file.txt 'のように指定してください。
      * また、この静的関数を使用した場合はRegisterConfig::registerConfig()に自動で登録されます。
@@ -40,24 +59,5 @@ abstract class ConfigFoundation {
         }
         RegisterConfig::registerConfig($config);
         return $config;
-    }
-
-    /**
-     * データをセーブするときは必ず使ってください。
-     * また、この関数を実行する直前にキャッシュを削除しデータの重複を避けてください。
-     *
-     * @param array  $data
-     * @param Config $config
-     * @return bool
-     * @throws JsonException
-     */
-    public function saveConfig(array $data, Config $config) : bool {
-        $config->setAll($data);
-        try {
-            $config->save();
-        } catch (ConfigSaveException $error) {
-            return false;
-        }
-        return true;
     }
 }
