@@ -4,11 +4,18 @@
     <option name="transferred" value="true" />
   </component>
   <component name="PHPCSFixerOptionsConfiguration">
+    <option name="codingStandard" value="Custom" />
+    <option name="rulesetPath" value="$PROJECT_DIR$/.php-cs-fixer.dist.php" />
     <option name="transferred" value="true" />
   </component>
   <component name="PHPCodeSnifferOptionsConfiguration">
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpCSFixer">
+    <phpcsfixer_settings>
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/vendor/bin/php-cs-fixer" timeout="60000" />
+    </phpcsfixer_settings>
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
@@ -75,9 +82,11 @@
     <PhpStan_settings>
       <phpstan_by_interpreter interpreter_id="2e9bbd9b-a15d-4697-bf43-d9ca7e490768" tool_path="$USER_HOME$/Documents/plugins/vendor/bin/phpstan.bat" />
       <phpstan_by_interpreter interpreter_id="ba55a0a1-5d02-404f-a2e4-b5e5a30eaeb5" tool_path="$USER_HOME$/PhpstormProjects/nk-plugins/vendor/bin/phpstan.bat" />
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/vendor/bin/phpstan" />
     </PhpStan_settings>
   </component>
   <component name="PhpStanOptionsConfiguration">
+    <option name="config" value="$PROJECT_DIR$/phpstan.neon" />
     <option name="transferred" value="true" />
   </component>
   <component name="PsalmOptionsConfiguration">
