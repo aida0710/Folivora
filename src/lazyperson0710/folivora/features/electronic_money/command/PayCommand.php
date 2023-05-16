@@ -4,6 +4,24 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\electronic_money\command;
 
-class PayCommand {
+use lazyperson0710\folivora\util\command\CommandFoundation;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
+use pocketmine\player\Player;
+use pocketmine\Server;
+
+class PayCommand extends Command {
+
+    public function __construct() {
+        parent::__construct('pay', 'お金を送金します。');
+    }
+
+    public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
+        if (!$sender instanceof Player) {
+            Server::getInstance()->getLogger()->warning(CommandFoundation::NON_PLAYER);
+            return false;
+        }
+        return true;
+    }
 
 }
