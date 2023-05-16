@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\util\config;
 
 use JsonException;
-use lazyperson0710\folivora\features\electronic_money\exception\AccountNotFound;
+use lazyperson0710\folivora\util\config\exception\AccountNotFound;
 use lazyperson0710\folivora\util\config\exception\ConfigDataPathNotSetException;
 use lazyperson0710\folivora\util\config\exception\ConfigSaveException;
 use lazyperson0710\folivora\util\register\RegisterTaskScheduler;
