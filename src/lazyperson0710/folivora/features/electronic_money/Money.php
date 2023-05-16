@@ -22,6 +22,8 @@ class Money implements IConfig {
     public const DEFAULT_CURRENCY = 1500;
     public const PATH = 'player/money.json';
     private Config $config;
+    private array $cache = [];
+    //todo cacheを通してconfigにアクセスするようようにしないと0の値が入った場合keyごと削除される
 
     /**
      * @return void
