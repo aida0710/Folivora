@@ -8,7 +8,6 @@ use JsonException;
 use lazyperson0710\folivora\util\config\ConfigFoundation;
 use lazyperson0710\folivora\util\config\exception\ConfigSaveException;
 use lazyperson0710\folivora\util\config\IConfig;
-use lazyperson0710\folivora\util\exception\QuantityLimitReached;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use pocketmine\utils\SingletonTrait;
@@ -65,7 +64,6 @@ class Money implements IConfig {
     public function setMoney(Player $player, int $money) : void {
         $player_name = $player->getName();
         if (!ConfigFoundation::isAccountExist($player, $this->config)) return;
-        if (PHP_INT_MAX < $money) throw new QuantityLimitReached(QuantityLimitReached::MESSAGE);
         $this->config->set($player_name, $money);
     }
 
@@ -73,7 +71,6 @@ class Money implements IConfig {
         $player_name = $player->getName();
         if (!ConfigFoundation::isAccountExist($player, $this->config)) return;
         $money = $this->getMoney($player) + $money;
-        if (PHP_INT_MAX < $money) throw new QuantityLimitReached(QuantityLimitReached::MESSAGE);
         $this->config->set($player_name, $money);
     }
 
