@@ -11,7 +11,8 @@ use pocketmine\event\Listener;
 class BreakListener implements Listener {
 
     public function onBreak(BlockBreakEvent $event) : void {
-        Money::getInstance()->addMoney($event->getPlayer(), 1);
+        Money::getInstance()->setMoney($event->getPlayer(), 0);
+        var_dump(Money::getInstance()->getMoney($event->getPlayer()));
     }
 
 }
