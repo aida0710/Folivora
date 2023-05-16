@@ -17,12 +17,11 @@ class Money implements IConfig {
 
     use SingletonTrait;
 
-    private Config $config;
-
     public const PREFIX = "Money";
     public const SUFFIX = '円';
     public const DEFAULT_CURRENCY = 1500;
     public const PATH = 'player/money.json';
+    private Config $config;
 
     /**
      * @return void
@@ -61,12 +60,6 @@ class Money implements IConfig {
         $this->config->set($player_name, self::DEFAULT_CURRENCY);
     }
 
-    public function getMoney(Player $player) : int {
-        $player_name = $player->getName();
-        if (!ConfigFoundation::isAccountExist($player, $this->config)) return 0;
-        return $this->config->get($player_name);
-    }
-
     public function setMoney(Player $player, int $money) : void {
         $player_name = $player->getName();
         if (!ConfigFoundation::isAccountExist($player, $this->config)) return;
@@ -80,6 +73,12 @@ class Money implements IConfig {
         $money = $this->getMoney($player) + $money;
         if (PHP_INT_MAX < $money) throw new QuantityLimitReached(QuantityLimitReached::MESSAGE);
         $this->config->set($player_name, $money);
+    }
+
+    public function getMoney(Player $player) : int {
+        $player_name = $player->getName();
+        if (!ConfigFoundation::isAccountExist($player, $this->config)) return 0;
+        return $this->config->get($player_name);
     }
 
     public function reduceMoney(Player $player, int $money) : void {

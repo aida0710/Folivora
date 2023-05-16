@@ -18,7 +18,7 @@ class IntervalTask {
      * また、check関数から現在実行中かどうかを確認することが可能です。@param Player $player
      *
      * @param string $intervalName
-     * @param int    $tick
+     * @param int $tick
      * @return void
      * @see check
      *
