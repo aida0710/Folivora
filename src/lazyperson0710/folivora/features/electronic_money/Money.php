@@ -22,7 +22,6 @@ class Money implements IConfig {
     public const PATH = 'player/money.json';
     private Config $config;
     private array $cache = [];
-    //todo cacheを通してconfigにアクセスするようようにしないと0の値が入った場合keyごと削除される
 
     /**
      * @return void
@@ -31,6 +30,7 @@ class Money implements IConfig {
     public function createConfigFile() : void {
         try {
             $this->config = ConfigFoundation::createConfigFile(self::PATH);
+            $this->cache = $this->config->getAll();
         } catch (ConfigSaveException $exception) {
             throw new ConfigSaveException($exception->getMessage());
         }
@@ -57,8 +57,8 @@ class Money implements IConfig {
      */
     public function createAccount(Player $player) : void {
         $player_name = $player->getName();
-        if ($this->config->get($player_name)) return;
-        $this->config->set($player_name, self::DEFAULT_CURRENCY);
+        if ($this->cache[$player_name]) return;
+        $this->cache[$player_name] = self::DEFAULT_CURRENCY;
     }
 
     public function setMoney(Player $player, int $money) : void {

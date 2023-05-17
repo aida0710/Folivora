@@ -101,12 +101,12 @@ class ConfigFoundation {
 
     /**
      * @param Player $player
-     * @param Config $config
+     * @param array  $configCache
      * @return bool
      */
-    public static function isAccountExist(Player $player, Config $config) : bool {
+    public static function isAccountExist(Player $player, array $configCache) : bool {
         $player_name = $player->getName();
-        if (!$config->get($player_name)) {
+        if (!isset($configCache[$player_name])) {
             throw new AccountNotFound($player_name . 'のデータが存在しないためサーバーを停止しました');
         }
         return true;
