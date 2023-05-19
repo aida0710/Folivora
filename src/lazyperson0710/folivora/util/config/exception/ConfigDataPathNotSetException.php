@@ -8,4 +8,5 @@ use RuntimeException;
 
 class ConfigDataPathNotSetException extends RuntimeException {
 
+    public const MESSAGE = 'ConfigDataPathが設定されていません';
 }
