@@ -17,6 +17,7 @@ class MoneyCommand extends Command {
         parent::__construct('pay', 'お金を送金します。');
     }
 
+    //todo 未実装
     public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
         if (!$sender instanceof Player) {
             Server::getInstance()->getLogger()->warning(CommandFoundation::NON_PLAYER);

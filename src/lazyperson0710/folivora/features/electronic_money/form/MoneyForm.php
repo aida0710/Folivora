@@ -8,6 +8,7 @@ use bbo51dog\bboform\form\SimpleForm;
 
 class MoneyForm extends SimpleForm {
 
+    //todo あとでがんばって
     public function __construct() {
     }
 
