@@ -25,7 +25,7 @@ interface IPlayerSetting {
      * 値を変更する際に実行してください。
      *
      * @param Player $player
-     * @param mixed  $value
+     * @param mixed $value
      * @return void
      */
     public function setValue(Player $player, mixed $value) : void;
