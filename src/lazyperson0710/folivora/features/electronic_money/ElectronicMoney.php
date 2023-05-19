@@ -6,6 +6,7 @@ namespace lazyperson0710\folivora\features\electronic_money;
 
 use JsonException;
 use lazyperson0710\folivora\features\electronic_money\command\MoneyCommand;
+use lazyperson0710\folivora\features\electronic_money\currency\Money;
 use lazyperson0710\folivora\features\electronic_money\listener\JoinEvent;
 use lazyperson0710\folivora\util\config\exception\ConfigSaveException;
 use lazyperson0710\folivora\util\plugin_base\IPluginBase;
