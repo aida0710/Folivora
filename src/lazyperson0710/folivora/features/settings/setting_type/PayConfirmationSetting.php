@@ -2,9 +2,10 @@
 
 namespace lazyperson0710\folivora\features\settings\setting_type;
 
+use lazyperson0710\folivora\features\settings\IPlayerSetting;
 use pocketmine\player\Player;
 
-class PayConfirmationSetting implements \lazyperson0710\folivora\features\settings\IPlayerSetting {
+class PayConfirmationSetting implements IPlayerSetting {
 
     public const NAME = 'PayConfirmationSetting';
 
