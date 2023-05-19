@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\util\config;
 
 use JsonException;
-use lazyperson0710\folivora\util\config\exception\AccountNotFound;
 use lazyperson0710\folivora\util\config\exception\ConfigDataPathNotSetException;
 use lazyperson0710\folivora\util\config\exception\ConfigSaveException;
 use lazyperson0710\folivora\util\register\RegisterTaskScheduler;
@@ -83,7 +82,7 @@ class ConfigFoundation {
      */
     public static function getDataPath() : string {
         if (!isset(self::$dataPath)) {
-            throw new ConfigDataPathNotSetException('コンフィグパスが設定されていません。');
+            throw new ConfigDataPathNotSetException(ConfigDataPathNotSetException::MESSAGE);
         }
         return self::$dataPath;
     }
@@ -101,13 +100,12 @@ class ConfigFoundation {
 
     /**
      * @param Player $player
-     * @param array  $configCache
+     * @param array $configCache
      * @return bool
      */
     public static function isAccountExist(Player $player, array $configCache) : bool {
-        $player_name = $player->getName();
-        if (!isset($configCache[$player_name])) {
-            throw new AccountNotFound($player_name . 'のデータが存在しないためサーバーを停止しました');
+        if (!array_key_exists($player->getName(), $configCache)) {
+            return false;
         }
         return true;
     }
