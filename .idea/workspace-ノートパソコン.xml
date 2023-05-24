@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="184fc427-0d5e-4c14-89d6-6f9710bbf42e" name="変更" comment="不要に感じた為上限値を削除" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/nk-plugins/MjolnirBan-master/composer.json" />
+      <option value="$PROJECT_DIR$/nk-plugins/AntiCheat-master/composer.json" />
+      <option value="$PROJECT_DIR$/nk-plugins/www-scratches/DebugCodes/ymggacha/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" synchronizationState="DONT_SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="5c03eb8d-09c8-4f85-8159-50e7c3caeaee" />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="future/money" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1681579790" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="future/money" />
+                    <option name="lastUsedInstant" value="1681579702" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="04033a01-dcbe-4078-a97e-de9c97425d05" />
+        <option name="url" value="https://github.com/lazyperson0710/Folivora.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/pocketmine/snooze" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/color" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/bedrock-item-upgrade-schema" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/bedrock-data" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/nbt" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/log-pthreads" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/locale-data" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/pocketmine-mp" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/errorhandler" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/callback-validator" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/bedrock-block-upgrade-schema" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/raklib-ipc" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/bedrock-protocol" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/binaryutils" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/math" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/classloader" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/pocketmine/raklib" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/fgrosse/phpasn1" />
+      <path value="$PROJECT_DIR$/vendor/adhocore/json-comment" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/netresearch/jsonmapper" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/path-util" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2O1MHiE54Wr1wVngGH9O1dPLZGK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sloth/OneDrive/ドキュメント/PocketMine-Server/dev-folivora/plugins/folivora/src/lazyperson0710/folivora/util&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.PHP&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/sloth/OneDrive/ドキュメント/GitRepositorys/Folivora/nk-plugins/Ticket/src/lazyperson0710/ticket/TicketAPI.php&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/新規スクラッチファイル&quot;: [
+      &quot;PHP&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\src\lazyperson0710\folivora\util" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\utils" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\src\lazyperson0710\folivora\features\world_manager" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\src\lazyperson0710\folivora\util\packet" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\src\lazyperson0710\folivora\util" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\src\lazyperson0710\folivora\util\config" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\src\lazyperson0710\folivora\util\config\temp" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora\resource\player" />
+      <recent name="C:\Users\sloth\OneDrive\ドキュメント\PocketMine-Server\dev-folivora\plugins\folivora" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PocketMine-MP" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/../../start.cmd" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="デフォルトタスク">
+      <changelist id="184fc427-0d5e-4c14-89d6-6f9710bbf42e" name="変更" comment="" />
+      <created>1680723549194</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680723549194</updated>
+      <workItem from="1680723551521" duration="629000" />
+      <workItem from="1680725392161" duration="6459000" />
+      <workItem from="1680770462978" duration="6948000" />
+      <workItem from="1680787656524" duration="6513000" />
+      <workItem from="1680845241368" duration="9116000" />
+      <workItem from="1680968853198" duration="612000" />
+      <workItem from="1681111331881" duration="3967000" />
+      <workItem from="1681539668416" duration="10963000" />
+      <workItem from="1681684779725" duration="30291000" />
+      <workItem from="1681880013515" duration="12003000" />
+      <workItem from="1681915959344" duration="1244000" />
+      <workItem from="1682255202761" duration="25000" />
+      <workItem from="1682349962789" duration="122000" />
+      <workItem from="1682350096228" duration="81000" />
+      <workItem from="1682350976496" duration="10000" />
+      <workItem from="1682431426255" duration="10000" />
+      <workItem from="1682669340693" duration="1970000" />
+      <workItem from="1682682759566" duration="2897000" />
+      <workItem from="1682713204037" duration="1519000" />
+      <workItem from="1682731851747" duration="10000" />
+      <workItem from="1683124253559" duration="1398000" />
+      <workItem from="1683225286299" duration="632000" />
+      <workItem from="1683290434574" duration="804000" />
+      <workItem from="1683370276330" duration="498000" />
+      <workItem from="1683505892279" duration="4959000" />
+      <workItem from="1683536147893" duration="1858000" />
+      <workItem from="1683732975676" duration="14431000" />
+      <workItem from="1683756797057" duration="1100000" />
+      <workItem from="1683843003586" duration="468000" />
+      <workItem from="1683938331185" duration="327000" />
+      <workItem from="1683939184189" duration="829000" />
+      <workItem from="1683940510661" duration="326000" />
+      <workItem from="1684030157480" duration="21284000" />
+      <workItem from="1684136291324" duration="26175000" />
+      <workItem from="1684245615594" duration="671000" />
+      <workItem from="1684812923459" duration="63000" />
+    </task>
+    <task id="LOCAL-00071" summary="スポンジを追加">
+      <created>1683747571813</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747571813</updated>
+    </task>
+    <task id="LOCAL-00072" summary="オーバライド用の絡子を追加">
+      <created>1683747582194</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747582194</updated>
+    </task>
+    <task id="LOCAL-00073" summary="不要になったディレクトリを削除">
+      <created>1683747623139</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747623139</updated>
+    </task>
+    <task id="LOCAL-00074" summary="コンフィグのデータファイルパスが登録されてなかったときに出力されるエラーを追加">
+      <created>1683747666906</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747666906</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Configのデータパスクラスを追加">
+      <created>1683747689251</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747689251</updated>
+    </task>
+    <task id="LOCAL-00076" summary="disableFeaturesを追加し冗長な確認処理を削除">
+      <created>1683747714213</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747714213</updated>
+    </task>
+    <task id="LOCAL-00077" summary="コメントを追加し、アクセス修飾子を修正">
+      <created>1683747752924</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747752924</updated>
+    </task>
+    <task id="LOCAL-00078" summary="クラス名、関数名を変更し、コメントを追加">
+      <created>1683747775507</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747775507</updated>
+    </task>
+    <task id="LOCAL-00079" summary="コメント、PHPDocを追加">
+      <created>1683747795347</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747795347</updated>
+    </task>
+    <task id="LOCAL-00080" summary="処理をまとめて不快感を削減">
+      <created>1683747820207</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1683747820207</updated>
+    </task>
+    <task id="LOCAL-00081" summary="config関係をすべてリセット">
+      <created>1684030375141</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1684030375142</updated>
+    </task>
+    <task id="LOCAL-00082" summary="プロジェクト設定を更新">
+      <created>1684030396176</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1684030396176</updated>
+    </task>
+    <task id="LOCAL-00083" summary="コードスタイルの更新">
+      <created>1684031738818</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1684031738818</updated>
+    </task>
+    <task id="LOCAL-00084" summary="cs-fixerの利用目的を変更">
+      <created>1684033362509</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1684033362509</updated>
+    </task>
+    <task id="LOCAL-00085" summary="コードスタイルをアップロード">
+      <created>1684034314834</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1684034314834</updated>
+    </task>
+    <task id="LOCAL-00086" summary="readmeの更新">
+      <created>1684034803487</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1684034803487</updated>
+    </task>
+    <task id="LOCAL-00087" summary="データのセーブ方式の指標を追加">
+      <created>1684075571962</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075571962</updated>
+    </task>
+    <task id="LOCAL-00088" summary="セーブ時のエラーハンドリング用クラスを作成">
+      <created>1684075605405</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075605405</updated>
+    </task>
+    <task id="LOCAL-00089" summary="基盤を作ってみた">
+      <created>1684075621978</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075621978</updated>
+    </task>
+    <task id="LOCAL-00090" summary="configを一括保存するように">
+      <created>1684075647054</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075647054</updated>
+    </task>
+    <task id="LOCAL-00091" summary="書いてみたけど失敗したやつ">
+      <created>1684075686655</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075686655</updated>
+    </task>
+    <task id="LOCAL-00092" summary="入れ子ミスってたので修正">
+      <created>1684075895900</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075895901</updated>
+    </task>
+    <task id="LOCAL-00093" summary="dbは基本的に使う予定ないので削除">
+      <created>1684075912418</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075912418</updated>
+    </task>
+    <task id="LOCAL-00094" summary="コード整形による関数の場所変更">
+      <created>1684075979443</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1684075979443</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Templateを作成">
+      <created>1684244546385</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244546386</updated>
+    </task>
+    <task id="LOCAL-00096" summary="RegisterConfig.phpを削除">
+      <created>1684244568803</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244568803</updated>
+    </task>
+    <task id="LOCAL-00097" summary="ElectronicMoneyクラスを追加">
+      <created>1684244583215</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244583215</updated>
+    </task>
+    <task id="LOCAL-00098" summary="64bitの最大値エラーを追加">
+      <created>1684244610213</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244610213</updated>
+    </task>
+    <task id="LOCAL-00099" summary="exception系をconfigディレクトリ内に移動">
+      <created>1684244644341</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244644341</updated>
+    </task>
+    <task id="LOCAL-00100" summary="没になった為削除">
+      <created>1684244673902</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244673902</updated>
+    </task>
+    <task id="LOCAL-00101" summary="コンフィグ関係のインターフェイスを追加">
+      <created>1684244704171</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244704171</updated>
+    </task>
+    <task id="LOCAL-00102" summary="なんか色々やった">
+      <created>1684244715948</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244715948</updated>
+    </task>
+    <task id="LOCAL-00103" summary="コマンドの基底クラスを作成">
+      <created>1684244735363</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244735363</updated>
+    </task>
+    <task id="LOCAL-00104" summary="サブコマンド用のインターフェイスを追加">
+      <created>1684244752225</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244752225</updated>
+    </task>
+    <task id="LOCAL-00105" summary="一旦ticketクラスを割くjと">
+      <created>1684244768197</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244768197</updated>
+    </task>
+    <task id="LOCAL-00106" summary="money関係の基底クラスを作成">
+      <created>1684244809608</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244809608</updated>
+    </task>
+    <task id="LOCAL-00107" summary="IPluginBaseを実装。初期化処理など諸々書いた">
+      <created>1684244834490</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244834490</updated>
+    </task>
+    <task id="LOCAL-00108" summary="ログイン時にaccountを作成するように">
+      <created>1684244856848</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244856848</updated>
+    </task>
+    <task id="LOCAL-00109" summary="formクラスの原型だけ作成">
+      <created>1684244872886</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244872886</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Accountが存在しない際に実行されるべきRuntimeExceptionクラスを作成">
+      <created>1684244929664</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244929664</updated>
+    </task>
+    <task id="LOCAL-00111" summary="payコマンドの基盤を作成">
+      <created>1684244946195</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244946195</updated>
+    </task>
+    <task id="LOCAL-00112" summary="moneyコマンドの基盤を作成">
+      <created>1684244955353</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244955353</updated>
+    </task>
+    <task id="LOCAL-00113" summary="ディレクトリ変更によるuse文の変更">
+      <created>1684244990104</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1684244990104</updated>
+    </task>
+    <task id="LOCAL-00114" summary="debug機能の更新">
+      <created>1684245012402</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245012402</updated>
+    </task>
+    <task id="LOCAL-00115" summary="実行処理タイミングの変更とRegisterConfigクラスはinit関数を実行するように">
+      <created>1684245052697</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245052697</updated>
+    </task>
+    <task id="LOCAL-00116" summary="コード整形">
+      <created>1684245111810</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245111811</updated>
+    </task>
+    <task id="LOCAL-00117" summary="プロジェクト設定を更新">
+      <created>1684245147318</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245147318</updated>
+    </task>
+    <task id="LOCAL-00118" summary="todoを追加">
+      <created>1684245458321</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245458321</updated>
+    </task>
+    <task id="LOCAL-00119" summary="不要に感じた為上限値を削除">
+      <created>1684245669884</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245669884</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.neon" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Templateを作成" />
+    <MESSAGE value="RegisterConfig.phpを削除" />
+    <MESSAGE value="ElectronicMoneyクラスを追加" />
+    <MESSAGE value="64bitの最大値エラーを追加" />
+    <MESSAGE value="exception系をconfigディレクトリ内に移動" />
+    <MESSAGE value="没になった為削除" />
+    <MESSAGE value="コンフィグ関係のインターフェイスを追加" />
+    <MESSAGE value="なんか色々やった" />
+    <MESSAGE value="コマンドの基底クラスを作成" />
+    <MESSAGE value="サブコマンド用のインターフェイスを追加" />
+    <MESSAGE value="一旦ticketクラスを削除" />
+    <MESSAGE value="money関係の基底クラスを作成" />
+    <MESSAGE value="IPluginBaseを実装。初期化処理など諸々書いた" />
+    <MESSAGE value="ログイン時にaccountを作成するように" />
+    <MESSAGE value="formクラスの原型だけ作成" />
+    <MESSAGE value="Accountが存在しない際に実行されるべきRuntimeExceptionクラスを作成" />
+    <MESSAGE value="payコマンドの基盤を作成" />
+    <MESSAGE value="moneyコマンドの基盤を作成" />
+    <MESSAGE value="ディレクトリ変更によるuse文の変更" />
+    <MESSAGE value="debug機能の更新" />
+    <MESSAGE value="実行処理タイミングの変更とRegisterConfigクラスはinit関数を実行するように" />
+    <MESSAGE value="コード整形" />
+    <MESSAGE value="プロジェクト設定を更新" />
+    <MESSAGE value="todoを追加" />
+    <MESSAGE value="不要に感じた為上限値を削除" />
+    <option name="LAST_COMMIT_MESSAGE" value="不要に感じた為上限値を削除" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
