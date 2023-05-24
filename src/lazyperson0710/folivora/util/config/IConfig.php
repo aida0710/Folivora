@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\util\config;
 
-use pocketmine\player\Player;
-
 interface IConfig {
 
     /**
@@ -31,13 +29,5 @@ interface IConfig {
      *
      */
     public function runSave() : void;
-
-    /**
-     * 基本的にログイン処理以外での使用はしないでください。
-     *
-     * @param Player $player
-     * @return void
-     */
-    public function createAccount(Player $player) : void;
 
 }
