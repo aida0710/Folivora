@@ -17,7 +17,7 @@ class Ticket implements IConfig, ICurrency {
 
     use SingletonTrait;
 
-    public const PREFIX = "Ticket";
+    public const PREFIX = 'Ticket';
     public const SUFFIX = '枚';
     public const DEFAULT_CURRENCY = 15;
     public const PATH = 'player/ticket.json';

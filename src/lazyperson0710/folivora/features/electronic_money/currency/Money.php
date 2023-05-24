@@ -17,7 +17,7 @@ class Money implements IConfig, ICurrency {
 
     use SingletonTrait;
 
-    public const PREFIX = "Money";
+    public const PREFIX = 'Money';
     public const SUFFIX = '円';
     public const DEFAULT_CURRENCY = 1500;
     public const PATH = 'player/money.json';
