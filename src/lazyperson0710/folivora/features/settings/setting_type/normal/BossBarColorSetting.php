@@ -11,12 +11,12 @@ class BossBarColorSetting implements IPlayerSetting {
 
     public const NAME = 'BossBarColorSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : int {
         return BossBarColor::PINK;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

@@ -12,6 +12,10 @@ use pocketmine\plugin\PluginBase;
 
 class Folivora extends PluginBase {
 
+    protected function onDisable() : void {
+        RegisterFeatures::disableFeatures($this->getServer());
+    }
+
     protected function onEnable() : void {
         RegisterTaskScheduler::init($this->getScheduler());
         ConfigFoundation::init($this->getDataFolder());
@@ -19,7 +23,4 @@ class Folivora extends PluginBase {
         RegisterFeatures::enableFeatures($this->getServer());
     }
 
-    protected function onDisable() : void {
-        RegisterFeatures::disableFeatures($this->getServer());
-    }
 }

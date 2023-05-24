@@ -13,8 +13,8 @@ class RedStoneOreBlock extends RedstoneOre {
 
     protected bool $lit = false;
 
-    public function readStateFromData(int $id, int $stateMeta) : void {
-        $this->lit = $id === $this->idInfoFlattened->getSecondId();
+    public function getLightLevel() : int {
+        return 0;
     }
 
     public function isLit() : bool {
@@ -28,15 +28,15 @@ class RedStoneOreBlock extends RedstoneOre {
         return $this;
     }
 
-    public function getLightLevel() : int {
-        return 0;
-    }
-
     public function onInteract(Item $item, int $face, Vector3 $clickVector, ?Player $player = null) : bool {
         return false;
     }
 
     public function onNearbyBlockChange() : void {
+    }
+
+    public function readStateFromData(int $id, int $stateMeta) : void {
+        $this->lit = $id === $this->idInfoFlattened->getSecondId();
     }
 
     public function ticksRandomly() : bool {

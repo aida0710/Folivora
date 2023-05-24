@@ -10,12 +10,12 @@ class MiningToolsDestructionEnabledWorldsSetting implements IPlayerSetting {
 
     public const NAME = 'MiningToolsDestructionEnabledWorldsSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : string {
         return 'all';
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

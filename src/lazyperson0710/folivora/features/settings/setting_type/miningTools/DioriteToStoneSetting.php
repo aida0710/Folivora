@@ -10,12 +10,12 @@ class DioriteToStoneSetting implements IPlayerSetting {
 
     public const NAME = 'DioriteToStoneSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return false;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

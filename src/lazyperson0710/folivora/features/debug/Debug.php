@@ -11,11 +11,11 @@ use pocketmine\Server;
 
 class Debug implements IPluginBase {
 
-    public function onEnable(Server $server) : void {
-        RegisterListener::register(new LEvent());
+    public function onDisable(Server $server) : void {
     }
 
-    public function onDisable(Server $server) : void {
+    public function onEnable(Server $server) : void {
+        RegisterListener::register(new LEvent());
     }
 
 }

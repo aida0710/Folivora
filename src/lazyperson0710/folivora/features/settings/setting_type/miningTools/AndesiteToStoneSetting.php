@@ -10,12 +10,12 @@ class AndesiteToStoneSetting implements IPlayerSetting {
 
     public const NAME = 'AndesiteToStoneSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return false;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

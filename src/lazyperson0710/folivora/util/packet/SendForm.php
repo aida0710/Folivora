@@ -15,7 +15,7 @@ class SendForm {
      * 基本的にformをプレイヤーに送信するときは使ってください
      *
      * @param Player $player
-     * @param Form $form
+     * @param Form   $form
      * @return void
      */
     public static function Send(Player $player, Form $form) : void {

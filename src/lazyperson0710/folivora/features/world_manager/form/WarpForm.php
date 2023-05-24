@@ -99,6 +99,13 @@ class WarpForm extends SimpleForm {
             );
     }
 
+    public function checkLoadWorld(string $worldName) : World {
+        if (Server::getInstance()->getWorldManager()->getWorldByName($worldName) === null) {
+            return Server::getInstance()->getWorldManager()->getWorldByName('lobby');
+        }
+        return Server::getInstance()->getWorldManager()->getWorldByName($worldName);
+    }
+
     private function addButton(Player $player, World $world, string $text, string $command, bool $permission, ?ButtonImage $buttonImage = null) : CommandDispatchButton {
         $worldRequestLevel = WorldManagementAPI::getInstance()->getMiningLevelLimit($world->getFolderName());
         if ($permission === true) {
@@ -115,12 +122,5 @@ class WarpForm extends SimpleForm {
             $text .= "\n§cこのワールドは現在解放されていません";
         }
         return new CommandDispatchButton($text, $command, $permission, $buttonImage);
-    }
-
-    public function checkLoadWorld(string $worldName) : World {
-        if (Server::getInstance()->getWorldManager()->getWorldByName($worldName) === null) {
-            return Server::getInstance()->getWorldManager()->getWorldByName('lobby');
-        }
-        return Server::getInstance()->getWorldManager()->getWorldByName($worldName);
     }
 }

@@ -10,12 +10,12 @@ class EnablingGoldIngotSetting implements IPlayerSetting {
 
     public const NAME = 'EnablingGoldIngotSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return false;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

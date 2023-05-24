@@ -43,22 +43,7 @@ class SellBuyForm implements Form {
         });
     }
 
-    public function callback(Player $player, Item $item, bool $data, int $storage) : void {
-        $count = 0;
-        $myMoney = (int) EconomyAPI::getInstance()->mymoney($player);
-        foreach ($player->getInventory()->getContents() as $v) {
-            if ($item->getId() === $v->getId() && $item->getMeta() === $v->getMeta()) {
-                $count += $v->getCount();
-            }
-        }
-        if ($data) {
-            SendForm::Send($player, (new PurchaseForm(new LevelShopItem($item, $this->buy, $count, $myMoney, $storage))));
-            return;
-        }
-        SendForm::Send($player, (new SaleForm(new LevelShopItem($item, $this->sell, $count, $myMoney, $storage))));
-    }
-
-    public function jsonSerialize() {
+    public function jsonSerialize() : array {
         $api = LevelShopAPI::getInstance();
         $notWorkingItem = null;
         if (LevelShopAPI::getInstance()->getWorkingBlock($this->itemId, $this->itemMeta) === false) {
@@ -73,5 +58,20 @@ class SellBuyForm implements Form {
             'button1' => '購入する',
             'button2' => '売却する',
         ];
+    }
+
+    public function callback(Player $player, Item $item, bool $data, int $storage) : void {
+        $count = 0;
+        $myMoney = (int) EconomyAPI::getInstance()->mymoney($player);
+        foreach ($player->getInventory()->getContents() as $v) {
+            if ($item->getId() === $v->getId() && $item->getMeta() === $v->getMeta()) {
+                $count += $v->getCount();
+            }
+        }
+        if ($data) {
+            SendForm::Send($player, (new PurchaseForm(new LevelShopItem($item, $this->buy, $count, $myMoney, $storage))));
+            return;
+        }
+        SendForm::Send($player, (new SaleForm(new LevelShopItem($item, $this->sell, $count, $myMoney, $storage))));
     }
 }

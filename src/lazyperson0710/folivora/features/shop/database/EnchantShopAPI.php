@@ -12,10 +12,12 @@ use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\lang\Translatable;
 use pocketmine\player\Player;
 use pocketmine\Server;
+use pocketmine\utils\SingletonTrait;
 
 class EnchantShopAPI {
 
-    private static EnchantShopAPI $instance;
+    use SingletonTrait;
+
     protected array $buy = [];
     protected array $levelLimit = [];
     protected array $miningLevel = [];
@@ -39,13 +41,6 @@ class EnchantShopAPI {
         $this->buy[$enchantName] = $buy;
         $this->levelLimit[$enchantName] = $limit;
         $this->miningLevel[$enchantName] = $miningLevel;
-    }
-
-    public static function getInstance() : EnchantShopAPI {
-        if (!isset(self::$instance)) {
-            self::$instance = new EnchantShopAPI();
-        }
-        return self::$instance;
     }
 
     public function getBuy(string $enchantmentName) : ?int {

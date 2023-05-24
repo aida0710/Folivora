@@ -240,13 +240,6 @@ class ItemShopAPI {
         $this->register(new ItemShopObject(VanillaBlocks::REDSTONE_COMPARATOR()->asItem(), 2500, 1, RestrictionShop::SHOP_7, ShopCategory::CAT_RED_STONE, 'コンパレーター ', false));
     }
 
-    private function register(ItemShopObject $item) : void {
-        $this->items[$item->getShopId()][$item->getItemCategory()][] = $item;
-        $this->displayName[] = $item->getDisplayName();
-        $this->itemByVanillaName[] = $item;
-        $this->itemByDisplayName[$item->getDisplayName()] = $item;
-    }
-
     public function getDisplayName() : array {
         return $this->displayName;
     }
@@ -270,6 +263,13 @@ class ItemShopAPI {
     public function getCategoryItems(int $shopId, string $category) : array {
         if (RestrictionShop::getInstance()->checkShopId($shopId)) throw new RuntimeException('存在しないショップIDが指定されました -> ' . $shopId);
         return $this->items[$shopId][$category];
+    }
+
+    private function register(ItemShopObject $item) : void {
+        $this->items[$item->getShopId()][$item->getItemCategory()][] = $item;
+        $this->displayName[] = $item->getDisplayName();
+        $this->itemByVanillaName[] = $item;
+        $this->itemByDisplayName[$item->getDisplayName()] = $item;
     }
 
 }

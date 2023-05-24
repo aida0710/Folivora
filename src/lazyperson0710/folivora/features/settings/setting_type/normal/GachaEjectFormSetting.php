@@ -10,12 +10,12 @@ class GachaEjectFormSetting implements IPlayerSetting {
 
     public const NAME = 'GachaEjectFormSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return true;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

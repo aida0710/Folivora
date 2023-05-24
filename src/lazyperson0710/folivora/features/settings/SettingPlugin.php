@@ -9,6 +9,9 @@ use pocketmine\Server;
 
 class SettingPlugin implements IPluginBase {
 
+    public function onDisable(Server $server) : void {
+    }
+
     /**
      * @param Server $server
      * @return void
@@ -21,9 +24,6 @@ class SettingPlugin implements IPluginBase {
             $server->getLogger()->error($exception->getMessage());
         }
         Setting::getInstance()->registerConfigClass();
-    }
-
-    public function onDisable(Server $server) : void {
     }
 
 }

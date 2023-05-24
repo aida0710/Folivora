@@ -7,6 +7,7 @@ namespace lazyperson0710\folivora\util\register;
 use lazyperson0710\folivora\features\debug\Debug;
 use lazyperson0710\folivora\features\electronic_money\ElectronicMoneyPlugin;
 use lazyperson0710\folivora\features\settings\SettingPlugin;
+use lazyperson0710\folivora\features\world_manager\WorldManager;
 use lazyperson0710\folivora\util\plugin_base\IPluginBase;
 use pocketmine\Server;
 
@@ -26,28 +27,10 @@ class RegisterFeatures {
         $registerFeatures->setFeatures(new Debug());
         $registerFeatures->setFeatures(new ElectronicMoneyPlugin());
         $registerFeatures->setFeatures(new SettingPlugin());
+        $registerFeatures->setFeatures(new WorldManager());
         foreach ($registerFeatures->getFeatures() as $pluginBase) {
             $pluginBase->onEnable($server);
         }
-    }
-
-    /**
-     * 追加はこの関数のみで行ってください。
-     *
-     * @param IPluginBase $pluginBase
-     * @return void
-     */
-    private function setFeatures(IPluginBase $pluginBase) : void {
-        $this->features[] = $pluginBase;
-    }
-
-    /**
-     * 追加された機能を取得します。
-     *
-     * @return IPluginBase[]
-     */
-    public function getFeatures() : array {
-        return $this->features;
     }
 
     /**
@@ -63,6 +46,25 @@ class RegisterFeatures {
         foreach ($registerFeatures->getFeatures() as $pluginBase) {
             $pluginBase->onDisable($server);
         }
+    }
+
+    /**
+     * 追加された機能を取得します。
+     *
+     * @return IPluginBase[]
+     */
+    public function getFeatures() : array {
+        return $this->features;
+    }
+
+    /**
+     * 追加はこの関数のみで行ってください。
+     *
+     * @param IPluginBase $pluginBase
+     * @return void
+     */
+    private function setFeatures(IPluginBase $pluginBase) : void {
+        $this->features[] = $pluginBase;
     }
 
 }

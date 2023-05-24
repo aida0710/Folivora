@@ -10,12 +10,12 @@ class DiceMessageSetting implements IPlayerSetting {
 
     public const NAME = 'DiceMessageSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return true;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

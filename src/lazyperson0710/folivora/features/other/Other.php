@@ -9,10 +9,10 @@ use pocketmine\Server;
 
 class Other implements IPluginBase {
 
-    public function onEnable(Server $server) : void {
+    public function onDisable(Server $server) : void {
     }
 
-    public function onDisable(Server $server) : void {
+    public function onEnable(Server $server) : void {
     }
 
 }

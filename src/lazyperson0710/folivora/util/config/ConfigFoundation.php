@@ -53,7 +53,7 @@ class ConfigFoundation {
      * ディレクトリ階層は自動で生成されるため$path = ' dir1/dir2/file.txt 'のように指定してください。
      * また、この静的関数を使用した場合はRegisterConfig::registerConfig()に自動で登録されます。
      *
-     * @param string $path
+     * @param string   $path
      * @param int|null $fileType
      * @return Config
      * @throws JsonException
@@ -101,7 +101,7 @@ class ConfigFoundation {
 
     /**
      * @param Player $player
-     * @param array $configCache
+     * @param array  $configCache
      * @return bool
      */
     public static function isAccountExist(Player $player, array $configCache) : bool {

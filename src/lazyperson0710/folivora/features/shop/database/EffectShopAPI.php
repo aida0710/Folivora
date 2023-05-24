@@ -8,10 +8,12 @@ use pocketmine\entity\effect\Effect;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\lang\Translatable;
 use pocketmine\Server;
+use pocketmine\utils\SingletonTrait;
 
 class EffectShopAPI {
 
-    private static EffectShopAPI $instance;
+    use SingletonTrait;
+
     protected array $buy = [];
     protected array $levelLimit = [];
     protected array $amplifiedMoney = [];
@@ -37,13 +39,6 @@ class EffectShopAPI {
         $this->levelLimit[$effectName] = $levelLimit;
         $this->amplifiedMoney[$effectName] = $amplifiedMoney;
         $this->timeRestriction[$effectName] = $timeRestriction;
-    }
-
-    public static function getInstance() : EffectShopAPI {
-        if (!isset(self::$instance)) {
-            self::$instance = new EffectShopAPI();
-        }
-        return self::$instance;
     }
 
     public function getBuy(string $effectName) : ?int {

@@ -10,12 +10,12 @@ class LevelUpDisplaySetting implements IPlayerSetting {
 
     public const NAME = 'LevelUpDisplaySetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : string {
         return 'title';
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

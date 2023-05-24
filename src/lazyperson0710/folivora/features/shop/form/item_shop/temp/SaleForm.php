@@ -49,8 +49,27 @@ class SaleForm implements Form {
         });
     }
 
-    private function isInteger($input) : bool {
-        return (ctype_digit(strval($input)));
+    public function jsonSerialize() : array {
+        return [
+            'type' => 'custom_form',
+            'title' => 'LevelShop',
+            'content' => [
+                [
+                    'type' => 'label',
+                    'text' => '売却するアイテム/' . LevelShopAPI::getInstance()->getItemName($this->item->getItem()->getId(), $this->item->getItem()->getMeta()) . "\n1つあたりの値段/" . number_format($this->item->getPrice()) . "\n仮想ストレージにある量/" . number_format($this->item->getStorage()) . "\nインベントリにある数/" . number_format($this->item->getCount()) . "\n現在の所持金/" . number_format($this->item->getMyMoney()),
+                ],
+                [
+                    'type' => 'input',
+                    'text' => '個数を入力',
+                    'placeholder' => '個数を入力してください',
+                    'default' => '',
+                ],
+                [
+                    'type' => 'toggle',
+                    'text' => '仮想ストレージ優先',
+                ],
+            ],
+        ];
     }
 
     public function transaction(Player $player, array $data) : void {
@@ -123,26 +142,7 @@ class SaleForm implements Form {
         return $result;
     }
 
-    public function jsonSerialize() {
-        return [
-            'type' => 'custom_form',
-            'title' => 'LevelShop',
-            'content' => [
-                [
-                    'type' => 'label',
-                    'text' => '売却するアイテム/' . LevelShopAPI::getInstance()->getItemName($this->item->getItem()->getId(), $this->item->getItem()->getMeta()) . "\n1つあたりの値段/" . number_format($this->item->getPrice()) . "\n仮想ストレージにある量/" . number_format($this->item->getStorage()) . "\nインベントリにある数/" . number_format($this->item->getCount()) . "\n現在の所持金/" . number_format($this->item->getMyMoney()),
-                ],
-                [
-                    'type' => 'input',
-                    'text' => '個数を入力',
-                    'placeholder' => '個数を入力してください',
-                    'default' => '',
-                ],
-                [
-                    'type' => 'toggle',
-                    'text' => '仮想ストレージ優先',
-                ],
-            ],
-        ];
+    private function isInteger($input) : bool {
+        return (ctype_digit(strval($input)));
     }
 }

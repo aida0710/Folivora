@@ -63,11 +63,7 @@ class PurchaseForm implements Form {
         (new LevelShopSellEvent($player, $this->item, 'buy'))->call();
     }
 
-    private function isInteger($input) : bool {
-        return (ctype_digit(strval($input)));
-    }
-
-    public function jsonSerialize() {
+    public function jsonSerialize() : array {
         return [
             'type' => 'custom_form',
             'title' => 'LevelShop',
@@ -92,5 +88,9 @@ class PurchaseForm implements Form {
                 ],
             ],
         ];
+    }
+
+    private function isInteger($input) : bool {
+        return (ctype_digit(strval($input)));
     }
 }

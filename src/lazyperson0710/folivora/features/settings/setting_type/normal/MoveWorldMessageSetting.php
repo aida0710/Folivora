@@ -10,12 +10,12 @@ class MoveWorldMessageSetting implements IPlayerSetting {
 
     public const NAME = 'MoveWorldMessageSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return true;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

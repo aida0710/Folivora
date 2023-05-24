@@ -33,16 +33,6 @@ class Elevator implements Listener {
         }
     }
 
-    private function elevator($level, $x, $y, $z) : bool {
-        $vector3 = new Vector3($x, $y, $z);
-        if (self::elevator == $level->getBlock(new Vector3($x, $y, $z))->getId()) {
-            if (self::block == $level->getBlock(new Vector3($x, $y - 1, $z))->getId()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public function onSneak(PlayerToggleSneakEvent $ev) : void {
         $p = $ev->getPlayer();
         $n = $p->getName();
@@ -70,6 +60,16 @@ class Elevator implements Listener {
         } else {
             $this->sneak[$n] = true;
         }
+    }
+
+    private function elevator($level, $x, $y, $z) : bool {
+        $vector3 = new Vector3($x, $y, $z);
+        if (self::elevator == $level->getBlock(new Vector3($x, $y, $z))->getId()) {
+            if (self::block == $level->getBlock(new Vector3($x, $y - 1, $z))->getId()) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

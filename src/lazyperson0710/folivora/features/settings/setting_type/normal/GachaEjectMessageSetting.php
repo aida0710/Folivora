@@ -10,12 +10,12 @@ class GachaEjectMessageSetting implements IPlayerSetting {
 
     public const NAME = 'GachaEjectMessageSetting';
 
-    public function getName() : string {
-        return self::NAME;
-    }
-
     public function getDefaultValue() : bool {
         return true;
+    }
+
+    public function getName() : string {
+        return self::NAME;
     }
 
     public function normalValue() : array {

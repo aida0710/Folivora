@@ -15,6 +15,9 @@ use pocketmine\Server;
 
 class ElectronicMoneyPlugin implements IPluginBase {
 
+    public function onDisable(Server $server) : void {
+    }
+
     /**
      * @param Server $server
      * @return void
@@ -29,9 +32,6 @@ class ElectronicMoneyPlugin implements IPluginBase {
         Money::getInstance()->registerConfigClass();
         RegisterListener::register(new JoinEvent());
         $server->getCommandMap()->register(Money::PREFIX, new MoneyCommand());
-    }
-
-    public function onDisable(Server $server) : void {
     }
 
 }
