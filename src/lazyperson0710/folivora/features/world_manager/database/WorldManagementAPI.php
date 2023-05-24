@@ -5,11 +5,13 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\features\world_manager\database;
 
 use pocketmine\Server;
+use pocketmine\utils\SingletonTrait;
 use function array_key_exists;
 
 class WorldManagementAPI {
 
-    private static WorldManagementAPI $instance;
+    use SingletonTrait;
+
     protected array $heightLimit = [];
     protected array $miningLevelLimit = [];
     protected array $flyLimit = [];
@@ -66,13 +68,6 @@ class WorldManagementAPI {
         $this->x2[$worldName] = $x2;
         $this->z1[$worldName] = $z1;
         $this->z2[$worldName] = $z2;
-    }
-
-    public static function getInstance() : WorldManagementAPI {
-        if (!isset(self::$instance)) {
-            self::$instance = new WorldManagementAPI();
-        }
-        return self::$instance;
     }
 
     public function getHeightLimit(string $worldFolderName) : int {
