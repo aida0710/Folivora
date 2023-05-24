@@ -13,7 +13,7 @@ use lazyperson0710\folivora\util\plugin_base\IPluginBase;
 use lazyperson0710\folivora\util\register\RegisterListener;
 use pocketmine\Server;
 
-class ElectronicMoney implements IPluginBase {
+class ElectronicMoneyPlugin implements IPluginBase {
 
     /**
      * @param Server $server
