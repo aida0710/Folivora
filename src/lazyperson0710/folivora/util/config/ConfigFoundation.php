@@ -30,6 +30,7 @@ class ConfigFoundation {
             new ClosureTask(
                 function () : void {
                     self::runAllSave();
+                    var_dump('saveされました');
                 }
             ), 20 * 30,
         );
