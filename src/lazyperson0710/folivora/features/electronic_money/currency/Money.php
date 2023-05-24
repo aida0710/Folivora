@@ -63,7 +63,7 @@ class Money implements IConfig, ICurrency {
         }
     }
 
-    public function getCurrency(Player $player) : CurrencyFoundation {
+    public function getFunction(Player $player) : CurrencyFoundation {
         return new CurrencyFoundation($player, $this->cache);
     }
 
