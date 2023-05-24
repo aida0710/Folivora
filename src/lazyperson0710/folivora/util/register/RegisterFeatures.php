@@ -5,7 +5,8 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\util\register;
 
 use lazyperson0710\folivora\features\debug\Debug;
-use lazyperson0710\folivora\features\electronic_money\ElectronicMoney;
+use lazyperson0710\folivora\features\electronic_money\ElectronicMoneyPlugin;
+use lazyperson0710\folivora\features\settings\SettingPlugin;
 use lazyperson0710\folivora\util\plugin_base\IPluginBase;
 use pocketmine\Server;
 
@@ -23,7 +24,8 @@ class RegisterFeatures {
     public static function enableFeatures(Server $server) : void {
         $registerFeatures = new RegisterFeatures();
         $registerFeatures->setFeatures(new Debug());
-        $registerFeatures->setFeatures(new ElectronicMoney());
+        $registerFeatures->setFeatures(new ElectronicMoneyPlugin());
+        $registerFeatures->setFeatures(new SettingPlugin());
         foreach ($registerFeatures->getFeatures() as $pluginBase) {
             $pluginBase->onEnable($server);
         }
