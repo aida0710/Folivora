@@ -3,3 +3,22 @@ main: lazyperson0710\folivora\Folivora
 version: 1.0.0
 api: 4.0.0
 author: lazyperson0710
+depend:
+  - BboForm
+  - RedstoneCircuit
+  - DevTools
+  - EasyEdit
+  - PMDiscordAPI
+  - IgnoreCase
+  - ReplenishResources
+  - DataCleaning
+  - unphar
+  - InvSee
+  - PMDiscordAPI
+  - Voting
+  - ReportSystem
+  - InvCrashFix
+  - StackStorage
+  - PersonaAdapter
+  - SimpleFill
+  - VanillaElytra
