@@ -31,3 +31,11 @@ cs-fixerの設定は[.php-cs-fixer.dist.php](/.php-cs-fixer.dist.php)に記述�
 - 変数名、関数名はキャメルケースで記述してください
 - ディレクトリ名はスネークケースで記述してください
 - exceptionクラスはエラー内容をexceptionクラス内に定数でメッセージとして記述し統一化を図ってください
+
+## ブランチについて
+
+- master - 安定版(直接のコミット・プッシュ厳禁)
+- develop - 開発・作業用ブランチ(直接のコミット・プッシュ基本NG)
+- feature - 機能追加etc用 developから切ってdevelopにマージ、マージ後削除
+- hotfix - バグ対応用。developから分岐し、全ブランチにマージ。マージ後削除
+- release - リリース前に準備や微調整。developから切ってmasterにマージしてdevelopにマージ
