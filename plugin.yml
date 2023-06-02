@@ -1,7 +1,7 @@
 name: Folivora
 main: lazyperson0710\folivora\Folivora
 version: 1.0.0
-api: 4.0.0
+api: 5.0.0
 author: lazyperson0710
 depend:
   - BboForm
