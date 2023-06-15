@@ -58,7 +58,7 @@ class WorldManagementAPI {
 
     public function register(string $worldName, int $heightLimit, int $miningLevelLimit, ?int $flyLimit = 300, ?int $x1 = 15000, ?int $z1 = 15000, ?int $x2 = -15000, ?int $z2 = -15000) : void {
         if (Server::getInstance()->getWorldManager()->getWorldByName($worldName) === null) {
-            Server::getInstance()->getLogger()->error('world_managerAPI: World ' . $worldName . ' not found.');
+            Server::getInstance()->getLogger()->error('WorldManagementAPI: World ' . $worldName . ' not found.');
         }
         $this->heightLimit[$worldName] = $heightLimit;
         $this->miningLevelLimit[$worldName] = $miningLevelLimit;
