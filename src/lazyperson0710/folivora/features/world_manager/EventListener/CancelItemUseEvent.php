@@ -28,52 +28,6 @@ class CancelItemUseEvent implements Listener {
 
     public function onInteract(PlayerInteractEvent $event) : void {
         $this->banItems($event);
-        $world_name = $event->getPlayer()->getWorld()->getDisplayName();
-        $farming = mb_substr($world_name, -2, 2, 'utf-8');
-        if ($farming !== '-f') {
-            switch ($event->getPlayer()->getInventory()->getItemInHand()->getId()) {
-                //クワ
-                case ItemIds::WOODEN_HOE:
-                case ItemIds::STONE_HOE:
-                case ItemIds::IRON_HOE:
-                case ItemIds::GOLD_HOE:
-                case ItemIds::DIAMOND_HOE:
-                    //作物関係
-                case ItemIds::WHEAT_SEEDS:
-                case ItemIds::PUMPKIN_SEEDS:
-                case ItemIds::MELON_SEEDS:
-                case ItemIds::NETHER_WART:
-                case ItemIds::BEETROOT_SEEDS:
-                case ItemIds::CARROT:
-                case ItemIds::POTATO:
-                case ItemIds::SUGARCANE:
-                case ItemIds::SUGARCANE_BLOCK:
-                case ItemIds::BAMBOO:
-                case ItemIds::BAMBOO_SAPLING:
-                    if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
-                        $event->cancel();
-                    }
-                    SendTip::Send($event->getPlayer(), '農業ワールドでのみ使用可能です', 'Farming', false);
-                    break;
-            }
-        }
-        if (!($farming === '-f' || $farming === '-c')) {
-            switch ($event->getPlayer()->getInventory()->getItemInHand()->getId()) {
-                //水関係
-                case BlockLegacyIds::WATER:
-                case BlockLegacyIds::WATER_LILY:
-                case BlockLegacyIds::WATERLILY:
-                case BlockLegacyIds::FLOWING_WATER:
-                case BlockLegacyIds::STILL_WATER:
-                    //その他
-                case ItemIds::HOPPER:
-                    if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
-                        $event->cancel();
-                    }
-                    SendTip::Send($event->getPlayer(), "{$event->getPlayer()->getInventory()->getItemInHand()->getName()}は生活ワールドと農業ワールドでのみ使用可能です", 'Water', false);
-                    break;
-            }
-        }
     }
 
     public function onBreak(BlockBreakEvent $event) : void {
