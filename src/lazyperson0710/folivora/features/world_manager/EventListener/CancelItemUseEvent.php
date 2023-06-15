@@ -15,7 +15,6 @@ use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\item\ItemIds;
 use pocketmine\item\VanillaItems;
 use pocketmine\Server;
-use function mb_substr;
 
 class CancelItemUseEvent implements Listener {
 

@@ -9,7 +9,6 @@ use lazyperson0710\folivora\features\world_manager\WorldLimit\WorldProperty;
 use lazyperson0710\folivora\util\message\send_message\SendMessage;
 use pocketmine\scheduler\Task;
 use pocketmine\Server;
-use function in_array;
 
 class CheckLifeWorldTask extends Task {
 

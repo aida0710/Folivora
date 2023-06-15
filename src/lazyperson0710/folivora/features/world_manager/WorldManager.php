@@ -28,8 +28,6 @@ use pocketmine\block\BlockIdentifier;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\VanillaBlocks;
 use pocketmine\Server;
-use function is_dir;
-use function scandir;
 
 class WorldManager implements IPluginBase {
 

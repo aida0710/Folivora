@@ -6,7 +6,6 @@ namespace lazyperson0710\folivora\features\world_manager\database;
 
 use pocketmine\Server;
 use pocketmine\utils\SingletonTrait;
-use function array_key_exists;
 
 class WorldManagementAPI {
 

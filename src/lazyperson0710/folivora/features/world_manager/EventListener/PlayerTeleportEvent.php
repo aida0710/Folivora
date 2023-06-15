@@ -10,7 +10,6 @@ use lazyperson0710\folivora\util\message\send_message\SendMessage;
 use pocketmine\event\entity\EntityTeleportEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
-use function in_array;
 
 class PlayerTeleportEvent implements Listener {
 

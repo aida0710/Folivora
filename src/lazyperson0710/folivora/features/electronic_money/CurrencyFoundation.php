@@ -10,7 +10,7 @@ use pocketmine\player\Player;
 class CurrencyFoundation {
 
     public function __construct(
-        private Player $player,
+        private readonly Player $player,
         private array &$configCache,
     ) {
     }

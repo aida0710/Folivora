@@ -11,10 +11,6 @@ use pocketmine\block\BaseSign;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Server;
-use function array_keys;
-use function array_values;
-use function floor;
-use function str_replace;
 
 class CommandSign implements Listener {
 

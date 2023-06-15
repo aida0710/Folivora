@@ -9,7 +9,6 @@ use lazyperson0710\PlayerSetting\object\PlayerSettingPool;
 use lazyperson0710\PlayerSetting\object\settings\normal\DestructionSoundSetting;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\Listener;
-use function mt_rand;
 
 class BlockBreakSound implements Listener {
 

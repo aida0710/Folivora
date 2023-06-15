@@ -12,7 +12,6 @@ use pocketmine\event\entity\EntityTeleportEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\scheduler\ClosureTask;
-use function in_array;
 
 class PlayerDamageEvent implements Listener {
 

@@ -11,7 +11,6 @@ use pocketmine\event\Listener;
 use pocketmine\item\Durable;
 use pocketmine\item\Food;
 use pocketmine\item\VanillaItems;
-use function in_array;
 
 class CraftCancel implements Listener {
 

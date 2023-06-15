@@ -12,7 +12,6 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\item\VanillaItems;
-use function in_array;
 
 class YachimataCityWorldProtect implements Listener {
 

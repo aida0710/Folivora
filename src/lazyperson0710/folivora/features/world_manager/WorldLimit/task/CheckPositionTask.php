@@ -11,7 +11,6 @@ use lazyperson0710\folivora\util\message\send_message\SendMessage;
 use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 use pocketmine\Server;
-use function in_array;
 
 class CheckPositionTask extends Task {
 

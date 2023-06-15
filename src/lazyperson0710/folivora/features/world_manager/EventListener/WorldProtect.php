@@ -12,7 +12,6 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Server;
-use function in_array;
 
 class WorldProtect implements Listener {
 

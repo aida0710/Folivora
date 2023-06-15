@@ -11,7 +11,6 @@ use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\Listener;
 use pocketmine\Server;
-use function in_array;
 
 class ResourceWorldProtect implements Listener {
 

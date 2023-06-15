@@ -13,7 +13,6 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\math\Vector3;
 use pocketmine\world\particle\RedstoneParticle;
-use function round;
 
 class Major implements Listener {
 

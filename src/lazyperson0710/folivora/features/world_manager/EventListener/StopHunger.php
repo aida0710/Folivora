@@ -7,7 +7,6 @@ namespace lazyperson0710\folivora\features\world_manager\EventListener;
 use lazyperson0710\folivora\features\world_manager\database\WorldCategory;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerExhaustEvent;
-use function in_array;
 
 class StopHunger implements Listener {
 
