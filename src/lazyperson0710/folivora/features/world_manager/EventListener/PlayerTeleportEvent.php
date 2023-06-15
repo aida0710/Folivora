@@ -25,7 +25,6 @@ class PlayerTeleportEvent implements Listener {
             return;
         }
         $worldApi = WorldManagementAPI::getInstance();
-        //note setting
         if (PlayerSettingPool::getInstance()->getSettingNonNull($player)->getSetting(MoveWorldMessageSetting::getName())?->getValue() === true) {
             if (in_array($event->getTo()->getWorld()->getDisplayName(), WorldCategory::Nature, true)) {
                 SendMessage::Send($player, "天然資源ワールド\n§7>> §a自由に採掘が可能です\n§7>> §aたくさんの資源を集めてショップで売却してみよう！", '§bWorld', true);
@@ -61,6 +60,8 @@ class PlayerTeleportEvent implements Listener {
                     SendMessage::Send($player, '八街市はブロックの設置や破壊などが制限されたワールドになります', '', true);
                 }
             }
+        } else {
+            SendActionBarMessage::Send($player, 'ワールドに関する説明が現在settingによって無効化されています', 'World', true);
         }
     }
 
