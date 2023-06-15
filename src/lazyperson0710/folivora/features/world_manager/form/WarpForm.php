@@ -16,7 +16,6 @@ use pocketmine\world\World;
 class WarpForm extends SimpleForm {
 
     public function __construct(Player $player, ?string $error = null) {
-        $worldM = Server::getInstance()->getWorldManager();
         $facilities = (new SimpleForm())
             ->setTitle('World Select')
             ->addElements(
@@ -87,7 +86,7 @@ class WarpForm extends SimpleForm {
             );
         $this
             ->setTitle('World Select')
-            ->setText("このFormは/wpでも使用可能です{$error}")
+            ->setText('このFormは/wpでも使用可能です' . $error)
             ->addElements(
                 new SendFormButton($facilities, '公共施設', new ButtonImage(ButtonImage::TYPE_PATH, 'textures/ui/icon_best3.png')),
                 new SendFormButton($cityAndFarm, '農業 & 生活ワールド', new ButtonImage(ButtonImage::TYPE_PATH, 'textures/ui/inventory_icon.png')),
