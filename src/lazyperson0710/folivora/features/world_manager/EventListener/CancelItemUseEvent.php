@@ -72,7 +72,6 @@ class CancelItemUseEvent implements Listener {
             case ItemIds::ENCHANTED_BOOK:
             case ItemIds::ENDER_CHEST:
             case ItemIds::ENDER_EYE:
-            case ItemIds::ENDER_PEARL:
             case ItemIds::LEAD:
             case ItemIds::ARMOR_STAND:
             case ItemIds::CHORUS_FLOWER:
@@ -118,4 +117,5 @@ class CancelItemUseEvent implements Listener {
             SendTip::Send($event->getPlayer(), 'このアイテムはMiningToolsの強化にのみ使用可能です/mt', 'Cancel', false);
         }
     }
+
 }
