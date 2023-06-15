@@ -8,6 +8,6 @@ use RuntimeException;
 
 class AbnormalValueEnteredException extends RuntimeException {
 
-    public const MESSAGE = "異常値が入力されました";
+    public const MESSAGE = '異常値が入力されました';
 
 }
