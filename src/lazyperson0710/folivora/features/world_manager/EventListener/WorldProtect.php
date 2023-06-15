@@ -15,6 +15,10 @@ use pocketmine\Server;
 
 class WorldProtect implements Listener {
 
+    /**
+     * @param BlockPlaceEvent $event
+     * @return void
+     */
     public function onPlace(BlockPlaceEvent $event) : void {
         if ($event->isCancelled()) {
             return;
@@ -30,6 +34,10 @@ class WorldProtect implements Listener {
         $this->PlayerAction($event);
     }
 
+    /**
+     * @param BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event
+     * @return void
+     */
     public function PlayerAction(BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event) : void {
         if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
             $worldName = $event->getPlayer()->getPosition()->getWorld()->getFolderName();
@@ -42,6 +50,10 @@ class WorldProtect implements Listener {
         }
     }
 
+    /**
+     * @param BlockBreakEvent $event
+     * @return void
+     */
     public function onBreak(BlockBreakEvent $event) : void {
         if ($event->isCancelled()) {
             return;
@@ -49,6 +61,10 @@ class WorldProtect implements Listener {
         $this->PlayerAction($event);
     }
 
+    /**
+     * @param PlayerInteractEvent $event
+     * @return void
+     */
     public function onInteract(PlayerInteractEvent $event) : void {
         if ($event->isCancelled()) {
             return;
