@@ -7,9 +7,9 @@ namespace lazyperson0710\folivora\features\shop\form\enchant_shop;
 use bbo51dog\bboform\element\Label;
 use bbo51dog\bboform\element\Slider;
 use bbo51dog\bboform\form\CustomForm;
+use lazyperson0710\folivora\features\electronic_money\currency\Money;
 use lazyperson0710\folivora\features\shop\database\EnchantShopAPI;
 use lazyperson0710\folivora\util\packet\SendForm;
-use onebone\economyapi\EconomyAPI;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\lang\Translatable;
 use pocketmine\player\Player;
@@ -35,7 +35,7 @@ class EnchantConfirmationForm extends CustomForm {
             ->addElements(
                 new Label("{$enchantName}を付与しようとしています"),
                 new Label("{$enchantName}は1レベルごとに{$api->getBuy($enchantName)}円かかります"),
-                new Label("\n現在の所持金 -> " . EconomyAPI::getInstance()->myMoney($player)),
+                new Label("\n現在の所持金 -> " . Money::getInstance()->getFunction($player)->getCurrency() . "円"),
                 $this->level,
             );
     }
