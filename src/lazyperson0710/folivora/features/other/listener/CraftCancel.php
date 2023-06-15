@@ -115,13 +115,13 @@ class CraftCancel implements Listener {
             VanillaItems::WRITTEN_BOOK()->getVanillaName(),
         ];
         $ids = [
-            513, //shield
+            513,  //shield
             -272, //リスポーン アンカー
             -269, //魂のランタン
-            720, //キャンプファイヤー
-            801, //魂のキャンプファイヤー
+            720,  //キャンプファイヤー
+            801,  //魂のキャンプファイヤー
             -239, //ターゲット
-            758, //chain
+            758,  //chain
             -270, //ネザライトブロック
         ];
         foreach ($event->getOutputs() as $item) {

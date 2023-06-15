@@ -22,31 +22,6 @@ class CancelItemUseEvent implements Listener {
         $this->banItems($event);
     }
 
-    public function onPlace(BlockPlaceEvent $event) : void {
-        $this->banItems($event);
-    }
-
-    public function onInteract(PlayerInteractEvent $event) : void {
-        $this->banItems($event);
-    }
-
-    public function onBreak(BlockBreakEvent $event) : void {
-        foreach ($event->getDrops() as $item) {
-            switch ($item->getId()) {
-                case BlockLegacyIds::INFO_UPDATE:
-                case BlockLegacyIds::INFO_UPDATE2:
-                case BlockLegacyIds::RESERVED6:
-                    $event->setDrops([
-                        VanillaItems::NETHER_STAR()->setCount(1),
-                    ]);
-            }
-        }
-    }
-
-    public function onEntityTrampleFarmland(EntityTrampleFarmlandEvent $event) : void {
-        $event->cancel();
-    }
-
     private function banItems(BlockPlaceEvent|PlayerItemUseEvent|PlayerInteractEvent $event) : void {
         switch ($event->getPlayer()->getInventory()->getItemInHand()->getId()) {
             case BlockLegacyIds::INFO_UPDATE;
@@ -116,6 +91,31 @@ class CancelItemUseEvent implements Listener {
             $event->cancel();
             SendTip::Send($event->getPlayer(), 'このアイテムはMiningToolsの強化にのみ使用可能です/mt', 'Cancel', false);
         }
+    }
+
+    public function onPlace(BlockPlaceEvent $event) : void {
+        $this->banItems($event);
+    }
+
+    public function onInteract(PlayerInteractEvent $event) : void {
+        $this->banItems($event);
+    }
+
+    public function onBreak(BlockBreakEvent $event) : void {
+        foreach ($event->getDrops() as $item) {
+            switch ($item->getId()) {
+                case BlockLegacyIds::INFO_UPDATE:
+                case BlockLegacyIds::INFO_UPDATE2:
+                case BlockLegacyIds::RESERVED6:
+                    $event->setDrops([
+                        VanillaItems::NETHER_STAR()->setCount(1),
+                    ]);
+            }
+        }
+    }
+
+    public function onEntityTrampleFarmland(EntityTrampleFarmlandEvent $event) : void {
+        $event->cancel();
     }
 
 }

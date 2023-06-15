@@ -34,18 +34,13 @@ class RegisterFeatures {
     }
 
     /**
-     * 登録した順にdisableを実行します。
-     * 実行順を変更したい場合は配列を操作して下さい。@param Server $server
+     * 追加はこの関数のみで行ってください。
      *
+     * @param IPluginBase $pluginBase
      * @return void
-     * @see $features
-     *
      */
-    public static function disableFeatures(Server $server) : void {
-        $registerFeatures = new RegisterFeatures();
-        foreach ($registerFeatures->getFeatures() as $pluginBase) {
-            $pluginBase->onDisable($server);
-        }
+    private function setFeatures(IPluginBase $pluginBase) : void {
+        $this->features[] = $pluginBase;
     }
 
     /**
@@ -58,13 +53,18 @@ class RegisterFeatures {
     }
 
     /**
-     * 追加はこの関数のみで行ってください。
+     * 登録した順にdisableを実行します。
+     * 実行順を変更したい場合は配列を操作して下さい。@param Server $server
      *
-     * @param IPluginBase $pluginBase
      * @return void
+     * @see $features
+     *
      */
-    private function setFeatures(IPluginBase $pluginBase) : void {
-        $this->features[] = $pluginBase;
+    public static function disableFeatures(Server $server) : void {
+        $registerFeatures = new RegisterFeatures();
+        foreach ($registerFeatures->getFeatures() as $pluginBase) {
+            $pluginBase->onDisable($server);
+        }
     }
 
 }

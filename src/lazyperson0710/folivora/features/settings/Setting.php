@@ -41,6 +41,19 @@ class Setting implements IConfig {
         throw new AbnormalValueEnteredException(AbnormalValueEnteredException::MESSAGE);
     }
 
+    /**
+     * @param Player         $player
+     * @param IPlayerSetting $setting
+     * @return mixed
+     */
+    private function checkSettingData(Player $player, IPlayerSetting $setting) : mixed {
+        if (!ConfigFoundation::isAccountExist($player, $this->cache)) {
+            $this->cache += [$player->getName()];
+        }
+        $this->cache[$player->getName()][$setting->getName()] = $setting->getDefaultValue();
+        return $this->cache[$player->getName()][$setting->getName()];
+    }
+
     public function getSettingData(Player $player, IPlayerSetting $setting) : mixed {
         $this->checkSettingData($player, $setting);
         return $this->cache[$player->getName()][$setting->getName()];
@@ -77,18 +90,5 @@ class Setting implements IConfig {
         } catch (ConfigSaveException $exception) {
             Server::getInstance()->getLogger()->warning($exception);
         }
-    }
-
-    /**
-     * @param Player         $player
-     * @param IPlayerSetting $setting
-     * @return mixed
-     */
-    private function checkSettingData(Player $player, IPlayerSetting $setting) : mixed {
-        if (!ConfigFoundation::isAccountExist($player, $this->cache)) {
-            $this->cache += [$player->getName()];
-        }
-        $this->cache[$player->getName()][$setting->getName()] = $setting->getDefaultValue();
-        return $this->cache[$player->getName()][$setting->getName()];
     }
 }

@@ -35,7 +35,7 @@ class EnchantConfirmationForm extends CustomForm {
             ->addElements(
                 new Label("{$enchantName}を付与しようとしています"),
                 new Label("{$enchantName}は1レベルごとに{$api->getBuy($enchantName)}円かかります"),
-                new Label("\n現在の所持金 -> " . Money::getInstance()->getFunction($player)->getCurrency() . "円"),
+                new Label("\n現在の所持金 -> " . Money::getInstance()->getFunction($player)->getCurrency() . '円'),
                 $this->level,
             );
     }
