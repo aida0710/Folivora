@@ -20,7 +20,7 @@ class EventTicket implements IConfig, ICurrency {
     public const PREFIX = 'EventTicket';
     public const SUFFIX = '枚';
     public const DEFAULT_CURRENCY = 0;
-    public const PATH = 'player/event_ticket.json';
+    public const PATH = 'player/currey/event_ticket.json';
     private Config $config;
     private array $cache = [];
 

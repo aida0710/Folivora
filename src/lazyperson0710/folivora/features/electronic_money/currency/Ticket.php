@@ -20,7 +20,7 @@ class Ticket implements IConfig, ICurrency {
     public const PREFIX = 'Ticket';
     public const SUFFIX = '枚';
     public const DEFAULT_CURRENCY = 15;
-    public const PATH = 'player/ticket.json';
+    public const PATH = 'player/currey/ticket.json';
     private Config $config;
     private array $cache = [];
 
