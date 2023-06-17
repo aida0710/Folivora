@@ -12,7 +12,7 @@ class LevelFoundation {
 
     public function __construct(
         private readonly Player $player,
-        private array &$configCache,
+        private array &$cache,
         private readonly ILevel $levelClass,
     ) {
         $this->createAccount($player);
@@ -23,8 +23,8 @@ class LevelFoundation {
      * @return void
      */
     public function createAccount(Player $player) : void {
-        if (!ConfigFoundation::isAccountExist($player, $this->configCache)) {
-            $this->configCache += [
+        if (!ConfigFoundation::isAccountExist($player, $this->cache)) {
+            $this->cache += [
                 $player->getName() => [
                     ($this->levelClass)::LEVEL_KEY => $this->levelClass->getDefaultLevel(),
                     ($this->levelClass)::EXP_KEY => $this->levelClass->getDefaultExp(),
@@ -40,8 +40,8 @@ class LevelFoundation {
      */
     public function setExp(int $exp) : void {
         $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return;
-        $this->configCache[$player_name][($this->levelClass)::EXP_KEY] = $exp;
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
+        $this->cache[$player_name][($this->levelClass)::EXP_KEY] = $exp;
     }
 
     /**
@@ -50,9 +50,9 @@ class LevelFoundation {
      */
     public function addExp(int $exp) : void {
         $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return;
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $exp = $this->getExp() + $exp;
-        $this->configCache[$player_name][($this->levelClass)::EXP_KEY] = $exp;
+        $this->cache[$player_name][($this->levelClass)::EXP_KEY] = $exp;
     }
 
     /**
@@ -60,15 +60,15 @@ class LevelFoundation {
      */
     public function getExp() : int {
         $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return $this->levelClass->getDefaultExp();
-        return $this->configCache[$player_name][($this->levelClass)::EXP_KEY];
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->levelClass->getDefaultExp();
+        return $this->cache[$player_name][($this->levelClass)::EXP_KEY];
     }
 
     /**
      * @return array
      */
     public function getAllPlayerData() : array {
-        return $this->configCache;
+        return $this->cache;
     }
 
 }

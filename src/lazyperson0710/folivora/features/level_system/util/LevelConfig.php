@@ -14,18 +14,17 @@ use pocketmine\utils\Config;
 
 class LevelConfig implements IConfig {
 
-    /** @var Config[] */
-    private static array $config;
-    /** @var array[] */
-    private static array $cache;
-
     /**
+     * @param ILevel $ILevel
      * @param string $path
-     * @param ILevel $iLevelClass
+     * @param Config $config
+     * @param array  $cache
      */
     public function __construct(
+        private readonly Ilevel $ILevel,
         private readonly string $path,
-        private readonly ILevel $iLevelClass,
+        private readonly Config $config,
+        private array $cache,
     ) {
     }
 
@@ -35,8 +34,9 @@ class LevelConfig implements IConfig {
      */
     public function createConfigFile() : void {
         try {
-            self::$config[get_class($this->iLevelClass)] = ConfigFoundation::createConfigFile($this->path);
-            self::$cache[get_class($this->iLevelClass)] = self::$config[get_class($this->iLevelClass)]->getAll();
+            $this->config = ConfigFoundation::createConfigFile($this->path);
+            $this->cache = $this->config->getAll();
+            $this->ILevel->setConfig($this->config);
         } catch (ConfigSaveException $exception) {
             throw new ConfigSaveException($exception->getMessage());
         }
@@ -56,8 +56,8 @@ class LevelConfig implements IConfig {
      * @throws JsonException
      */
     public function runSave() : void {
-        self::$config[get_class($this->iLevelClass)]->setAll(self::$cache);
-        self::$config[get_class($this->iLevelClass)]->save();
+        $this->config->setAll($this->cache);
+        $this->config->save();
     }
 
     public function getFunction(Player $player) : LevelFoundation {

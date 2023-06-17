@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\level_system\levels;
 
-use lazyperson0710\folivora\features\level_system\util\LevelConfig;
+use pocketmine\utils\Config;
 use pocketmine\utils\SingletonTrait;
 
 class Mining implements ILevel {
@@ -15,13 +15,35 @@ class Mining implements ILevel {
     private const DEFAULT_EXP = 1;
     private const DEFAULT_LEVEL_UP_EXP = 80;
 
-    public const PATH = 'player/levels/mining_level.json';
+    private const PATH = 'player/levels/mining_level.json';
+
+    private static Config $config;
+    private static array $cache;
 
     /**
-     * @return LevelConfig
+     * @return Config
      */
-    public function getConfig() : LevelConfig {
-        return new LevelConfig(self::PATH, $this);
+    public function getConfig() : Config {
+    }
+
+    /**
+     * @param Config $config
+     * @return void
+     */
+    public function setConfig(Config $config) : void {
+    }
+
+    /**
+     * @return array
+     */
+    public function getCache() : array {
+    }
+
+    /**
+     * @param array $cache
+     * @return void
+     */
+    public function setCache(array $cache) : void {
     }
 
     /**

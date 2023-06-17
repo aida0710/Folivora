@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\level_system\levels;
 
-use lazyperson0710\folivora\features\level_system\util\LevelConfig;
+use pocketmine\utils\Config;
 
 interface ILevel {
 
@@ -13,9 +13,26 @@ interface ILevel {
     public const EXP_TO_NEXT_LEVEL_KEY = 'exp_to_next_level';
 
     /**
-     * @return LevelConfig
+     * @return Config
      */
-    public function getConfig() : LevelConfig;
+    public function getConfig() : Config;
+
+    /**
+     * @param Config $config
+     * @return void
+     */
+    public function setConfig(Config $config) : void;
+
+    /**
+     * @return array
+     */
+    public function getCache() : array;
+
+    /**
+     * @param array $cache
+     * @return void
+     */
+    public function setCache(array $cache) : void;
 
     /**
      * @return int
