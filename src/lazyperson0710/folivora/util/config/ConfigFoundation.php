@@ -30,7 +30,6 @@ class ConfigFoundation {
             new ClosureTask(
                 function () : void {
                     self::runAllSave();
-                    var_dump('saveされました');
                 }
             ), 20 * 30,
         );
@@ -43,9 +42,13 @@ class ConfigFoundation {
      * @return void
      */
     public static function runAllSave() : void {
+        $time_start = microtime(true);
         foreach (self::$iConfigs as $iConfig) {
             $iConfig->runSave();
         }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        var_dump('ConfigSaveが正常に実行されました。所要時間: ' . $time . '秒');
     }
 
     /**
