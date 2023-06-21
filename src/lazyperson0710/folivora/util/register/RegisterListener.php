@@ -9,6 +9,7 @@ use pocketmine\plugin\Plugin;
 
 class RegisterListener {
 
+    /** @var Plugin */
     private static Plugin $plugin;
 
     /**

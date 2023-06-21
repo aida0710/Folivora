@@ -10,6 +10,11 @@ use pocketmine\player\Player;
 
 class CoordinatesPacket {
 
+    /**
+     * @param Player $player
+     * @param bool   $value
+     * @return void
+     */
     public static function Send(Player $player, bool $value) : void {
         $pk = new GameRulesChangedPacket();
         $pk->gameRules = ['showcoordinates' => new BoolGameRule($value, false)];

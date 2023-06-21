@@ -10,6 +10,13 @@ use pocketmine\player\Player;
 
 class AddEffectPacket {
 
+    /**
+     * @param Player         $player
+     * @param EffectInstance $effect
+     * @param Effect         $vanillaEffects
+     * @param bool|null      $force
+     * @return void
+     */
     public static function Add(Player $player, EffectInstance $effect, Effect $vanillaEffects, ?bool $force = false) : void {
         $effectInstance = $player->getEffects()->get($vanillaEffects);
         if ($force === true || $effectInstance === null) {

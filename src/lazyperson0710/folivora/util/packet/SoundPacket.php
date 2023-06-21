@@ -9,6 +9,15 @@ use pocketmine\player\Player;
 
 class SoundPacket {
 
+    /**
+     * @param Player    $player
+     * @param string    $soundName
+     * @param int|null  $volume
+     * @param int|null  $pitch
+     * @param bool|null $division
+     * @param int|null  $value
+     * @return void
+     */
     public static function Send(Player $player, string $soundName, ?int $volume = 1, ?int $pitch = 1, ?bool $division = false, ?int $value = 1) : void {
         if (!$player->isOnline()) return;
         $sound = new PlaySoundPacket();
