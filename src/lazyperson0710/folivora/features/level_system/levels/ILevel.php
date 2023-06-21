@@ -16,13 +16,7 @@ interface ILevel {
     /**
      * @return string
      */
-    public function getCache() : array;
-
-    /**
-     * @param array $cache
-     * @return void
-     */
-    public function setCache(array $cache) : void;
+    public function getName() : string;
 
     /**
      * @return int
