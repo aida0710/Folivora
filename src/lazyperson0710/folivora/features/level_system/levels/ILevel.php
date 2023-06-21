@@ -4,23 +4,17 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\level_system\levels;
 
-use pocketmine\utils\Config;
+use lazyperson0710\folivora\features\level_system\util\LevelConfig;
 
 interface ILevel {
 
     /**
-     * @return Config
+     * @return LevelConfig
      */
-    public function getConfig() : Config;
+    public function getConfig() : LevelConfig;
 
     /**
-     * @param Config $config
-     * @return void
-     */
-    public function setConfig(Config $config) : void;
-
-    /**
-     * @return array
+     * @return string
      */
     public function getCache() : array;
 
