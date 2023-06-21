@@ -8,10 +8,6 @@ use pocketmine\utils\Config;
 
 interface ILevel {
 
-    public const LEVEL_KEY = 'level';
-    public const EXP_KEY = 'exp';
-    public const EXP_TO_NEXT_LEVEL_KEY = 'exp_to_next_level';
-
     /**
      * @return Config
      */
