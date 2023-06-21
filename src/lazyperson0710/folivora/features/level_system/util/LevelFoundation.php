@@ -4,18 +4,21 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\level_system\util;
 
-use lazyperson0710\folivora\features\level_system\levels\ILevel;
 use lazyperson0710\folivora\util\config\ConfigFoundation;
 use pocketmine\player\Player;
 
 class LevelFoundation {
 
+    private DefaultValue $defaultValue;
+
     public function __construct(
         private readonly Player $player,
         private array &$cache,
-        private readonly ILevel $levelClass,
+        private readonly Levels $level,
     ) {
+        var_dump('load constructor');
         $this->createAccount($player);
+        $this->defaultValue = new DefaultValue($this->level);
     }
 
     /**
@@ -23,15 +26,17 @@ class LevelFoundation {
      * @return void
      */
     public function createAccount(Player $player) : void {
-        if (!ConfigFoundation::isAccountExist($player, $this->cache)) {
-            $this->cache += [
-                $player->getName() => [
-                    ($this->levelClass)::LEVEL_KEY => $this->levelClass->getDefaultLevel(),
-                    ($this->levelClass)::EXP_KEY => $this->levelClass->getDefaultExp(),
-                    ($this->levelClass)::EXP_TO_NEXT_LEVEL_KEY => $this->levelClass->getDefaultExpToNextLevel(),
-                ],
-            ];
+        if (ConfigFoundation::isAccountExist($player, $this->cache)) {
+            return;
         }
+        $this->cache += [
+            $player->getName() => [
+                //bug $this->defaultValueの値が取得できない
+                DefaultValue::LEVEL_KEY => $this->defaultValue->getDefaultLevel(),
+                DefaultValue::EXP_KEY => $this->defaultValue->getDefaultExp(),
+                DefaultValue::EXP_TO_NEXT_LEVEL_KEY => $this->defaultValue->getDefaultExpToNextLevel(),
+            ],
+        ];
     }
 
     /**
@@ -41,7 +46,7 @@ class LevelFoundation {
     public function setExp(int $exp) : void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
-        $this->cache[$player_name][($this->levelClass)::EXP_KEY] = $exp;
+        $this->cache[$player_name][DefaultValue::EXP_KEY] = $exp;
     }
 
     /**
@@ -52,7 +57,7 @@ class LevelFoundation {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $exp = $this->getExp() + $exp;
-        $this->cache[$player_name][($this->levelClass)::EXP_KEY] = $exp;
+        $this->cache[$player_name][DefaultValue::EXP_KEY] = $exp;
     }
 
     /**
@@ -60,8 +65,8 @@ class LevelFoundation {
      */
     public function getExp() : int {
         $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->levelClass->getDefaultExp();
-        return $this->cache[$player_name][($this->levelClass)::EXP_KEY];
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultExp();
+        return $this->cache[$player_name][DefaultValue::EXP_KEY];
     }
 
     /**
