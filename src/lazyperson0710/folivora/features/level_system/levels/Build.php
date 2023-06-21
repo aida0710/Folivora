@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace lazyperson0710\folivora\features\level_system\levels;
 
 use lazyperson0710\folivora\features\level_system\util\LevelConfig;
+use lazyperson0710\folivora\features\level_system\util\Levels;
 use pocketmine\utils\SingletonTrait;
 
 class Build implements ILevel {
@@ -14,13 +15,23 @@ class Build implements ILevel {
     private const DEFAULT_LEVEL = 1;
     private const DEFAULT_EXP = 1;
     private const DEFAULT_LEVEL_UP_EXP = 250;
+
+    public const LEVEL = Levels::BUILD;
+
     public const PATH = 'player/levels/build_level.json';
 
     /**
      * @return LevelConfig
      */
     public function getConfig() : LevelConfig {
-        return new LevelConfig(self::PATH, $this);
+        return new LevelConfig(self::LEVEL, self::PATH);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName() : string {
+        return self::LEVEL->value;
     }
 
     /**
