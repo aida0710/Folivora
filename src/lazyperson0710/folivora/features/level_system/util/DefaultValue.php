@@ -24,6 +24,7 @@ class DefaultValue {
     public function __construct(
         private readonly Levels $levels,
     ) {
+        //note 読み込まれてない?
         var_dump('load constructor is Default Value');
         $levelClass = match ($this->levels) {
             Levels::MINING => new Mining(),
