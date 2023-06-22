@@ -34,7 +34,7 @@ class MiningLevelListener implements Listener {
     public function onInteract(PlayerInteractEvent $event) : void {
         $player = $event->getPlayer();
         Build::getInstance()->getConfig()->getFunction($player)->addExp(1);
-        var_dump('build - ' . Farming::getInstance()->getConfig()->getFunction($player)->getExp());
+        var_dump('build - ' . Build::getInstance()->getConfig()->getFunction($player)->getExp());
     }
 
 }
