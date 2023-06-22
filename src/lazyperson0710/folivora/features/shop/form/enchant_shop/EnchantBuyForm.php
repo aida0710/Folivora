@@ -42,7 +42,7 @@ class EnchantBuyForm extends CustomForm {
             );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         $price = EnchantShopAPI::getInstance()->getBuy($this->enchantName) * $this->level;
         $item = $player->getInventory()->getItemInHand();
         if (Money::getInstance()->getFunction($player)->getCurrency() <= $price) {

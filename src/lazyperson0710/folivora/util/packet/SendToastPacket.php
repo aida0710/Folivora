@@ -15,7 +15,7 @@ class SendToastPacket {
      * @param string $body
      * @return void
      */
-    public static function Send(Player $player, string $title, string $body) : void {
+    public static function Send(Player $player, string $title, string $body): void {
         $player->getNetworkSession()->sendDataPacket(ToastRequestPacket::create($title, $body));
         SoundPacket::Send($player, 'random.toast');
     }

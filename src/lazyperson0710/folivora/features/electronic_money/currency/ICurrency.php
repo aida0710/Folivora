@@ -9,6 +9,6 @@ use pocketmine\player\Player;
 
 interface ICurrency {
 
-    public function getFunction(Player $player) : CurrencyFoundation;
+    public function getFunction(Player $player): CurrencyFoundation;
 
 }

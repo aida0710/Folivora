@@ -9,7 +9,7 @@ use pocketmine\utils\TextFormat;
 
 class SendBroadcastMessage {
 
-    public static function Send(string $message, string $prefix) : void {
+    public static function Send(string $message, string $prefix): void {
         Server::getInstance()->broadcastMessage(TextFormat::AQUA . $prefix . TextFormat::GRAY . ' >> ' . TextFormat::YELLOW . $message);
     }
 }

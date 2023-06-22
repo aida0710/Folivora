@@ -31,7 +31,7 @@ class ItemShopAPI {
     /**
      * @return void
      */
-    public function init() : void {
+    public function init(): void {
         $this->register(new ItemShopObject(VanillaBlocks::DIRT()->asItem(), 25, 1, RestrictionShop::SHOP_1, ShopCategory::CAT_NATURE_BLOCK, '土', true));
         $this->register(new ItemShopObject(VanillaBlocks::STONE()->asItem(), 25, 5, RestrictionShop::SHOP_1, ShopCategory::CAT_NATURE_BLOCK, '石', true));
         $this->register(new ItemShopObject(VanillaBlocks::COBBLESTONE()->asItem(), 25, 3, RestrictionShop::SHOP_1, ShopCategory::CAT_NATURE_BLOCK, '丸石', true));
@@ -249,7 +249,7 @@ class ItemShopAPI {
      * @param ItemShopObject $item
      * @return void
      */
-    private function register(ItemShopObject $item) : void {
+    private function register(ItemShopObject $item): void {
         $this->items[$item->getShopId()][$item->getItemCategory()][] = $item;
         $this->displayName[] = $item->getDisplayName();
         $this->itemByItemID[$item->getItem()->getId() . ':' . $item->getItem()->getMeta()] = $item;
@@ -259,14 +259,14 @@ class ItemShopAPI {
     /**
      * @return string[]
      */
-    public function getDisplayName() : array {
+    public function getDisplayName(): array {
         return $this->displayName;
     }
 
     /**
      * @return ItemShopObject[]
      */
-    public function getItems() : array {
+    public function getItems(): array {
         return $this->items;
     }
 
@@ -276,7 +276,7 @@ class ItemShopAPI {
      * @param string $displayName
      * @return ItemShopObject|false
      */
-    public function getItemByDisplayName(string $displayName) : ItemShopObject|false {
+    public function getItemByDisplayName(string $displayName): ItemShopObject|false {
         if (!isset($this->itemByDisplayName[$displayName])) {
             return false;
         }
@@ -290,7 +290,7 @@ class ItemShopAPI {
      * @param Item $item
      * @return ItemShopObject|false
      */
-    public function getItemByItemID(Item $item) : ItemShopObject|false {
+    public function getItemByItemID(Item $item): ItemShopObject|false {
         if (!isset($this->itemByItemID[$item->getId() . ':' . $item->getMeta()])) {
             return false;
         }
@@ -301,7 +301,7 @@ class ItemShopAPI {
      * @param int $shopId
      * @return ItemShopObject[]
      */
-    public function getCategory(int $shopId) : array {
+    public function getCategory(int $shopId): array {
         if (RestrictionShop::getInstance()->checkShopId($shopId)) throw new RuntimeException('存在しないショップIDが指定されました -> ' . $shopId);
         return $this->items[$shopId];
     }
@@ -311,7 +311,7 @@ class ItemShopAPI {
      * @param string $category
      * @return ItemShopObject[]
      */
-    public function getCategoryItems(int $shopId, string $category) : array {
+    public function getCategoryItems(int $shopId, string $category): array {
         if (RestrictionShop::getInstance()->checkShopId($shopId)) throw new RuntimeException('存在しないショップIDが指定されました -> ' . $shopId);
         return $this->items[$shopId][$category];
     }

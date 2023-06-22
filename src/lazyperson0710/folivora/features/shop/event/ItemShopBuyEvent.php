@@ -18,19 +18,19 @@ class ItemShopBuyEvent extends Event {
     ) {
     }
 
-    public function getPlayer() : Player {
+    public function getPlayer(): Player {
         return $this->player;
     }
 
-    public function getItem() : ItemShopObject {
+    public function getItem(): ItemShopObject {
         return $this->item;
     }
 
-    public function getCount() : int {
+    public function getCount(): int {
         return $this->count;
     }
 
-    public function getPrice() : int {
+    public function getPrice(): int {
         return $this->price;
     }
 

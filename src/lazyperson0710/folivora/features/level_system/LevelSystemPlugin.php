@@ -19,7 +19,7 @@ class LevelSystemPlugin implements IPluginBase {
      * @param Server $server
      * @return void
      */
-    public function onDisable(Server $server) : void {
+    public function onDisable(Server $server): void {
     }
 
     /**
@@ -27,7 +27,7 @@ class LevelSystemPlugin implements IPluginBase {
      * @return void
      * @throws JsonException
      */
-    public function onEnable(Server $server) : void {
+    public function onEnable(Server $server): void {
         $this->registerConfigClass();
         $this->createConfig();
         RegisterListener::register(new MiningLevelListener());
@@ -36,7 +36,7 @@ class LevelSystemPlugin implements IPluginBase {
     /**
      * @return void
      */
-    private function registerConfigClass() : void {
+    private function registerConfigClass(): void {
         Mining::getInstance()->getConfig()->registerConfigClass();
         Farming::getInstance()->getConfig()->registerConfigClass();
         Build::getInstance()->getConfig()->registerConfigClass();
@@ -46,7 +46,7 @@ class LevelSystemPlugin implements IPluginBase {
      * @return void
      * @throws JsonException
      */
-    private function createConfig() : void {
+    private function createConfig(): void {
         Mining::getInstance()->getConfig()->createConfigFile();
         Farming::getInstance()->getConfig()->createConfigFile();
         Build::getInstance()->getConfig()->createConfigFile();

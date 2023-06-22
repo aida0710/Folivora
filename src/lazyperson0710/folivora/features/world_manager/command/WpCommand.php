@@ -16,7 +16,7 @@ class WpCommand extends Command {
         parent::__construct('wp', 'ワープフォームを開きます');
     }
 
-    public function execute(CommandSender $sender, string $commandLabel, array $args) : void {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): void {
         if (!($sender instanceof Player)) {
             $sender->sendMessage('サーバー内で実行してください');
             return;

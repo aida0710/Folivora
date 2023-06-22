@@ -24,7 +24,7 @@ class PlayerTeleportTask extends Task {
     /**
      * @inheritDoc
      */
-    public function onRun() : void {
+    public function onRun(): void {
         if (!$this->player->isOnline()) {
             return;
         }

@@ -55,14 +55,14 @@ class BulkSaleForm extends CustomForm {
      * @param ItemShopObject[] $items
      * @return void
      */
-    private function getVirtualStorageCount(Player $player, array $items) : void {
+    private function getVirtualStorageCount(Player $player, array $items): void {
         if ($items === []) return;
         StackStorageAPI::$instance->getCount($player->getXuid(), $item = array_shift($items)->getItem(),
-            function ($virtualStorageItemCount) use ($player, $items, $item) : void {
+            function ($virtualStorageItemCount) use ($player, $items, $item): void {
                 $this->virtualStorageCount[$item->getVanillaName()] = $virtualStorageItemCount;
                 $this->getVirtualStorageCount($player, $items);
                 if ($items === []) $this->setToggleElements($player);
-            }, function () use ($player, $items, $item) : void {
+            }, function () use ($player, $items, $item): void {
                 $this->virtualStorageCount[$item->getVanillaName()] = 0;
                 $this->getVirtualStorageCount($player, $items);
                 if ($items === []) $this->setToggleElements($player);
@@ -70,7 +70,7 @@ class BulkSaleForm extends CustomForm {
         );
     }
 
-    private function setToggleElements(Player $player) : void {
+    private function setToggleElements(Player $player): void {
         foreach ($this->categoryItems as $item) {
             if (!$item instanceof ItemShopObject) throw new RuntimeException('ItemShopObjectではありません');
             $inventory = ItemHoldingCalculation::getHoldingCount($player, $item->getItem());
@@ -95,7 +95,11 @@ class BulkSaleForm extends CustomForm {
         }
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleClosed(Player $player): void {
+        LevelCheck::sendForm($player, new ItemSelectForm($player, $this->shopNumber, $this->category), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->shopNumber));
+    }
+
+    public function handleSubmit(Player $player): void {
         if (!$this->toggleEnable) {
             LevelCheck::sendForm($player, new ItemSelectForm($player, $this->shopNumber, $this->category), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->shopNumber));
             return;
@@ -112,10 +116,6 @@ class BulkSaleForm extends CustomForm {
         if (!$sellEnable) {
             SendMessage::Send($player, '売却を有効化されたアイテムが存在しない為何も処理されませんでした', ItemShopAPI::PREFIX, true);
         }
-    }
-
-    public function handleClosed(Player $player) : void {
-        LevelCheck::sendForm($player, new ItemSelectForm($player, $this->shopNumber, $this->category), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->shopNumber));
     }
 
 }

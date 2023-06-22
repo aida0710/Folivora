@@ -9,7 +9,7 @@ use pocketmine\Server;
 
 class SettingPlugin implements IPluginBase {
 
-    public function onDisable(Server $server) : void {
+    public function onDisable(Server $server): void {
     }
 
     /**
@@ -17,7 +17,7 @@ class SettingPlugin implements IPluginBase {
      * @return void
      * @throws JsonException
      */
-    public function onEnable(Server $server) : void {
+    public function onEnable(Server $server): void {
         try {
             Setting::getInstance()->createConfigFile();
         } catch (ConfigSaveException $exception) {

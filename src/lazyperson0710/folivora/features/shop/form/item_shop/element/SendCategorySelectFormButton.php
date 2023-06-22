@@ -22,7 +22,7 @@ class SendCategorySelectFormButton extends Button {
         parent::__construct($text, $image);
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         if ($this->shopNumber === 0) {
             LevelCheck::sendForm($player, new OtherShopSelectForm($player), $this->restrictionLevel);
             return;

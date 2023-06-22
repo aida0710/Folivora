@@ -18,11 +18,11 @@ class Major implements Listener {
 
     public array $data = [];
 
-    public function interactEvent(PlayerInteractEvent $event) : void {
+    public function interactEvent(PlayerInteractEvent $event): void {
         $this->setMajor($event);
     }
 
-    public function setMajor(PlayerInteractEvent|BlockBreakEvent $event) : void {
+    public function setMajor(PlayerInteractEvent|BlockBreakEvent $event): void {
         $player = $event->getPlayer();
         if ($player->getInventory()->getItemInHand()->getId() == 318) {
             $event->cancel();
@@ -52,14 +52,14 @@ class Major implements Listener {
         }
     }
 
-    public static function coordinateCalculation(Vector3 $start, Vector3 $end, float $percent) : Vector3 {
+    public static function coordinateCalculation(Vector3 $start, Vector3 $end, float $percent): Vector3 {
         if (0 > $percent || $percent > 1) {
             throw new InvalidArgumentException("percentage $percent should have a value of 0 to 1");
         }
         return $end->subtract($start->getFloorX(), $start->getFloorY(), $start->getFloorZ())->multiply($percent)->add($start->getFloorX(), $start->getFloorY(), $start->getFloorZ());
     }
 
-    public function breakEvent(BlockBreakEvent $event) : void {
+    public function breakEvent(BlockBreakEvent $event): void {
         $this->setMajor($event);
     }
 

@@ -37,7 +37,7 @@ class EffectBuyForm extends CustomForm {
             );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         $price = $this->time * EffectShopAPI::getInstance()->getBuy($this->effectName) + ($this->level * EffectShopAPI::getInstance()->getAmplifiedMoney($this->effectName));
         if (Money::getInstance()->getFunction($player)->getCurrency() <= $price) {
             SendMessage::Send($player, "所持金が足りない為処理が中断されました。要求価格 -> {$price}円", 'Effect', false, 'dig.chain');

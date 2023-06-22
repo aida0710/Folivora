@@ -19,7 +19,7 @@ class CurrencyFoundation {
      * @param int $money
      * @return void
      */
-    public function setCurrency(int $money) : void {
+    public function setCurrency(int $money): void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return;
         $this->configCache[$player_name] = $money;
@@ -29,7 +29,7 @@ class CurrencyFoundation {
      * @param int $money
      * @return void
      */
-    public function addCurrency(int $money) : void {
+    public function addCurrency(int $money): void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return;
         $money = $this->getCurrency() + $money;
@@ -39,7 +39,7 @@ class CurrencyFoundation {
     /**
      * @return int
      */
-    public function getCurrency() : int {
+    public function getCurrency(): int {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return 0;
         return $this->configCache[$player_name];
@@ -49,7 +49,7 @@ class CurrencyFoundation {
      * @param int $reduce
      * @return void
      */
-    public function reduceCurrency(int $reduce) : void {
+    public function reduceCurrency(int $reduce): void {
         if (!ConfigFoundation::isAccountExist($this->player, $this->configCache)) return;
         if ($reduce <= 0) return;
         $int = $this->configCache[$this->player->getName()];

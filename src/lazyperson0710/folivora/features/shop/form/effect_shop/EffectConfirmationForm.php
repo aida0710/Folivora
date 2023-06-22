@@ -48,7 +48,7 @@ class EffectConfirmationForm extends CustomForm {
             );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         if (is_numeric($this->time->getValue())) {
             $time = (int) $this->time->getValue();
         } else {

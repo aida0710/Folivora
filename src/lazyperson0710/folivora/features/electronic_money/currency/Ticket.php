@@ -28,7 +28,7 @@ class Ticket implements IConfig, ICurrency {
      * @return void
      * @throws JsonException
      */
-    public function createConfigFile() : void {
+    public function createConfigFile(): void {
         try {
             $this->config = ConfigFoundation::createConfigFile(self::PATH);
             $this->cache = $this->config->getAll();
@@ -40,7 +40,7 @@ class Ticket implements IConfig, ICurrency {
     /**
      * @return void
      */
-    public function registerConfigClass() : void {
+    public function registerConfigClass(): void {
         ConfigFoundation::registerConfigClass($this);
     }
 
@@ -48,7 +48,7 @@ class Ticket implements IConfig, ICurrency {
      * @return void
      * @throws JsonException
      */
-    public function runSave() : void {
+    public function runSave(): void {
         $this->config->setAll($this->cache);
         $this->config->save();
     }
@@ -57,13 +57,13 @@ class Ticket implements IConfig, ICurrency {
      * @param Player $player
      * @return void
      */
-    public function createAccount(Player $player) : void {
+    public function createAccount(Player $player): void {
         if (!ConfigFoundation::isAccountExist($player, $this->cache)) {
             $this->cache += [$player->getName() => self::DEFAULT_CURRENCY];
         }
     }
 
-    public function getFunction(Player $player) : CurrencyFoundation {
+    public function getFunction(Player $player): CurrencyFoundation {
         return new CurrencyFoundation($player, $this->cache);
     }
 

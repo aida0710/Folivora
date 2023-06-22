@@ -33,11 +33,11 @@ class WorldProperty {
         }
     }
 
-    public function inSafeArea(Position $pos) : bool {
+    public function inSafeArea(Position $pos): bool {
         return $this->minX < $pos->x && $pos->x < $this->maxX && $this->minZ < $pos->z && $pos->z < $this->maxZ;
     }
 
-    public function getWorldName() : string {
+    public function getWorldName(): string {
         return $this->worldName;
     }
 }

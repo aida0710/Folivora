@@ -30,7 +30,7 @@ class Setting implements IConfig {
      * @param mixed          $value
      * @return void
      */
-    public function editSettingData(Player $player, IPlayerSetting $setting, mixed $value) : void {
+    public function editSettingData(Player $player, IPlayerSetting $setting, mixed $value): void {
         $this->checkSettingData($player, $setting);
         foreach ($setting->normalValue() as $normalValue) {
             if ($normalValue === $value) {
@@ -46,7 +46,7 @@ class Setting implements IConfig {
      * @param IPlayerSetting $setting
      * @return mixed
      */
-    private function checkSettingData(Player $player, IPlayerSetting $setting) : mixed {
+    private function checkSettingData(Player $player, IPlayerSetting $setting): mixed {
         if (!ConfigFoundation::isAccountExist($player, $this->cache)) {
             $this->cache += [$player->getName()];
         }
@@ -54,7 +54,7 @@ class Setting implements IConfig {
         return $this->cache[$player->getName()][$setting->getName()];
     }
 
-    public function getSettingData(Player $player, IPlayerSetting $setting) : mixed {
+    public function getSettingData(Player $player, IPlayerSetting $setting): mixed {
         $this->checkSettingData($player, $setting);
         return $this->cache[$player->getName()][$setting->getName()];
     }
@@ -63,7 +63,7 @@ class Setting implements IConfig {
      * @return void
      * @throws JsonException
      */
-    public function createConfigFile() : void {
+    public function createConfigFile(): void {
         try {
             $this->config = ConfigFoundation::createConfigFile(self::PATH);
             $this->cache = $this->config->getAll();
@@ -75,7 +75,7 @@ class Setting implements IConfig {
     /**
      * @return void
      */
-    public function registerConfigClass() : void {
+    public function registerConfigClass(): void {
         ConfigFoundation::registerConfigClass($this);
     }
 
@@ -83,7 +83,7 @@ class Setting implements IConfig {
      * @return void
      * @throws JsonException
      */
-    public function runSave() : void {
+    public function runSave(): void {
         $this->config->setAll($this->cache);
         try {
             $this->config->save();

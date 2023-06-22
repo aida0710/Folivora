@@ -19,7 +19,7 @@ class SendFormButton extends Button {
         $this->form = $form;
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         SendForm::Send($player, ($this->form));
     }
 }

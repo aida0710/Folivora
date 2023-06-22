@@ -23,10 +23,10 @@ class IntervalTask {
      * @see check
      *
      */
-    public static function onRun(Player $player, string $intervalName, int $tick) : void {
+    public static function onRun(Player $player, string $intervalName, int $tick): void {
         self::$WaitingTaskList[$player->getName()][$intervalName] = true;
         RegisterTaskScheduler::getScheduler()->scheduleDelayedTask(new ClosureTask(
-            function () use ($player, $intervalName) : void {
+            function () use ($player, $intervalName): void {
                 self::unset($player, $intervalName);
             }
         ), $tick);
@@ -40,7 +40,7 @@ class IntervalTask {
      * @param string $intervalName
      * @return void
      */
-    public static function unset(Player $player, string $intervalName) : void {
+    public static function unset(Player $player, string $intervalName): void {
         unset(self::$WaitingTaskList[$player->getName()][$intervalName]);
     }
 
@@ -51,7 +51,7 @@ class IntervalTask {
      * @param string $intervalName
      * @return bool
      */
-    public static function check(Player $player, string $intervalName) : bool {
+    public static function check(Player $player, string $intervalName): bool {
         return isset(self::$WaitingTaskList[$player->getName()][$intervalName]);
     }
 

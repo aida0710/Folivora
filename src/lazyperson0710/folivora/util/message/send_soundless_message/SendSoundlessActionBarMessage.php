@@ -9,7 +9,7 @@ use pocketmine\utils\TextFormat;
 
 class SendSoundlessActionBarMessage {
 
-    public static function Send(Player $player, string $message, string $prefix, bool $success) : void {
+    public static function Send(Player $player, string $message, string $prefix, bool $success): void {
         if ($success === true) {
             $type = TextFormat::GREEN;
         } else {

@@ -28,7 +28,7 @@ class ItemShopCommand extends Command {
      * @param array         $args
      * @return void
      */
-    public function execute(CommandSender $sender, string $commandLabel, array $args) : void {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): void {
         if (!($sender instanceof Player)) {
             $sender->sendMessage('サーバー内で実行してください');
             return;

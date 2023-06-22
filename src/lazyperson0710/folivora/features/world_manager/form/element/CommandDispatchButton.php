@@ -23,7 +23,7 @@ class CommandDispatchButton extends Button {
         $this->permission = $permission;
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         if ($this->permission === true) {
             Server::getInstance()->dispatchCommand($player, $this->command);
         } else {

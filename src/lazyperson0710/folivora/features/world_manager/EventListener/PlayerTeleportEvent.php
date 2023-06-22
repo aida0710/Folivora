@@ -18,7 +18,7 @@ class PlayerTeleportEvent implements Listener {
     /**
      * @priority HIGH
      */
-    public function PlayerTeleportEvent(EntityTeleportEvent $event) : void {
+    public function PlayerTeleportEvent(EntityTeleportEvent $event): void {
         $player = $event->getEntity();
         if (!$player instanceof Player) return;
         if ($event->getTo()->getWorld()->getDisplayName() === $event->getFrom()->getWorld()->getDisplayName()) {

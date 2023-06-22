@@ -20,7 +20,7 @@ class EffectSelectFormButton extends Button {
         $this->effect = $effect;
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         SendForm::Send($player, (new EffectConfirmationForm($player, $this->effect)));
     }
 }

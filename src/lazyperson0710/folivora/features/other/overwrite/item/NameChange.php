@@ -23,7 +23,7 @@ class NameChange {
     public const ITEM_COMMAND_BLOCK = 137;
     public const ITEM_CHISELED_NETHER_BRICKS = -302;
 
-    public function init() : void {
+    public function init(): void {
         ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
         CreativeInventory::getInstance()->add(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
         StringToItemParser::getInstance()->register('grindstone', fn (string $input) => new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));

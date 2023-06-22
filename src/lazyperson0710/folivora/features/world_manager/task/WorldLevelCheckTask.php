@@ -11,7 +11,7 @@ use pocketmine\Server;
 
 class WorldLevelCheckTask extends Task {
 
-    public function onRun() : void {
+    public function onRun(): void {
         foreach (Server::getInstance()->getOnlinePlayers() as $player) {
             $worldApi = WorldManagementAPI::getInstance();
             //note miningAPI is not a thing

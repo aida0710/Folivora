@@ -10,15 +10,15 @@ class JoinItemsSetting implements IPlayerSetting {
 
     public const NAME = 'JoinItemsSetting';
 
-    public function getDefaultValue() : bool {
+    public function getDefaultValue(): bool {
         return true;
     }
 
-    public function getName() : string {
+    public function getName(): string {
         return self::NAME;
     }
 
-    public function normalValue() : array {
+    public function normalValue(): array {
         return [
             true,
             false,

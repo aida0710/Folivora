@@ -40,14 +40,14 @@ class RestrictionShop {
         self::SHOP_7,
     ];
 
-    public function checkShopId(int $shopId) : bool {
+    public function checkShopId(int $shopId): bool {
         foreach (self::ALL_SHOP as $shop) {
             if ($shop !== $shopId) return false;
         }
         return true;
     }
 
-    public function getRestrictionByShopNumber(int $shopNumber) : int {
+    public function getRestrictionByShopNumber(int $shopNumber): int {
         return match ($shopNumber) {
             self::OTHER_SHOP => self::RESTRICTION_LEVEL_OTHER_SHOP,
             self::SHOP_1 => self::RESTRICTION_LEVEL_SHOP_1,
@@ -61,7 +61,7 @@ class RestrictionShop {
         };
     }
 
-    public function getShopNumberByRestriction(int $restrictionLevel) : int {
+    public function getShopNumberByRestriction(int $restrictionLevel): int {
         return match ($restrictionLevel) {
             self::RESTRICTION_LEVEL_OTHER_SHOP => self::OTHER_SHOP,
             self::RESTRICTION_LEVEL_SHOP_1 => self::SHOP_1,

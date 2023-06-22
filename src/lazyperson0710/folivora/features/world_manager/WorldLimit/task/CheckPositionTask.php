@@ -30,7 +30,7 @@ class CheckPositionTask extends Task {
     /**
      * @inheritDoc
      */
-    public function onRun() : void {
+    public function onRun(): void {
         foreach ($this->properties as $property) {
             $world = Server::getInstance()->getWorldManager()->getWorldByName($property->getWorldName());
             if (in_array($world->getFolderName(), WorldCategory::Nature, true) || in_array($world->getFolderName(), WorldCategory::MiningWorld, true) || in_array($world->getFolderName(), WorldCategory::Nether, true) || in_array($world->getFolderName(), WorldCategory::End, true)) {

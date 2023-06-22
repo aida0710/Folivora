@@ -30,13 +30,13 @@ class ItemSellForm extends CustomForm {
         $this->virtualStorageEnable = new Toggle('仮想ストレージを優先にして売却する', false);
         $this->setTitle(FormText::TITLE);
         StackStorageAPI::$instance->getCount($player->getXuid(), $item->getItem(),
-            function ($virtualStorageItemCount) use ($player, $item) : void {
+            function ($virtualStorageItemCount) use ($player, $item): void {
                 $this->addElements(
                     new Label(SelectTypeForm::getLabel($player, $item, $virtualStorageItemCount)),
                     $this->count,
                     $this->virtualStorageEnable,
                 );
-            }, function () use ($player, $item) : void {
+            }, function () use ($player, $item): void {
                 $this->addElements(
                     new Label(SelectTypeForm::getLabel($player, $item, 0)),
                     $this->count,
@@ -46,7 +46,11 @@ class ItemSellForm extends CustomForm {
         );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleClosed(Player $player): void {
+        LevelCheck::sendForm($player, new ItemSelectForm($player, $this->item->getShopId(), $this->item->getItemCategory()), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->item->getShopId()));
+    }
+
+    public function handleSubmit(Player $player): void {
         $sellCount = $this->count->getValue();
         if (!is_numeric($sellCount)) {
             SendMessage::Send($player, '1以上の整数を入力してください', ItemShopAPI::PREFIX, false, 'dig.chain');
@@ -60,16 +64,12 @@ class ItemSellForm extends CustomForm {
         $item = $this->item;
         $virtualStorageEnable = $this->virtualStorageEnable->getValue();
         StackStorageAPI::$instance->getCount($player->getXuid(), $this->item->getItem(),
-            function ($count) use ($player, $sellCount, $item, $virtualStorageEnable) : void {
+            function ($count) use ($player, $sellCount, $item, $virtualStorageEnable): void {
                 ItemSell::getInstance()->transaction($player, $sellCount, $item, $count, $virtualStorageEnable);
-            }, function () use ($player, $sellCount, $item, $virtualStorageEnable) : void {
+            }, function () use ($player, $sellCount, $item, $virtualStorageEnable): void {
                 ItemSell::getInstance()->transaction($player, $sellCount, $item, 0, $virtualStorageEnable);
             },
         );
-    }
-
-    public function handleClosed(Player $player) : void {
-        LevelCheck::sendForm($player, new ItemSelectForm($player, $this->item->getShopId(), $this->item->getItemCategory()), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->item->getShopId()));
     }
 
 }

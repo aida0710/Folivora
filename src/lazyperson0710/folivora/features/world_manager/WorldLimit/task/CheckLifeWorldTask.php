@@ -25,7 +25,7 @@ class CheckLifeWorldTask extends Task {
     /**
      * @inheritDoc
      */
-    public function onRun() : void {
+    public function onRun(): void {
         foreach ($this->properties as $property) {
             $world = Server::getInstance()->getWorldManager()->getWorldByName($property->getWorldName());
             foreach ($world->getPlayers() as $player) {

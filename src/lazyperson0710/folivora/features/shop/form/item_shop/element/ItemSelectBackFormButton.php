@@ -23,7 +23,7 @@ class ItemSelectBackFormButton extends Button {
         parent::__construct($text, $image);
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         SoundPacket::Send($player, 'mob.shulker.close');
         LevelCheck::sendForm($player, new ItemSelectForm($player, $this->item->getShopId(), $this->item->getItemCategory()), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->item->getShopId()));
     }

@@ -50,7 +50,7 @@ class InvSellForm extends SimpleForm {
      * @param Player $player
      * @return Item[]
      */
-    private function getSellItems(Player $player) : array {
+    private function getSellItems(Player $player): array {
         $sellItems = [];
         for ($i = 0, $size = $player->getInventory()->getSize(); $i < $size; ++$i) {
             $item = clone $player->getInventory()->getItem($i);
@@ -65,7 +65,7 @@ class InvSellForm extends SimpleForm {
         return $sellItems;
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         if ($this->sellItems === []) {
             LevelCheck::sendForm($player, new OtherShopSelectForm($player), RestrictionShop::RESTRICTION_LEVEL_OTHER_SHOP);
             return;

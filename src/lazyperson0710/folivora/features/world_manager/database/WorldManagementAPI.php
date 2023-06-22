@@ -19,7 +19,7 @@ class WorldManagementAPI {
     protected array $z1 = [];
     protected array $z2 = [];
 
-    public function init() : void {
+    public function init(): void {
         #public
         $this->register('lobby', 255, 0, 0, 320, 280, 230, 80);
         $this->register('tos', 255, 0, 0, 260, 260, 200, 230);
@@ -56,7 +56,7 @@ class WorldManagementAPI {
         $this->register('八街市-f', 255, 80, 90, 822, 321, 257, -334);
     }
 
-    public function register(string $worldName, int $heightLimit, int $miningLevelLimit, ?int $flyLimit = 300, ?int $x1 = 15000, ?int $z1 = 15000, ?int $x2 = -15000, ?int $z2 = -15000) : void {
+    public function register(string $worldName, int $heightLimit, int $miningLevelLimit, ?int $flyLimit = 300, ?int $x1 = 15000, ?int $z1 = 15000, ?int $x2 = -15000, ?int $z2 = -15000): void {
         if (Server::getInstance()->getWorldManager()->getWorldByName($worldName) === null) {
             Server::getInstance()->getLogger()->error('WorldManagementAPI: World ' . $worldName . ' not found.');
         }
@@ -69,49 +69,49 @@ class WorldManagementAPI {
         $this->z2[$worldName] = $z2;
     }
 
-    public function getHeightLimit(string $worldFolderName) : int {
+    public function getHeightLimit(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->heightLimit)) {
             return $this->heightLimit[$worldFolderName];
         }
         return 255;
     }
 
-    public function getMiningLevelLimit(string $worldFolderName) : int {
+    public function getMiningLevelLimit(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->miningLevelLimit)) {
             return $this->miningLevelLimit[$worldFolderName];
         }
         return 0;
     }
 
-    public function getFlyLimit(string $worldFolderName) : int {
+    public function getFlyLimit(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->flyLimit)) {
             return $this->flyLimit[$worldFolderName];
         }
         return 300;
     }
 
-    public function getWorldLimitX_1(string $worldFolderName) : int {
+    public function getWorldLimitX_1(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->x1)) {
             return $this->x1[$worldFolderName];
         }
         return 15000;
     }
 
-    public function getWorldLimitX_2(string $worldFolderName) : int {
+    public function getWorldLimitX_2(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->x2)) {
             return $this->x2[$worldFolderName];
         }
         return -15000;
     }
 
-    public function getWorldLimitZ_1(string $worldFolderName) : int {
+    public function getWorldLimitZ_1(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->z1)) {
             return $this->z1[$worldFolderName];
         }
         return 15000;
     }
 
-    public function getWorldLimitZ_2(string $worldFolderName) : int {
+    public function getWorldLimitZ_2(string $worldFolderName): int {
         if (array_key_exists($worldFolderName, $this->z2)) {
             return $this->z2[$worldFolderName];
         }

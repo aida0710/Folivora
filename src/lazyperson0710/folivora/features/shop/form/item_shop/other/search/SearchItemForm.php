@@ -30,7 +30,7 @@ class SearchItemForm extends CustomForm {
             );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         $items = [];
         if (!preg_match('/[ぁ-ん]+|[ァ-ヴー]+|[一-龠]/u', $this->itemName->getValue())) {
             SendForm::Send($player, (new SearchItemForm(

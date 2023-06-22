@@ -20,27 +20,27 @@ class EffectShopBuyEvent extends Event {
     ) {
     }
 
-    public function getPlayer() : Player {
+    public function getPlayer(): Player {
         return $this->player;
     }
 
-    public function getEffect() : Effect {
+    public function getEffect(): Effect {
         return $this->effect;
     }
 
-    public function getEffectName() : string {
+    public function getEffectName(): string {
         return $this->effectName;
     }
 
-    public function getLevel() : int {
+    public function getLevel(): int {
         return $this->level;
     }
 
-    public function getTime() : int {
+    public function getTime(): int {
         return $this->time;
     }
 
-    public function getPrice() : int {
+    public function getPrice(): int {
         return $this->price;
     }
 

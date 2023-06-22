@@ -21,15 +21,15 @@ class ItemShopSellEvent extends Event {
         }
     }
 
-    public function getPlayer() : Player {
+    public function getPlayer(): Player {
         return $this->player;
     }
 
-    public function getItem() : ItemShopObject {
+    public function getItem(): ItemShopObject {
         return $this->item;
     }
 
-    public function getType() : string {
+    public function getType(): string {
         return $this->type;
     }
 

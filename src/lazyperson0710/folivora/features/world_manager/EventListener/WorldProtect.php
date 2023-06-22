@@ -19,7 +19,7 @@ class WorldProtect implements Listener {
      * @param BlockPlaceEvent $event
      * @return void
      */
-    public function onPlace(BlockPlaceEvent $event) : void {
+    public function onPlace(BlockPlaceEvent $event): void {
         if ($event->isCancelled()) {
             return;
         }
@@ -38,7 +38,7 @@ class WorldProtect implements Listener {
      * @param BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event
      * @return void
      */
-    public function PlayerAction(BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event) : void {
+    public function PlayerAction(BlockBreakEvent|BlockPlaceEvent|PlayerInteractEvent $event): void {
         if (!Server::getInstance()->isOp($event->getPlayer()->getName())) {
             $worldName = $event->getPlayer()->getPosition()->getWorld()->getFolderName();
             if (in_array($worldName, WorldCategory::PublicWorld, true) || in_array($worldName, WorldCategory::PublicEventWorld, true) || in_array($worldName, WorldCategory::PVP, true)) {
@@ -54,7 +54,7 @@ class WorldProtect implements Listener {
      * @param BlockBreakEvent $event
      * @return void
      */
-    public function onBreak(BlockBreakEvent $event) : void {
+    public function onBreak(BlockBreakEvent $event): void {
         if ($event->isCancelled()) {
             return;
         }
@@ -65,7 +65,7 @@ class WorldProtect implements Listener {
      * @param PlayerInteractEvent $event
      * @return void
      */
-    public function onInteract(PlayerInteractEvent $event) : void {
+    public function onInteract(PlayerInteractEvent $event): void {
         if ($event->isCancelled()) {
             return;
         }

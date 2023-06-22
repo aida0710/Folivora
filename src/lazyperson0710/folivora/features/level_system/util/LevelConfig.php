@@ -35,7 +35,7 @@ class LevelConfig implements IConfig {
      * @see LevelConfig::registerConfigClass()
      *
      */
-    public function createConfigFile() : void {
+    public function createConfigFile(): void {
         if (isset(self::$config[$this->Level->value])) return;
         try {
             self::$config[$this->Level->value] = ConfigFoundation::createConfigFile($this->path);
@@ -50,7 +50,7 @@ class LevelConfig implements IConfig {
      *
      * @return void
      */
-    public function registerConfigClass() : void {
+    public function registerConfigClass(): void {
         ConfigFoundation::registerConfigClass($this);
     }
 
@@ -58,17 +58,17 @@ class LevelConfig implements IConfig {
      * @return void
      * @throws JsonException
      */
-    public function runSave() : void {
+    public function runSave(): void {
         var_dump($this->Level->value);
         self::$config[$this->Level->value]->setAll(self::$cache[$this->Level->value]);
         self::$config[$this->Level->value]->save();
     }
 
-    public function getFunction(Player $player) : LevelFoundation {
+    public function getFunction(Player $player): LevelFoundation {
         return new LevelFoundation($player, self::$cache[$this->Level->value], $this->Level);
     }
 
-    public function getAllPlayerData() : array {
+    public function getAllPlayerData(): array {
         return self::$cache[$this->Level->value];
     }
 

@@ -18,7 +18,7 @@ class RegisterListener {
      * @param Plugin $plugin
      * @return void
      */
-    public static function setPlugin(Plugin $plugin) : void {
+    public static function setPlugin(Plugin $plugin): void {
         self::$plugin = $plugin;
     }
 
@@ -30,7 +30,7 @@ class RegisterListener {
      * @see RegisterFeatures::enableFeatures()
      *
      */
-    public static function register(Listener $listener) : void {
+    public static function register(Listener $listener): void {
         $registerListener = new RegisterListener();
         $plugin = $registerListener->getPlugin();
         $plugin->getServer()->getPluginManager()->registerEvents($listener, $plugin);
@@ -41,7 +41,7 @@ class RegisterListener {
      *
      * @return Plugin
      */
-    private function getPlugin() : Plugin {
+    private function getPlugin(): Plugin {
         return self::$plugin;
     }
 

@@ -11,7 +11,7 @@ use pocketmine\world\particle\DustParticle;
 
 class HitEntityDelete implements Listener {
 
-    public function onHit(ProjectileHitEvent $event) : void {
+    public function onHit(ProjectileHitEvent $event): void {
         for ($i = 0; $i <= 0.6; $i += 0.2) {
             $event->getEntity()->getPosition()->getWorld()->addParticle($event->getEntity()->getPosition()->add(0, $i, 0), new DustParticle(new Color(255, 255, 255)));
         }

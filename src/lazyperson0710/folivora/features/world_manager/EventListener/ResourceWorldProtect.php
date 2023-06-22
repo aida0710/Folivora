@@ -19,7 +19,7 @@ class ResourceWorldProtect implements Listener {
      * @return void
      * @priority Low
      */
-    public function onBreak(BlockBreakEvent $event) : void {
+    public function onBreak(BlockBreakEvent $event): void {
         if ($event->getBlock()->getPosition()->getWorld()->getFolderName() === 'resource') {
             $blocks = [
                 VanillaBlocks::STONE()->getName(),
@@ -57,7 +57,7 @@ class ResourceWorldProtect implements Listener {
      * @return void
      * @priority Low
      */
-    public function onPlace(BlockPlaceEvent $event) : void {
+    public function onPlace(BlockPlaceEvent $event): void {
         $heightLimit = WorldManagementAPI::getInstance()->getHeightLimit('resource');
         if ($event->getBlock()->getPosition()->getWorld()->getFolderName() === 'resource') {
             $blocks = [

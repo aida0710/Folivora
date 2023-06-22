@@ -19,7 +19,7 @@ class RegisterFeatures {
      * @param Server $server
      * @return void
      */
-    public static function enableFeatures(Server $server) : void {
+    public static function enableFeatures(Server $server): void {
         $registerFeatures = new RegisterFeatures();
         //$registerFeatures->setFeatures(new Debug());
         //$registerFeatures->setFeatures(new ElectronicMoneyPlugin());
@@ -37,7 +37,7 @@ class RegisterFeatures {
      * @param IPluginBase $pluginBase
      * @return void
      */
-    private function setFeatures(IPluginBase $pluginBase) : void {
+    private function setFeatures(IPluginBase $pluginBase): void {
         $this->features[] = $pluginBase;
     }
 
@@ -46,7 +46,7 @@ class RegisterFeatures {
      *
      * @return IPluginBase[]
      */
-    public function getFeatures() : array {
+    public function getFeatures(): array {
         return $this->features;
     }
 
@@ -58,7 +58,7 @@ class RegisterFeatures {
      * @see $features
      *
      */
-    public static function disableFeatures(Server $server) : void {
+    public static function disableFeatures(Server $server): void {
         $registerFeatures = new RegisterFeatures();
         foreach ($registerFeatures->getFeatures() as $pluginBase) {
             $pluginBase->onDisable($server);

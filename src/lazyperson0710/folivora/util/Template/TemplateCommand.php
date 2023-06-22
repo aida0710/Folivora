@@ -16,7 +16,7 @@ class TemplateCommand extends Command {
         parent::__construct('template', 'Template');
     }
 
-    public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if (!$sender instanceof Player) {
             Server::getInstance()->getLogger()->warning(CommandFoundation::NON_PLAYER);
             return false;

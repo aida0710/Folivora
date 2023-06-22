@@ -17,11 +17,11 @@ class LEvent implements Listener {
      * @param PlayerJoinEvent $event
      * @return void
      */
-    public function onJoin(PlayerJoinEvent $event) : void {
+    public function onJoin(PlayerJoinEvent $event): void {
         var_dump(Setting::getInstance()->getSettingData($event->getPlayer(), new JoinItemsSetting()));
     }
 
-    public function onBreak(BlockBreakEvent $event) : void {
+    public function onBreak(BlockBreakEvent $event): void {
         Setting::getInstance()->editSettingData($event->getPlayer(), new JoinItemsSetting(), false);
         var_dump(Setting::getInstance()->getSettingData($event->getPlayer(), new JoinItemsSetting()));
     }

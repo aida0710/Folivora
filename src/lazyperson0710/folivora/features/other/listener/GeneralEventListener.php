@@ -10,7 +10,7 @@ use pocketmine\network\mcpe\raklib\RakLibInterface;
 
 class GeneralEventListener implements Listener {
 
-    public function NetworkInterfaceRegister(NetworkInterfaceRegisterEvent $event) : void {
+    public function NetworkInterfaceRegister(NetworkInterfaceRegisterEvent $event): void {
         $rakNetInterface = $event->getInterface();
         if (!$rakNetInterface instanceof RakLibInterface) {
             return;

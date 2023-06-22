@@ -12,7 +12,7 @@ use pocketmine\event\Listener;
 
 class BlockBreakSound implements Listener {
 
-    public function onBreak(BlockBreakEvent $event) : void {
+    public function onBreak(BlockBreakEvent $event): void {
         if (PlayerSettingPool::getInstance()->getSettingNonNull($event->getPlayer())->getSetting(DestructionSoundSetting::getName())?->getValue() === true) {
             $volume = mt_rand(1, 2);
             $pitch = mt_rand(5, 10);

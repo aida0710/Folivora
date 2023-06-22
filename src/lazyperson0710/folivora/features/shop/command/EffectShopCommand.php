@@ -16,7 +16,7 @@ class EffectShopCommand extends Command {
         parent::__construct('ef', 'エフェクトショップを開くことができます');
     }
 
-    public function execute(CommandSender $sender, string $commandLabel, array $args) : void {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): void {
         if (!($sender instanceof Player)) {
             $sender->sendMessage('サーバー内で実行してください');
             return;

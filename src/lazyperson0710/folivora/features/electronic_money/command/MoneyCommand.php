@@ -18,7 +18,7 @@ class MoneyCommand extends Command {
     }
 
     //todo 未実装
-    public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if (!$sender instanceof Player) {
             Server::getInstance()->getLogger()->warning(CommandFoundation::NON_PLAYER);
             return false;
@@ -28,6 +28,7 @@ class MoneyCommand extends Command {
             'get' => $sender->sendMessage('send'),
             'add' => $sender->sendMessage('add'),
             'reduce' => $sender->sendMessage('remove'),
+            //note 未完成
             default => SendForm::Send($sender,),
         };
         return true;

@@ -10,7 +10,7 @@ use pocketmine\utils\TextFormat;
 
 class SendTip {
 
-    public static function Send(Player $player, string $message, string $prefix, bool $success, ?string $sound = null) : void {
+    public static function Send(Player $player, string $message, string $prefix, bool $success, ?string $sound = null): void {
         if ($success === true) {
             if ($sound === null) {
                 $sound = 'note.harp';

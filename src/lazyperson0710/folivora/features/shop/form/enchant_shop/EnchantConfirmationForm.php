@@ -40,7 +40,7 @@ class EnchantConfirmationForm extends CustomForm {
             );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         $level = (int) $this->level->getValue();
         SendForm::Send($player, (new EnchantBuyForm($player, $level, $this->enchantment, $this->enchantName)));
     }

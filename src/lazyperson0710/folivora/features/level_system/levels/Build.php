@@ -23,35 +23,35 @@ class Build implements ILevel {
     /**
      * @return LevelConfig
      */
-    public function getConfig() : LevelConfig {
+    public function getConfig(): LevelConfig {
         return new LevelConfig(self::LEVEL, self::PATH);
     }
 
     /**
-     * @return string
-     */
-    public function getName() : string {
-        return self::LEVEL->value;
-    }
-
-    /**
      * @return int
      */
-    public function getDefaultLevel() : int {
-        return self::DEFAULT_LEVEL;
-    }
-
-    /**
-     * @return int
-     */
-    public function getDefaultExp() : int {
+    public function getDefaultExp(): int {
         return self::DEFAULT_EXP;
     }
 
     /**
      * @return int
      */
-    public function getDefaultExpToNextLevel() : int {
+    public function getDefaultExpToNextLevel(): int {
         return self::DEFAULT_LEVEL_UP_EXP;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDefaultLevel(): int {
+        return self::DEFAULT_LEVEL;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string {
+        return self::LEVEL->value;
     }
 }

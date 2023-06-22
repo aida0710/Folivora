@@ -9,7 +9,7 @@ use pocketmine\player\Player;
 
 class ItemHoldingCalculation {
 
-    public static function getHoldingCount(Player $player, Item $targetItem) : int {
+    public static function getHoldingCount(Player $player, Item $targetItem): int {
         $inventory = 0;
         for ($i = 0; $i <= 35; $i++) {
             $item = $player->getInventory()->getItem($i);

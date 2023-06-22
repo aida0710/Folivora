@@ -21,7 +21,7 @@ class SendMenuFormButton extends Button {
         parent::__construct($text, $image);
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         LevelCheck::sendForm($player, $this->form, $this->restrictionLevel);
     }
 }

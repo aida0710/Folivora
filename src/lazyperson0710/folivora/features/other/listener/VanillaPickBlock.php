@@ -12,7 +12,7 @@ class VanillaPickBlock implements Listener {
     /**
      * @priority LOWEST
      */
-    public function onPlayerPickBlock(PlayerBlockPickEvent $event) : void {
+    public function onPlayerPickBlock(PlayerBlockPickEvent $event): void {
         $event->cancel();
         $player = $event->getPlayer();
         if ($player->isSpectator()) {

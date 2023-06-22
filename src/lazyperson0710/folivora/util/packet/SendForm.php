@@ -18,7 +18,7 @@ class SendForm {
      * @param Form   $form
      * @return void
      */
-    public static function Send(Player $player, Form $form) : void {
+    public static function Send(Player $player, Form $form): void {
         if (IntervalTask::check($player, 'SendForm')) {
             SendSoundlessTip::Send($player, '0.3秒以内連続でFormを送信することは出来ません', 'SendForm', true);
             return;

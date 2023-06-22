@@ -37,21 +37,21 @@ class DefaultValue {
     /**
      * @return int
      */
-    public function getDefaultLevel() : int {
+    public function getDefaultLevel(): int {
         return $this->defaultLevel;
     }
 
     /**
      * @return int
      */
-    public function getDefaultExp() : int {
+    public function getDefaultExp(): int {
         return $this->defaultExp;
     }
 
     /**
      * @return int
      */
-    public function getDefaultExpToNextLevel() : int {
+    public function getDefaultExpToNextLevel(): int {
         return $this->defaultExpToNextLevel;
     }
 }

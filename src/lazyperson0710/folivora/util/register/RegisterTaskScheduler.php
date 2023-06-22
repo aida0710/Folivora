@@ -16,7 +16,7 @@ class RegisterTaskScheduler {
      * @param TaskScheduler $scheduler
      * @return void
      */
-    public static function init(TaskScheduler $scheduler) : void {
+    public static function init(TaskScheduler $scheduler): void {
         self::$scheduler = $scheduler;
     }
 
@@ -26,7 +26,7 @@ class RegisterTaskScheduler {
      *
      * @return TaskScheduler
      */
-    public static function getScheduler() : TaskScheduler {
+    public static function getScheduler(): TaskScheduler {
         return self::$scheduler;
     }
 

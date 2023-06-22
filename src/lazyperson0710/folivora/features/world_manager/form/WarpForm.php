@@ -97,7 +97,7 @@ class WarpForm extends SimpleForm {
             );
     }
 
-    private function addButton(Player $player, World $world, string $text, string $command, bool $permission, ?ButtonImage $buttonImage = null) : CommandDispatchButton {
+    private function addButton(Player $player, World $world, string $text, string $command, bool $permission, ?ButtonImage $buttonImage = null): CommandDispatchButton {
         $worldRequestLevel = WorldManagementAPI::getInstance()->getMiningLevelLimit($world->getFolderName());
         if ($permission === true) {
             if (is_null($buttonImage)) $buttonImage = new ButtonImage(ButtonImage::TYPE_PATH, 'textures/ui/worldsIcon.png');
@@ -115,7 +115,7 @@ class WarpForm extends SimpleForm {
         return new CommandDispatchButton($text, $command, $permission, $buttonImage);
     }
 
-    public function checkLoadWorld(string $worldName) : World {
+    public function checkLoadWorld(string $worldName): World {
         if (Server::getInstance()->getWorldManager()->getWorldByName($worldName) === null) {
             return Server::getInstance()->getWorldManager()->getWorldByName('lobby');
         }

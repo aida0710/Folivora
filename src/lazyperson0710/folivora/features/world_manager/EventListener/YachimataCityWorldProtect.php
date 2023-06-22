@@ -20,7 +20,7 @@ class YachimataCityWorldProtect implements Listener {
      * @return void
      * @priority Low
      */
-    public function onBreak(BlockBreakEvent $event) : void {
+    public function onBreak(BlockBreakEvent $event): void {
         if (in_array($event->getPlayer()->getPosition()->getWorld()->getFolderName(), WorldCategory::UniqueAgricultureWorld, true)) {
             $blocks = [
                 VanillaBlocks::WHEAT()->getId(),
@@ -40,7 +40,7 @@ class YachimataCityWorldProtect implements Listener {
      * @return void
      * @priority Low
      */
-    public function onPlace(BlockPlaceEvent $event) : void {
+    public function onPlace(BlockPlaceEvent $event): void {
         if (in_array($event->getPlayer()->getPosition()->getWorld()->getFolderName(), WorldCategory::UniqueAgricultureWorld, true)) {
             $items = [
                 VanillaItems::WHEAT_SEEDS()->getId(),
@@ -59,7 +59,7 @@ class YachimataCityWorldProtect implements Listener {
      * @param PlayerInteractEvent $event
      * @return void
      */
-    public function onInteract(PlayerInteractEvent $event) : void {
+    public function onInteract(PlayerInteractEvent $event): void {
         if (in_array($event->getBlock()->getPosition()->getWorld()->getFolderName(), WorldCategory::UniqueAgricultureWorld, true)) {
             $items = [
                 VanillaItems::WHEAT_SEEDS()->getId(),

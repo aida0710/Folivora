@@ -22,7 +22,7 @@ class CategoryBackFormButton extends Button {
         parent::__construct($text, $image);
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         SoundPacket::Send($player, 'mob.shulker.close');
         LevelCheck::sendForm($player, (new CategorySelectForm($this->shopNumber)), $this->restrictionLevel);
     }

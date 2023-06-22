@@ -32,15 +32,15 @@ class SelectTypeForm extends SimpleForm {
                 new ItemSelectBackFormButton('カテゴリアイテム選択メニューに戻る', $item),
             );
         StackStorageAPI::$instance->getCount($player->getXuid(), $item->getItem(),
-            function ($virtualStorageItemCount) use ($player, $item) : void {
+            function ($virtualStorageItemCount) use ($player, $item): void {
                 $this->setText(self::getLabel($player, $item, $virtualStorageItemCount));
-            }, function () use ($player, $item) : void {
+            }, function () use ($player, $item): void {
                 $this->setText(self::getLabel($player, $item, 0));
             },
         );
     }
 
-    public static function getLabel(Player $player, ItemShopObject $item, int $virtualStorageItemCount) : string {
+    public static function getLabel(Player $player, ItemShopObject $item, int $virtualStorageItemCount): string {
         $inventoryItemCount = ItemHoldingCalculation::getHoldingCount($player, $item->getItem());
         $notWorkingItem = null;
         if (!$item->isWorkingItem()) $notWorkingItem = PHP_EOL . TextFormat::RED . '注意 : このアイテムはバニラの挙動を示さず設置のみ可能です。';
@@ -56,7 +56,7 @@ class SelectTypeForm extends SimpleForm {
             $notWorkingItem;
     }
 
-    public function handleClosed(Player $player) : void {
+    public function handleClosed(Player $player): void {
         LevelCheck::sendForm($player, new ItemSelectForm($player, $this->item->getShopId(), $this->item->getItemCategory()), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->item->getShopId()));
     }
 

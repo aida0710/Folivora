@@ -24,7 +24,7 @@ class PlayerDamageEvent implements Listener {
     /**
      * @priority LOW
      */
-    public function onDamage(EntityDamageEvent $event) : void {
+    public function onDamage(EntityDamageEvent $event): void {
         $entity = $event->getEntity();
         if (!$entity instanceof Player) {
             return;
@@ -61,23 +61,23 @@ class PlayerDamageEvent implements Listener {
         }
     }
 
-    public function unset(Player $player) : void {
+    public function unset(Player $player): void {
         unset(self::$damageFlags[$player->getName()]);
     }
 
-    public function worldTeleport(EntityTeleportEvent $event) : void {
+    public function worldTeleport(EntityTeleportEvent $event): void {
         $player = $event->getEntity();
         if ($player instanceof Player) {
             self::$damageFlags[$player->getName()] = true;
             if (in_array($event->getTo()->getWorld()->getFolderName(), WorldCategory::MiningWorld, true)) {
                 RegisterTaskScheduler::getScheduler()->scheduleDelayedTask(new ClosureTask(
-                    function () use ($player) : void {
+                    function () use ($player): void {
                         $this->unset($player);
                     }
                 ), 20 * 25);
             } else {
                 RegisterTaskScheduler::getScheduler()->scheduleDelayedTask(new ClosureTask(
-                    function () use ($player) : void {
+                    function () use ($player): void {
                         $this->unset($player);
                     }
                 ), 20 * 8);

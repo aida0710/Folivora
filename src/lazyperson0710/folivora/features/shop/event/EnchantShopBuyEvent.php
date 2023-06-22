@@ -19,23 +19,23 @@ class EnchantShopBuyEvent extends Event {
     ) {
     }
 
-    public function getPlayer() : Player {
+    public function getPlayer(): Player {
         return $this->player;
     }
 
-    public function getEnchant() : Enchantment {
+    public function getEnchant(): Enchantment {
         return $this->enchant;
     }
 
-    public function getEnchantName() : string {
+    public function getEnchantName(): string {
         return $this->enchantName;
     }
 
-    public function getLevel() : int {
+    public function getLevel(): int {
         return $this->level;
     }
 
-    public function getPrice() : int {
+    public function getPrice(): int {
         return $this->price;
     }
 

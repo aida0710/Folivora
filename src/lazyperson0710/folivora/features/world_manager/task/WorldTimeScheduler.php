@@ -9,7 +9,7 @@ use pocketmine\Server;
 
 class WorldTimeScheduler extends Task {
 
-    public function onRun() : void {
+    public function onRun(): void {
         foreach (Server::getInstance()->getWorldManager()->getWorlds() as $world) {
             switch ($world->getFolderName()) {
                 case 'lobby':

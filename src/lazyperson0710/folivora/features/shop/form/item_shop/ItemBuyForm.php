@@ -31,13 +31,13 @@ class ItemBuyForm extends CustomForm {
         $this->item = $item;
         $this->setTitle(FormText::TITLE);
         StackStorageAPI::$instance->getCount($player->getXuid(), $item->getItem(),
-            function ($virtualStorageItemCount) use ($player, $item) : void {
+            function ($virtualStorageItemCount) use ($player, $item): void {
                 $this->addElements(
                     new Label(SelectTypeForm::getLabel($player, $item, $virtualStorageItemCount)),
                     $this->count,
                     $this->onVirtualStorage,
                 );
-            }, function () use ($player, $item) : void {
+            }, function () use ($player, $item): void {
                 $this->addElements(
                     new Label(SelectTypeForm::getLabel($player, $item, 0)),
                     $this->count,
@@ -47,7 +47,11 @@ class ItemBuyForm extends CustomForm {
         );
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleClosed(Player $player): void {
+        LevelCheck::sendForm($player, new ItemSelectForm($player, $this->item->getShopId(), $this->item->getItemCategory()), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->item->getShopId()));
+    }
+
+    public function handleSubmit(Player $player): void {
         $count = $this->count->getValue();
         $money = Money::getInstance()->getFunction($player);
         if (!is_numeric($count)) {
@@ -85,9 +89,5 @@ class ItemBuyForm extends CustomForm {
         SendMessage::Send($player, $this->item->getDisplayName() . 'を' . number_format($count) . '個購入しました。使用金額 : ' . number_format($totalPrice) . '円', ItemShopAPI::PREFIX, true, 'break.amethyst_block');
         $event = new ItemShopBuyEvent($player, $this->item, $count, $totalPrice);
         $event->call();
-    }
-
-    public function handleClosed(Player $player) : void {
-        LevelCheck::sendForm($player, new ItemSelectForm($player, $this->item->getShopId(), $this->item->getItemCategory()), RestrictionShop::getInstance()->getRestrictionByShopNumber($this->item->getShopId()));
     }
 }

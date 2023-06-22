@@ -9,7 +9,7 @@ use pocketmine\block\VanillaBlocks;
 
 class FarmlandBlock extends Farmland {
 
-    public function onRandomTick() : void {
+    public function onRandomTick(): void {
         if ($this->getPosition()->getWorld()->getFolderName() === '八街市-f') {
             $this->wetness = 7;
             $this->position->getWorld()->setBlock($this->position, $this, false);

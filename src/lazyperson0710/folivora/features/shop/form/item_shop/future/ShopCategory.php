@@ -30,7 +30,7 @@ class ShopCategory {
     public const CAT_VEGETATION = 'Vegetation';
     public const CAT_RED_STONE = 'RedStone';
 
-    public function getCategoryByDisplayName(string $categoryName) : string {
+    public function getCategoryByDisplayName(string $categoryName): string {
         return match ($categoryName) {
             self::CAT_CURRENCY => '換金アイテム',
             self::CAT_FOODS => '食べ物',

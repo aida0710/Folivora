@@ -26,7 +26,7 @@ class EnchantSelectFormButton extends Button {
         $this->enchantName = $enchantName;
     }
 
-    public function handleSubmit(Player $player) : void {
+    public function handleSubmit(Player $player): void {
         if (MiningLevelAPI::getInstance()->getLevel($player) >= EnchantShopAPI::getInstance()->getMiningLevel($this->enchantName)) {
             SendForm::Send($player, (new EnchantConfirmationForm($player, $this->enchantment)));
         } else {

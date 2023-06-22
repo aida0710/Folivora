@@ -17,7 +17,7 @@ class ItemSell {
 
     use SingletonTrait;
 
-    public function transaction(Player $player, int $sellCount, ItemShopObject $item, int $virtualStorageItemCount, bool $virtualStorageEnable) : void {
+    public function transaction(Player $player, int $sellCount, ItemShopObject $item, int $virtualStorageItemCount, bool $virtualStorageEnable): void {
         if (MiningLevelAPI::getInstance()->getLevel($player) < RestrictionShop::getInstance()->getRestrictionByShopNumber($item->getShopId())) {
             SendMessage::Send($player, $item->getDisplayName() . 'を売却するには' . RestrictionShop::getInstance()->getRestrictionByShopNumber($item->getShopId()) . '以上のマイニングレベルが必要です', ItemShopAPI::PREFIX, false);
             return;
@@ -62,7 +62,7 @@ class ItemSell {
         SendMessage::Send($player, $item->getDisplayName() . 'が' . number_format($sellCount) . '個売却され、所持金が' . number_format($result) . '円増えました', ItemShopAPI::PREFIX, true, 'break.amethyst_block');
     }
 
-    private function buyItemFromStackStorage(Player $player, ItemShopObject $item, int $count) : int {
+    private function buyItemFromStackStorage(Player $player, ItemShopObject $item, int $count): int {
         $itemClone = (clone $item->getItem())->setCount($count);
         $storageResult = $item->getSell() * $count;
         StackStorageAPI::$instance->remove($player->getXuid(), $itemClone);
@@ -70,7 +70,7 @@ class ItemSell {
         return $storageResult;
     }
 
-    private function buyItemFromInventory(Player $player, ItemShopObject $item, int $count) : int {
+    private function buyItemFromInventory(Player $player, ItemShopObject $item, int $count): int {
         $itemClone = (clone $item->getItem())->setCount($count);
         $result = $item->getSell() * $count;
         $player->getInventory()->removeItem($itemClone);

@@ -17,7 +17,7 @@ class CommandSign implements Listener {
     /**
      * @priority LOWEST
      */
-    public function onTap(PlayerInteractEvent $event) : void {
+    public function onTap(PlayerInteractEvent $event): void {
         $block = $event->getBlock();
         if ($block instanceof BaseSign) {
             if ($block->getText()->getLine(0) == '##cmd') {

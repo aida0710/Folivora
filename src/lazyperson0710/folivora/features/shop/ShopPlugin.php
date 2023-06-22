@@ -15,7 +15,10 @@ use pocketmine\Server;
 
 class ShopPlugin implements IPluginBase {
 
-    public function onEnable(Server $server) : void {
+    public function onDisable(Server $server): void {
+    }
+
+    public function onEnable(Server $server): void {
         ItemShopAPI::getInstance()->init();
         EffectShopAPI::getInstance()->init();
         EnchantShopAPI::getInstance()->init();
@@ -24,8 +27,5 @@ class ShopPlugin implements IPluginBase {
             new EnchantShopCommand(),
             new EffectShopCommand(),
         ]);
-    }
-
-    public function onDisable(Server $server) : void {
     }
 }

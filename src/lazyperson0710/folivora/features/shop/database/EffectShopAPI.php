@@ -19,7 +19,7 @@ class EffectShopAPI {
     protected array $amplifiedMoney = [];
     protected array $timeRestriction = [];
 
-    public function init() : void {
+    public function init(): void {
         $this->register(VanillaEffects::HASTE(), 600, 2, 800, 800);
         $this->register(VanillaEffects::SPEED(), 250, 15, 1200, 800);
         $this->register(VanillaEffects::REGENERATION(), 1200, 5, 800, 30);
@@ -28,7 +28,7 @@ class EffectShopAPI {
         $this->register(VanillaEffects::WATER_BREATHING(), 1500, 1, 0, 800);
     }
 
-    public function register(Effect $effect, int $buy, int $levelLimit, int $amplifiedMoney, int $timeRestriction) : void {
+    public function register(Effect $effect, int $buy, int $levelLimit, int $amplifiedMoney, int $timeRestriction): void {
         $effectName = $effect->getName();
         if ($effectName instanceof Translatable) {
             $effectName = Server::getInstance()->getLanguage()->translate($effectName);
@@ -41,19 +41,19 @@ class EffectShopAPI {
         $this->timeRestriction[$effectName] = $timeRestriction;
     }
 
-    public function getBuy(string $effectName) : ?int {
+    public function getBuy(string $effectName): ?int {
         return $this->buy[$effectName];
     }
 
-    public function getLevelLimit(string $effectName) : ?int {
+    public function getLevelLimit(string $effectName): ?int {
         return $this->levelLimit[$effectName];
     }
 
-    public function getTimeRestriction(string $effectName) : ?int {
+    public function getTimeRestriction(string $effectName): ?int {
         return $this->timeRestriction[$effectName];
     }
 
-    public function getAmplifiedMoney(string $effectName) : ?int {
+    public function getAmplifiedMoney(string $effectName): ?int {
         return $this->amplifiedMoney[$effectName];
     }
 

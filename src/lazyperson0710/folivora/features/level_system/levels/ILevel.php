@@ -11,26 +11,26 @@ interface ILevel {
     /**
      * @return LevelConfig
      */
-    public function getConfig() : LevelConfig;
+    public function getConfig(): LevelConfig;
 
     /**
      * @return string
      */
-    public function getName() : string;
+    public function getName(): string;
 
     /**
      * @return int
      */
-    public function getDefaultLevel() : int;
+    public function getDefaultLevel(): int;
 
     /**
      * @return int
      */
-    public function getDefaultExp() : int;
+    public function getDefaultExp(): int;
 
     /**
      * @return int
      */
-    public function getDefaultExpToNextLevel() : int;
+    public function getDefaultExpToNextLevel(): int;
 
 }

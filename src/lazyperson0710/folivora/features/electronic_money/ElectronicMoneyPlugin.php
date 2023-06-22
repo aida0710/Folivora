@@ -15,7 +15,7 @@ use pocketmine\Server;
 
 class ElectronicMoneyPlugin implements IPluginBase {
 
-    public function onDisable(Server $server) : void {
+    public function onDisable(Server $server): void {
     }
 
     /**
@@ -23,7 +23,7 @@ class ElectronicMoneyPlugin implements IPluginBase {
      * @return void
      * @throws JsonException
      */
-    public function onEnable(Server $server) : void {
+    public function onEnable(Server $server): void {
         try {
             Money::getInstance()->createConfigFile();
         } catch (ConfigSaveException $exception) {

@@ -24,11 +24,11 @@ class ConfigFoundation {
      * @param string $path
      * @return void
      */
-    public static function init(string $path) : void {
+    public static function init(string $path): void {
         self::$dataPath = $path;
         RegisterTaskScheduler::getScheduler()->scheduleRepeatingTask(
             new ClosureTask(
-                function () : void {
+                function (): void {
                     self::runAllSave();
                 }
             ), 20 * 30,
@@ -41,7 +41,7 @@ class ConfigFoundation {
      *
      * @return void
      */
-    public static function runAllSave() : void {
+    public static function runAllSave(): void {
         $time_start = microtime(true);
         foreach (self::$iConfigs as $iConfig) {
             $iConfig->runSave();
@@ -62,7 +62,7 @@ class ConfigFoundation {
      * @throws JsonException
      * @see ConfigFoundation::registerConfig()
      */
-    public static function createConfigFile(string $path, ?int $fileType = Config::JSON) : Config {
+    public static function createConfigFile(string $path, ?int $fileType = Config::JSON): Config {
         $pathArray = explode('/', $path);
         $fileName = array_pop($pathArray);
         $directoryPath = null;
@@ -84,7 +84,7 @@ class ConfigFoundation {
      *
      * @return string
      */
-    public static function getDataPath() : string {
+    public static function getDataPath(): string {
         if (!isset(self::$dataPath)) {
             throw new ConfigDataPathNotSetException(ConfigDataPathNotSetException::MESSAGE);
         }
@@ -98,7 +98,7 @@ class ConfigFoundation {
      * @param IConfig $iConfig
      * @return void
      */
-    public static function registerConfigClass(IConfig $iConfig) : void {
+    public static function registerConfigClass(IConfig $iConfig): void {
         self::$iConfigs[] = $iConfig;
     }
 
@@ -107,7 +107,7 @@ class ConfigFoundation {
      * @param array  $configCache
      * @return bool
      */
-    public static function isAccountExist(Player $player, array $configCache) : bool {
+    public static function isAccountExist(Player $player, array $configCache): bool {
         if (!array_key_exists($player->getName(), $configCache)) {
             return false;
         }

@@ -11,14 +11,14 @@ interface IConfig {
      *
      * @return void
      */
-    public function createConfigFile() : void;
+    public function createConfigFile(): void;
 
     /**
      * 起動時に必ず実行してください。
      *
      * @return void
      */
-    public function registerConfigClass() : void;
+    public function registerConfigClass(): void;
 
     /**
      * $this->config->save(); のみ記述し、実行処理は全てConfigFoundation::runAllSave() に任せてください。
@@ -28,6 +28,6 @@ interface IConfig {
      * @see ConfigFoundation::runAllSave()
      *
      */
-    public function runSave() : void;
+    public function runSave(): void;
 
 }

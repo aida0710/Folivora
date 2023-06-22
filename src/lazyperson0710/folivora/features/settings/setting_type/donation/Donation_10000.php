@@ -10,15 +10,15 @@ class Donation_10000 implements IPlayerSetting {
 
     public const NAME = 'Donation_10000';
 
-    public function getDefaultValue() : bool {
+    public function getDefaultValue(): bool {
         return false;
     }
 
-    public function getName() : string {
+    public function getName(): string {
         return self::NAME;
     }
 
-    public function normalValue() : array {
+    public function normalValue(): array {
         return [
             true,
             false,

@@ -18,11 +18,11 @@ use pocketmine\Server;
 
 class CancelItemUseEvent implements Listener {
 
-    public function onUes(PlayerItemUseEvent $event) : void {
+    public function onUes(PlayerItemUseEvent $event): void {
         $this->banItems($event);
     }
 
-    private function banItems(BlockPlaceEvent|PlayerItemUseEvent|PlayerInteractEvent $event) : void {
+    private function banItems(BlockPlaceEvent|PlayerItemUseEvent|PlayerInteractEvent $event): void {
         switch ($event->getPlayer()->getInventory()->getItemInHand()->getId()) {
             case BlockLegacyIds::INFO_UPDATE;
             case BlockLegacyIds::INFO_UPDATE2;
@@ -93,15 +93,15 @@ class CancelItemUseEvent implements Listener {
         }
     }
 
-    public function onPlace(BlockPlaceEvent $event) : void {
+    public function onPlace(BlockPlaceEvent $event): void {
         $this->banItems($event);
     }
 
-    public function onInteract(PlayerInteractEvent $event) : void {
+    public function onInteract(PlayerInteractEvent $event): void {
         $this->banItems($event);
     }
 
-    public function onBreak(BlockBreakEvent $event) : void {
+    public function onBreak(BlockBreakEvent $event): void {
         foreach ($event->getDrops() as $item) {
             switch ($item->getId()) {
                 case BlockLegacyIds::INFO_UPDATE:
@@ -114,7 +114,7 @@ class CancelItemUseEvent implements Listener {
         }
     }
 
-    public function onEntityTrampleFarmland(EntityTrampleFarmlandEvent $event) : void {
+    public function onEntityTrampleFarmland(EntityTrampleFarmlandEvent $event): void {
         $event->cancel();
     }
 

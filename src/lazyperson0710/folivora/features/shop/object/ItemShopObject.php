@@ -19,31 +19,31 @@ class ItemShopObject {
     ) {
     }
 
-    public function getItem() : Item {
+    public function getItem(): Item {
         return $this->item;
     }
 
-    public function getBuy() : int {
+    public function getBuy(): int {
         return $this->buy;
     }
 
-    public function getSell() : int {
+    public function getSell(): int {
         return $this->sell;
     }
 
-    public function getShopId() : int {
+    public function getShopId(): int {
         return $this->shopId;
     }
 
-    public function getItemCategory() : string {
+    public function getItemCategory(): string {
         return $this->itemCategory;
     }
 
-    public function getDisplayName() : string {
+    public function getDisplayName(): string {
         return $this->displayName;
     }
 
-    public function isWorkingItem() : bool {
+    public function isWorkingItem(): bool {
         return $this->workingItem;
     }
 

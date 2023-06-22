@@ -15,7 +15,7 @@ class CoordinatesPacket {
      * @param bool   $value
      * @return void
      */
-    public static function Send(Player $player, bool $value) : void {
+    public static function Send(Player $player, bool $value): void {
         $pk = new GameRulesChangedPacket();
         $pk->gameRules = ['showcoordinates' => new BoolGameRule($value, false)];
         $player->getNetworkSession()->sendDataPacket($pk);

@@ -24,7 +24,7 @@ class LevelFoundation {
      * @param Player $player
      * @return void
      */
-    public function createAccount(Player $player) : void {
+    public function createAccount(Player $player): void {
         if (ConfigFoundation::isAccountExist($player, $this->cache)) {
             return;
         }
@@ -38,19 +38,10 @@ class LevelFoundation {
     }
 
     /**
-     * @return int
-     */
-    public function getLevel() : int {
-        $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultLevel();
-        return $this->cache[$player_name][DefaultValue::LEVEL_KEY];
-    }
-
-    /**
      * @param int $level
      * @return void
      */
-    public function setLevel(int $level) : void {
+    public function setLevel(int $level): void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $this->cache[$player_name][DefaultValue::LEVEL_KEY] = $level;
@@ -60,7 +51,7 @@ class LevelFoundation {
      * @param int $level
      * @return void
      */
-    public function addLevel(int $level) : void {
+    public function addLevel(int $level): void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $level = $this->getLevel() + $level;
@@ -70,17 +61,17 @@ class LevelFoundation {
     /**
      * @return int
      */
-    public function getExp() : int {
+    public function getLevel(): int {
         $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultExp();
-        return $this->cache[$player_name][DefaultValue::EXP_KEY];
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultLevel();
+        return $this->cache[$player_name][DefaultValue::LEVEL_KEY];
     }
 
     /**
      * @param int $exp
      * @return void
      */
-    public function setExp(int $exp) : void {
+    public function setExp(int $exp): void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $this->cache[$player_name][DefaultValue::EXP_KEY] = $exp;
@@ -90,11 +81,20 @@ class LevelFoundation {
      * @param int $exp
      * @return void
      */
-    public function addExp(int $exp) : void {
+    public function addExp(int $exp): void {
         $player_name = $this->player->getName();
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $exp = $this->getExp() + $exp;
         $this->cache[$player_name][DefaultValue::EXP_KEY] = $exp;
+    }
+
+    /**
+     * @return int
+     */
+    public function getExp(): int {
+        $player_name = $this->player->getName();
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultExp();
+        return $this->cache[$player_name][DefaultValue::EXP_KEY];
     }
 
 }

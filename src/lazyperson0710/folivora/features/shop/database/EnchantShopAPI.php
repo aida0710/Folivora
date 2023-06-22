@@ -21,7 +21,7 @@ class EnchantShopAPI {
     protected array $levelLimit = [];
     protected array $miningLevel = [];
 
-    public function init() : void {
+    public function init(): void {
         $this->register(VanillaEnchantments::SHARPNESS(), 3000, 5, 30);
         $this->register(VanillaEnchantments::EFFICIENCY(), 5000, 5, 15);
         $this->register(VanillaEnchantments::SILK_TOUCH(), 15000, 1, 15);
@@ -30,7 +30,7 @@ class EnchantShopAPI {
         $this->register(VanillaEnchantments::POWER(), 30000, 5, 30);
     }
 
-    public function register(Enchantment $enchantment, int $buy, int $limit, int $miningLevel) : void {
+    public function register(Enchantment $enchantment, int $buy, int $limit, int $miningLevel): void {
         $enchantName = $enchantment->getName();
         if ($enchantName instanceof Translatable) {
             $enchantName = Server::getInstance()->getLanguage()->translate($enchantName);
@@ -42,11 +42,11 @@ class EnchantShopAPI {
         $this->miningLevel[$enchantName] = $miningLevel;
     }
 
-    public function getBuy(string $enchantmentName) : ?int {
+    public function getBuy(string $enchantmentName): ?int {
         return $this->buy[$enchantmentName];
     }
 
-    public function checkLevel(Player $player, string $enchantmentName) : bool {
+    public function checkLevel(Player $player, string $enchantmentName): bool {
         $miningLevel = MiningLevelAPI::getInstance();
         if (!($this->getMiningLevel($enchantmentName) < $miningLevel->getLevel($player->getName()))) {
             return false;
@@ -54,11 +54,11 @@ class EnchantShopAPI {
         return true;
     }
 
-    public function getMiningLevel(string $enchantmentName) : ?int {
+    public function getMiningLevel(string $enchantmentName): ?int {
         return $this->miningLevel[$enchantmentName];
     }
 
-    public function getLevelLimit(string $enchantmentName) : ?int {
+    public function getLevelLimit(string $enchantmentName): ?int {
         return $this->levelLimit[$enchantmentName];
     }
 

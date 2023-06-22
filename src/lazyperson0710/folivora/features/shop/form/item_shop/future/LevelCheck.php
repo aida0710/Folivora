@@ -14,7 +14,7 @@ use pocketmine\utils\TextFormat;
 
 class LevelCheck {
 
-    public static function check(Player $player, int $restrictionLevel) : bool {
+    public static function check(Player $player, int $restrictionLevel): bool {
         if (MiningLevelAPI::getInstance()->getLevel($player) >= $restrictionLevel) {
             return true;
         } else {
@@ -25,7 +25,7 @@ class LevelCheck {
         }
     }
 
-    public static function sendForm(Player $player, FormBase $formBase, int $restrictionLevel) : void {
+    public static function sendForm(Player $player, FormBase $formBase, int $restrictionLevel): void {
         if (MiningLevelAPI::getInstance()->getLevel($player) >= $restrictionLevel) {
             SendForm::Send($player, $formBase);
         } else {

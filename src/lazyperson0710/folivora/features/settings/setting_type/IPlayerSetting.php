@@ -10,18 +10,18 @@ interface IPlayerSetting {
      *
      * @return string
      */
-    public function getName() : string;
+    public function getName(): string;
 
     /***
      * defaultの値を取得します。
      *
      * @return mixed
      */
-    public function getDefaultValue() : mixed;
+    public function getDefaultValue(): mixed;
 
     /**
      * @return array
      * @see SettingFoundation::checkSettingData() で使用します。
      */
-    public function normalValue() : array;
+    public function normalValue(): array;
 }
