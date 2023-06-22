@@ -38,6 +38,45 @@ class LevelFoundation {
     }
 
     /**
+     * @return int
+     */
+    public function getLevel() : int {
+        $player_name = $this->player->getName();
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultLevel();
+        return $this->cache[$player_name][DefaultValue::LEVEL_KEY];
+    }
+
+    /**
+     * @param int $level
+     * @return void
+     */
+    public function setLevel(int $level) : void {
+        $player_name = $this->player->getName();
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
+        $this->cache[$player_name][DefaultValue::LEVEL_KEY] = $level;
+    }
+
+    /**
+     * @param int $level
+     * @return void
+     */
+    public function addLevel(int $level) : void {
+        $player_name = $this->player->getName();
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
+        $level = $this->getLevel() + $level;
+        $this->cache[$player_name][DefaultValue::EXP_KEY] = $level;
+    }
+
+    /**
+     * @return int
+     */
+    public function getExp() : int {
+        $player_name = $this->player->getName();
+        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultExp();
+        return $this->cache[$player_name][DefaultValue::EXP_KEY];
+    }
+
+    /**
      * @param int $exp
      * @return void
      */
@@ -56,22 +95,6 @@ class LevelFoundation {
         if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return;
         $exp = $this->getExp() + $exp;
         $this->cache[$player_name][DefaultValue::EXP_KEY] = $exp;
-    }
-
-    /**
-     * @return int
-     */
-    public function getExp() : int {
-        $player_name = $this->player->getName();
-        if (!ConfigFoundation::isAccountExist($this->player, $this->cache)) return $this->defaultValue->getDefaultExp();
-        return $this->cache[$player_name][DefaultValue::EXP_KEY];
-    }
-
-    /**
-     * @return array
-     */
-    public function getAllPlayerData() : array {
-        return $this->cache;
     }
 
 }
