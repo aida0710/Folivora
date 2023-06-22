@@ -12,9 +12,9 @@ class Build implements ILevel {
 
     use SingletonTrait;
 
-    private const DEFAULT_LEVEL = 1;
-    private const DEFAULT_EXP = 1;
-    private const DEFAULT_LEVEL_UP_EXP = 250;
+    public const DEFAULT_LEVEL = 1;
+    public const DEFAULT_EXP = 1;
+    public const DEFAULT_LEVEL_UP_EXP = 250;
 
     public const LEVEL = Levels::BUILD;
 
