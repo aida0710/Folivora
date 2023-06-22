@@ -34,7 +34,7 @@ cs-fixerの設定は[.php-cs-fixer.dist.php](/.php-cs-fixer.dist.php)に記述�
 
 ## ブランチについて
 
-- master - 安定版(直接のコミット・プッシュ厳禁)
+- main - 安定版(直接のコミット・プッシュ厳禁)
 - develop - 開発・作業用ブランチ(直接のコミット・プッシュ基本NG)
 - feature - 機能追加etc用 developから切ってdevelopにマージ、マージ後削除
 - hotfix - バグ対応用。developから分岐し、全ブランチにマージ。マージ後削除
