@@ -68,4 +68,8 @@ class LevelConfig implements IConfig {
         return new LevelFoundation($player, self::$cache[$this->Level->value], $this->Level);
     }
 
+    public function getAllPlayerData() : array {
+        return self::$cache[$this->Level->value];
+    }
+
 }
