@@ -16,9 +16,8 @@ class LevelFoundation {
         private array &$cache,
         private readonly Levels $level,
     ) {
-        var_dump('load constructor');
-        $this->createAccount($player);
         $this->defaultValue = new DefaultValue($this->level);
+        $this->createAccount($player);
     }
 
     /**
@@ -31,7 +30,6 @@ class LevelFoundation {
         }
         $this->cache += [
             $player->getName() => [
-                //bug $this->defaultValueの値が取得できない
                 DefaultValue::LEVEL_KEY => $this->defaultValue->getDefaultLevel(),
                 DefaultValue::EXP_KEY => $this->defaultValue->getDefaultExp(),
                 DefaultValue::EXP_TO_NEXT_LEVEL_KEY => $this->defaultValue->getDefaultExpToNextLevel(),
