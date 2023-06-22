@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace lazyperson0710\folivora\features\settings\setting_type\normal;
 
 use lazyperson0710\folivora\features\settings\setting_type\IPlayerSetting;
