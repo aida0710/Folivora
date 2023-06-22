@@ -21,7 +21,7 @@
 - 引用は`>`で行ってください
 
 ## コードスタイルの統一
-基本的に[コードスタイル.xml](/コードスタイル-2023年6月2日.xml)を使用しています。<br>
+基本的に[CodeStyle.xml](/CodeStyle.xml)を使用しています。<br>
 PhpStormのコードスタイルから読み込んでいただけたらと思います。
 ## cs-fixerに関して
 cs-fixerの設定は[.php-cs-fixer.dist.php](/.php-cs-fixer.dist.php)に記述しています。<br>
