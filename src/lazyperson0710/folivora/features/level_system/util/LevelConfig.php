@@ -59,7 +59,6 @@ class LevelConfig implements IConfig {
      * @throws JsonException
      */
     public function runSave(): void {
-        var_dump($this->Level->value);
         self::$config[$this->Level->value]->setAll(self::$cache[$this->Level->value]);
         self::$config[$this->Level->value]->save();
     }
