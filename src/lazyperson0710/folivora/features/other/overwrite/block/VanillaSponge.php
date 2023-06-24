@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\features\other\overwrite\block;
 
+use lazyperson0710\folivora\features\world_manager\database\WorldCategory;
 use lazyperson0710\folivora\util\message\send_message\SendTip;
 use pocketmine\block\Block;
 use pocketmine\block\BlockBreakInfo;
