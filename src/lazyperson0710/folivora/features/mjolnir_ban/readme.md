@@ -1,2 +1,0 @@
-# Mjolnir_Ban
-## Todo
