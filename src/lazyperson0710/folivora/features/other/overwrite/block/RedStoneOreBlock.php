@@ -18,7 +18,7 @@ class RedStoneOreBlock extends RedstoneOre {
     }
 
     public function isLit(): bool {
-        return $this->lit;
+        return true;
     }
 
     /**
