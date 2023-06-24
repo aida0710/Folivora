@@ -2,8 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace lazyperson0710\folivora\features\other\overwrite\block;
+namespace lazyperson0710\folivora\features\other\overwrite;
 
+use lazyperson0710\folivora\features\other\overwrite\block\RedStoneOreBlock;
+use lazyperson0710\folivora\features\other\overwrite\block\VanillaSponge;
+use lazyperson0710\folivora\features\other\overwrite\item\NameChange;
 use pocketmine\block\BlockBreakInfo;
 use pocketmine\block\BlockFactory;
 use pocketmine\block\BlockIdentifierFlattened as BIDFlattened;
@@ -13,7 +16,7 @@ use pocketmine\item\ToolTier;
 
 class Override {
 
-    public function init(): void {
+    public static function init(): void {
         BlockFactory::getInstance()->register(
             new RedStoneOreBlock(
                 new BIDFlattened(
@@ -28,6 +31,7 @@ class Override {
                     ToolTier::IRON()->getHarvestLevel())
             ), true);
         BlockFactory::getInstance()->register(new VanillaSponge(), true);
+        (new NameChange())->init();
     }
 
 }
