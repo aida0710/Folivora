@@ -4,7 +4,11 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\util\register;
 
+use lazyperson0710\folivora\features\debug\Debug;
 use lazyperson0710\folivora\features\level_system\LevelSystemPlugin;
+use lazyperson0710\folivora\features\other\Other;
+use lazyperson0710\folivora\features\secret_commnad\SecretCommandsPlugin;
+use lazyperson0710\folivora\features\shop\ShopPlugin;
 use lazyperson0710\folivora\util\plugin_base\IPluginBase;
 use pocketmine\Server;
 
@@ -21,11 +25,14 @@ class RegisterFeatures {
      */
     public static function enableFeatures(Server $server): void {
         $registerFeatures = new RegisterFeatures();
-        //$registerFeatures->setFeatures(new Debug());
+        $registerFeatures->setFeatures(new Other());
+        $registerFeatures->setFeatures(new Debug());
         //$registerFeatures->setFeatures(new ElectronicMoneyPlugin());
         //$registerFeatures->setFeatures(new SettingPlugin());
         //$registerFeatures->setFeatures(new WorldManager());
         $registerFeatures->setFeatures(new LevelSystemPlugin());
+        $registerFeatures->setFeatures(new ShopPlugin());
+        $registerFeatures->setFeatures(new SecretCommandsPlugin());//全てのコマンドを読み込ます必要がある為、最後に読み込みませて下さい。
         foreach ($registerFeatures->getFeatures() as $pluginBase) {
             $pluginBase->onEnable($server);
         }
