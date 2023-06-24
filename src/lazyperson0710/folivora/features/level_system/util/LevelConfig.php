@@ -63,10 +63,17 @@ class LevelConfig implements IConfig {
         self::$config[$this->Level->value]->save();
     }
 
+    /**
+     * @param Player $player
+     * @return LevelFoundation
+     */
     public function getFunction(Player $player): LevelFoundation {
         return new LevelFoundation($player, self::$cache[$this->Level->value], $this->Level);
     }
 
+    /**
+     * @return array
+     */
     public function getAllPlayerData(): array {
         return self::$cache[$this->Level->value];
     }

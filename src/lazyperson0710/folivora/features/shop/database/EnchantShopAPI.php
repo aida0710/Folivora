@@ -21,6 +21,9 @@ class EnchantShopAPI {
     protected array $levelLimit = [];
     protected array $miningLevel = [];
 
+    /**
+     * @return void
+     */
     public function init(): void {
         $this->register(VanillaEnchantments::SHARPNESS(), 3000, 5, 30);
         $this->register(VanillaEnchantments::EFFICIENCY(), 5000, 5, 15);
@@ -30,6 +33,13 @@ class EnchantShopAPI {
         $this->register(VanillaEnchantments::POWER(), 30000, 5, 30);
     }
 
+    /**
+     * @param Enchantment $enchantment
+     * @param int         $buy
+     * @param int         $limit
+     * @param int         $miningLevel
+     * @return void
+     */
     public function register(Enchantment $enchantment, int $buy, int $limit, int $miningLevel): void {
         $enchantName = $enchantment->getName();
         if ($enchantName instanceof Translatable) {
@@ -42,10 +52,19 @@ class EnchantShopAPI {
         $this->miningLevel[$enchantName] = $miningLevel;
     }
 
+    /**
+     * @param string $enchantmentName
+     * @return int|null
+     */
     public function getBuy(string $enchantmentName): ?int {
         return $this->buy[$enchantmentName];
     }
 
+    /**
+     * @param Player $player
+     * @param string $enchantmentName
+     * @return bool
+     */
     public function checkLevel(Player $player, string $enchantmentName): bool {
         $miningLevel = MiningLevelAPI::getInstance();
         if (!($this->getMiningLevel($enchantmentName) < $miningLevel->getLevel($player->getName()))) {
@@ -54,10 +73,18 @@ class EnchantShopAPI {
         return true;
     }
 
+    /**
+     * @param string $enchantmentName
+     * @return int|null
+     */
     public function getMiningLevel(string $enchantmentName): ?int {
         return $this->miningLevel[$enchantmentName];
     }
 
+    /**
+     * @param string $enchantmentName
+     * @return int|null
+     */
     public function getLevelLimit(string $enchantmentName): ?int {
         return $this->levelLimit[$enchantmentName];
     }

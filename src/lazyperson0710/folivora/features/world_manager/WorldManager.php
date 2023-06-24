@@ -34,9 +34,17 @@ class WorldManager implements IPluginBase {
     public const CHECK_INTERVAL = 20;
     public const TELEPORT_INTERVAL = 15;
 
+    /**
+     * @param Server $server
+     * @return void
+     */
     public function onDisable(Server $server): void {
     }
 
+    /**
+     * @param Server $server
+     * @return void
+     */
     public function onEnable(Server $server): void {
         foreach (scandir('worlds/') as $value) {
             if (is_dir('worlds/' . $value) && ($value !== '.' && $value !== '..')) {
