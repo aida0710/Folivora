@@ -74,7 +74,7 @@ class LevelConfig implements IConfig {
     /**
      * @return array
      */
-    public function getAllPlayerData(): array {
+    public function getAllData(): array {
         return self::$cache[$this->Level->value];
     }
 
