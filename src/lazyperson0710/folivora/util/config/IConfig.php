@@ -31,12 +31,6 @@ interface IConfig {
     public function runSave(): void;
 
     /**
-     * @param Player $player
-     * @return LevelFoundation
-     */
-    public function getFunction(Player $player): LevelFoundation;
-
-    /**
      * @return array
      */
     public function getAllData(): array;
