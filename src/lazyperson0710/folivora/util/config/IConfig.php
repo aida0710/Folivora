@@ -4,9 +4,6 @@ declare(strict_types = 1);
 
 namespace lazyperson0710\folivora\util\config;
 
-use lazyperson0710\folivora\features\level_system\util\LevelFoundation;
-use pocketmine\player\Player;
-
 interface IConfig {
 
     /**
@@ -42,6 +39,6 @@ interface IConfig {
     /**
      * @return array
      */
-    public function getAllPlayerData(): array;
+    public function getAllData(): array;
 
 }
