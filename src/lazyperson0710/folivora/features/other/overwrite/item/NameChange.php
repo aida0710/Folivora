@@ -24,12 +24,13 @@ class NameChange {
     public const ITEM_CHISELED_NETHER_BRICKS = -302;
 
     public function init(): void {
-        ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
-        CreativeInventory::getInstance()->add(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
-        StringToItemParser::getInstance()->register('grindstone', fn (string $input) => new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
-        ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_COMMAND_BLOCK, 0), 'コマンドブロック'));
-        CreativeInventory::getInstance()->add(new Item(new ItemIdentifier(self::ITEM_COMMAND_BLOCK, 0), 'コマンドブロック'));
-        StringToItemParser::getInstance()->register('command_block', fn (string $input) => new Item(new ItemIdentifier(self::ITEM_COMMAND_BLOCK, 0), 'コマンドブロック'));
+        //note アイテムを追加してください。
+        //ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
+        //CreativeInventory::getInstance()->add(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
+        //StringToItemParser::getInstance()->register('grindstone', fn (string $input) => new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));
+        //ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_COMMAND_BLOCK, 0), 'コマンドブロック'));
+        //CreativeInventory::getInstance()->add(new Item(new ItemIdentifier(self::ITEM_COMMAND_BLOCK, 0), 'コマンドブロック'));
+        //StringToItemParser::getInstance()->register('command_block', fn (string $input) => new Item(new ItemIdentifier(self::ITEM_COMMAND_BLOCK, 0), 'コマンドブロック'));
         ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_CHISELED_NETHER_BRICKS, 0), 'MiningToolsRangeCostItem'));
         CreativeInventory::getInstance()->add(new Item(new ItemIdentifier(self::ITEM_CHISELED_NETHER_BRICKS, 0), 'MiningToolsRangeCostItem'));
         StringToItemParser::getInstance()->register('MiningToolsRangeCostItem', fn (string $input) => new Item(new ItemIdentifier(self::ITEM_CHISELED_NETHER_BRICKS, 0), 'MiningToolsRangeCostItem'));
