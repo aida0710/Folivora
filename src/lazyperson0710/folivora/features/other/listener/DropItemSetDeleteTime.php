@@ -12,6 +12,10 @@ class DropItemSetDeleteTime implements Listener {
 
     private const DeleteTime = 20 * 60;
 
+    /**
+     * @param ItemSpawnEvent $event
+     * @return void
+     */
     public function onDropItemSetDeleteTime(ItemSpawnEvent $event): void {
         if ($event->getEntity() instanceof ItemEntity) {
             $event->getEntity()->setDespawnDelay(self::DeleteTime);

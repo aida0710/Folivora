@@ -24,6 +24,16 @@ class VanillaSponge extends Sponge {
         parent::__construct(new BlockIdentifier(BlockLegacyIds::SPONGE, 0), 'Sponge', new BlockBreakInfo(0.6, BlockToolType::HOE));
     }
 
+    /**
+     * @param BlockTransaction $tx
+     * @param Item             $item
+     * @param Block            $blockReplace
+     * @param Block            $blockClicked
+     * @param int              $face
+     * @param Vector3          $clickVector
+     * @param Player|null      $player
+     * @return bool
+     */
     public function place(BlockTransaction $tx, Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, Player $player = null): bool {
         if (!$this->isWet()) {
             if (!in_array($player->getWorld()->getFolderName(), WorldCategory::NatureAll, true)) {
@@ -35,6 +45,9 @@ class VanillaSponge extends Sponge {
         return parent::place($tx, $item, $blockReplace, $blockClicked, $face, $clickVector, $player);
     }
 
+    /**
+     * @return void
+     */
     private function absorb(): void {
         $pos = $this->getPosition();
         $startX = $pos->getFloorX() - 8;

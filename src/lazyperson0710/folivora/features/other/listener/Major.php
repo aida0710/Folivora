@@ -18,10 +18,18 @@ class Major implements Listener {
 
     public array $data = [];
 
+    /**
+     * @param PlayerInteractEvent $event
+     * @return void
+     */
     public function interactEvent(PlayerInteractEvent $event): void {
         $this->setMajor($event);
     }
 
+    /**
+     * @param PlayerInteractEvent|BlockBreakEvent $event
+     * @return void
+     */
     public function setMajor(PlayerInteractEvent|BlockBreakEvent $event): void {
         $player = $event->getPlayer();
         if ($player->getInventory()->getItemInHand()->getId() == 318) {

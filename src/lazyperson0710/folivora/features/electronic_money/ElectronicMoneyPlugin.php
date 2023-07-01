@@ -9,6 +9,10 @@ use pocketmine\Server;
 
 class ElectronicMoneyPlugin implements IPluginBase {
 
+    /**
+     * @param Server $server
+     * @return void
+     */
     public function onDisable(Server $server): void {
     }
 

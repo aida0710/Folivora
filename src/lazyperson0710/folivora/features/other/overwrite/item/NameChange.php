@@ -23,6 +23,9 @@ class NameChange {
     public const ITEM_COMMAND_BLOCK = 137;
     public const ITEM_CHISELED_NETHER_BRICKS = -302;
 
+    /**
+     * @return void
+     */
     public function init(): void {
         //note アイテムを追加してください。
         //ItemFactory::getInstance()->register(new Item(new ItemIdentifier(self::ITEM_GRIND_STONE, 0), 'Login Bonus'));

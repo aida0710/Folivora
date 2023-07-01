@@ -16,6 +16,9 @@ use pocketmine\item\ToolTier;
 
 class Override {
 
+    /**
+     * @return void
+     */
     public static function init(): void {
         BlockFactory::getInstance()->register(
             new RedStoneOreBlock(

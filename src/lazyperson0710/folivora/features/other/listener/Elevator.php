@@ -15,6 +15,10 @@ class Elevator implements Listener {
     public const elevator = 0;
     private array $sneak;
 
+    /**
+     * @param PlayerJumpEvent $ev
+     * @return void
+     */
     public function onJump(PlayerJumpEvent $ev): void {
         $p = $ev->getPlayer();
         $level = $p->getPosition()->getWorld();
@@ -33,6 +37,13 @@ class Elevator implements Listener {
         }
     }
 
+    /**
+     * @param $level
+     * @param $x
+     * @param $y
+     * @param $z
+     * @return bool
+     */
     private function elevator($level, $x, $y, $z): bool {
         $vector3 = new Vector3($x, $y, $z);
         if (self::elevator == $level->getBlock(new Vector3($x, $y, $z))->getId()) {
@@ -43,6 +54,10 @@ class Elevator implements Listener {
         return false;
     }
 
+    /**
+     * @param PlayerToggleSneakEvent $ev
+     * @return void
+     */
     public function onSneak(PlayerToggleSneakEvent $ev): void {
         $p = $ev->getPlayer();
         $n = $p->getName();

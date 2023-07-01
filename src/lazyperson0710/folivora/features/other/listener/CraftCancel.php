@@ -14,6 +14,10 @@ use pocketmine\item\VanillaItems;
 
 class CraftCancel implements Listener {
 
+    /**
+     * @param CraftItemEvent $event
+     * @return void
+     */
     public function onCraft(CraftItemEvent $event): void {
         $blocks = [
             VanillaBlocks::ACACIA_PRESSURE_PLATE()->asItem()->getVanillaName(),

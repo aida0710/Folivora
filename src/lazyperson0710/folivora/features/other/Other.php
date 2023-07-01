@@ -13,9 +13,17 @@ use pocketmine\Server;
 
 class Other implements IPluginBase {
 
+    /**
+     * @param Server $server
+     * @return void
+     */
     public function onDisable(Server $server): void {
     }
 
+    /**
+     * @param Server $server
+     * @return void
+     */
     public function onEnable(Server $server): void {
         RegisterListener::register(new CommandSign());
         Override::init();

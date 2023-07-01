@@ -10,6 +10,8 @@ use pocketmine\event\player\PlayerBlockPickEvent;
 class VanillaPickBlock implements Listener {
 
     /**
+     * @param PlayerBlockPickEvent $event
+     * @return void
      * @priority LOWEST
      */
     public function onPlayerPickBlock(PlayerBlockPickEvent $event): void {

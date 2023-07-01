@@ -21,6 +21,9 @@ class Fortune {
     public const ITEM_FLAGS = ItemFlags::DIG;
     public const ITEM_FLAGS_SECOND = ItemFlags::SHEARS;
 
+    /**
+     * @return void
+     */
     public static function register(): void {
         $enchant = new Enchantment(self::NAME, self::RARITY, self::ITEM_FLAGS, self::ITEM_FLAGS_SECOND, self::MAX_LEVEL);
         EnchantmentIdMap::getInstance()->register(EnchantmentIds::FORTUNE, $enchant);
